@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta charset="utf-8" />
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="/favicon.svg" rel="Shortcut Icon" type="image/svg" />
+
+    <title>&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&#x67E5;&#x8BE2; NET牛人</title>
+
+    <meta name="keywords" content="netnr,NET牛人,身份证号码查询" />
+    <meta name="description" content="netnr,NET牛人,身份证号码查询" />
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<meta name="x-stylesheet-fallback-test" content="" class="form-control" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("display","block",["https:\/\/static.netnr.com\/lib\/bootstrap\/3.3.7\/css\/bootstrap.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+    <script src="https://lib.baomitu.com/jquery/1.12.4/jquery.min.js">
+    </script>
+<script>(window.jQuery||document.write("\u003Cscript src=\u0022https:\/\/static.netnr.com\/lib\/jquery\/1.12.4\/jquery.min.js\u0022\u003E\u003C\/script\u003E"));</script>
+    <script src="https://lib.baomitu.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+<script>($.fn.emulateTransitionEnd||document.write("\u003Cscript src=\u0022https:\/\/static.netnr.com\/lib\/bootstrap\/3.3.7\/js\/bootstrap.min.js\u0022\u003E\u003C\/script\u003E"));</script>
+    <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<meta name="x-stylesheet-fallback-test" content="" class="fa" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("display","inline-block",["https:\/\/static.netnr.com\/lib\/font-awesome\/4.7.0\/css\/font-awesome.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+
+    <link href="/css/global.css?v=R7Z7O83tb0L-f-VpRbpKXsX4B7vN-UmCPBBqWYLJOPg" rel="stylesheet" />
+    <script src="/js/global.js?v=vYV-Mh-eV6XuQ-CwG1h31PQstXR6eIlkGj0rxyMBa0E"></script>
+    <script src="/js/jz/jz.min.js?v=LQvPjEmTgtZ-qcu_4JSfOJgI_SO_QBUKWOMvMvk3f2c"></script>
+</head>
+<body>
+
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="siteIcon pull-left">
+                        <img src="/favicon.svg" />
+                    </a>
+                    <a href="index.html" class="navbar-brand" title="脚本服务">Script Services</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="https://www.netnr.com">NET牛人</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <div class="bodym">
+        <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group mb15">
+                <input id="txtSearch" type="text" class="form-control" placeholder="请输入身份证号（15位或18位）" autocomplete="off">
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button" id="btnSearch">查询</button>
+                </span>
+            </div>
+
+            <div id="info">
+                <p>号 码： <strong id="code"></strong></p>
+                <p>地 区： <strong id="diqu"></strong></p>
+                <p>生 日： <strong id="shengri"></strong></p>
+                <p>性 别： <strong id="xingbie"></strong></p>
+                <br>
+            </div>
+            <div style="display:none;" id="e_info">
+                <p>你查询的是： <strong id="e_e_code"></strong> <font class="text-danger">(最后一位校验码错误)</font></p>
+                <p>　正确号码： <strong id="e_code"></strong></p>
+                <p>　　　地区： <strong id="e_diqu"></strong></p>
+                <p>　　　生日： <strong id="e_shengri"></strong></p>
+                <p>　　　性别： <strong id="e_xingbie"></strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/idcard.js?v=cWqI8IlBd3NL4pv0zqueeAElEBwJZmatKvhCuS1kULo"></script>
+
+    </div>
+
+        <footer class="footer">
+            <img src="/favicon.svg" class="logo" />
+            <p>© 2018 <a href="https://www.netnr.com">netnr</a></p>
+            <small class="text-muted">Hosted by <a href="https://pages.coding.me">Coding Pages</a></small>
+        </footer>
+</body>
+</html>

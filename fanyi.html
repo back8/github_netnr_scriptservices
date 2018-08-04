@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta charset="utf-8" />
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="/favicon.svg" rel="Shortcut Icon" type="image/svg" />
+
+    <title>&#x5728;&#x7EBF;&#x7FFB;&#x8BD1; NET牛人</title>
+
+    <meta name="keywords" content="netnr,NET牛人,在线翻译" />
+    <meta name="description" content="netnr,NET牛人,在线翻译" />
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<meta name="x-stylesheet-fallback-test" content="" class="form-control" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("display","block",["https:\/\/static.netnr.com\/lib\/bootstrap\/3.3.7\/css\/bootstrap.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+    <script src="https://lib.baomitu.com/jquery/1.12.4/jquery.min.js">
+    </script>
+<script>(window.jQuery||document.write("\u003Cscript src=\u0022https:\/\/static.netnr.com\/lib\/jquery\/1.12.4\/jquery.min.js\u0022\u003E\u003C\/script\u003E"));</script>
+    <script src="https://lib.baomitu.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+<script>($.fn.emulateTransitionEnd||document.write("\u003Cscript src=\u0022https:\/\/static.netnr.com\/lib\/bootstrap\/3.3.7\/js\/bootstrap.min.js\u0022\u003E\u003C\/script\u003E"));</script>
+    <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<meta name="x-stylesheet-fallback-test" content="" class="fa" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("display","inline-block",["https:\/\/static.netnr.com\/lib\/font-awesome\/4.7.0\/css\/font-awesome.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+
+    <link href="/css/global.css?v=R7Z7O83tb0L-f-VpRbpKXsX4B7vN-UmCPBBqWYLJOPg" rel="stylesheet" />
+    <script src="/js/global.js?v=vYV-Mh-eV6XuQ-CwG1h31PQstXR6eIlkGj0rxyMBa0E"></script>
+    <script src="/js/jz/jz.min.js?v=LQvPjEmTgtZ-qcu_4JSfOJgI_SO_QBUKWOMvMvk3f2c"></script>
+</head>
+<body>
+
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="siteIcon pull-left">
+                        <img src="/favicon.svg" />
+                    </a>
+                    <a href="index.html" class="navbar-brand" title="脚本服务">Script Services</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="https://www.netnr.com">NET牛人</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <div class="bodym">
+        <style>
+    #txt {
+        width: 100%;
+        height: 200px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+    }
+
+    #divTranslResult {
+        font-size: 16px;
+        word-break: break-all;
+        word-wrap: break-word;
+        border: 1px solid #fff;
+    }
+
+        #divTranslResult p {
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+            #divTranslResult p:first-child {
+                font-weight: 600;
+            }
+
+        #divTranslResult span {
+            color: #009a61;
+        }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 col-xs-6">
+            <input id="btnTransl" type="button" value=" 翻 译 " class="btn btn-danger btn-block" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <textarea id="txt" placeholder="请输入需要翻译的内容" style="padding:5px"></textarea>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div id="divTranslResult"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/fanyi.js?v=X8VkIaSOHJWuDXlg_H8rqOwkjl9KiOYfSPiVB8Z1YfE"></script>
+
+    </div>
+
+        <footer class="footer">
+            <img src="/favicon.svg" class="logo" />
+            <p>© 2018 <a href="https://www.netnr.com">netnr</a></p>
+            <small class="text-muted">Hosted by <a href="https://pages.coding.me">Coding Pages</a></small>
+        </footer>
+</body>
+</html>
