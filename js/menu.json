@@ -3,21 +3,23 @@
     {
       "group": "生活实用",
       "items": {
-        "wallpaper": "在线壁纸",
-        "weather": "天气预报",
-        "fanyi": "在线翻译",
-        "lottery": "彩票查询",
-        "domainname": "域名备案查询",
-        "qrcode": "生成二维码",
         "idcard": "身份证号码查询",
-        "bed": "图床"
+        "qrcode": "生成二维码",
+        "lottery": "彩票查询",
+        "wallpaper": "壁纸",
+        "bed": "图床",
+        "weather": "天气预报",
+        "fanyi": "在线翻译"
       }
     },
     {
-      "group": "Html/Js/Css",
+      "group": "网络工具",
       "items": {
         "code": "加密转码",
-        "jsontocsharp": "JSON转C#实体"
+        "vscode": "vscode在线编辑器",
+        "diff": "文本对比",
+        "domainname": "域名备案信息查询",
+        "jsontocsharp": "JSON转Csharp实体"
       }
     }
   ]

@@ -10,10 +10,10 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link href="/favicon.svg" rel="Shortcut Icon" type="image/svg" />
 
-    <title>JSON&#x8F6C;Csharp&#x5B9E;&#x4F53; NET牛人</title>
+    <title>vscode&#x5728;&#x7EBF;&#x7F16;&#x8F91;&#x5668; NET牛人</title>
 
-    <meta name="keywords" content="netnr,NET牛人,JSON转Csharp实体" />
-    <meta name="description" content="netnr,NET牛人,JSON转Csharp实体" />
+    <meta name="keywords" content="netnr,NET牛人,vscode在线编辑器" />
+    <meta name="description" content="netnr,NET牛人,vscode在线编辑器" />
 
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -59,85 +59,96 @@
         </nav>
 
     <div class="bodym">
-        <style>
-    #jteBox textarea {
-        min-height: 200px;
-    }
-
-    #jteBox label {
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: 400;
-        margin: 10px 15px 0 0;
-    }
-
-        #jteBox label input {
-            width: 1.1em;
-            height: 1.1em;
-            cursor: pointer;
-            vertical-align: top;
-        }
-</style>
-
-<div class="container">
+        <div class="container">
     <div class="row">
+        <div class="col-md-6 hiddex-sm">
+            <h4>VSCode在线编辑器，自动保存本地</h4>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <select class="form-control" id="selanguage">
+                <optgroup label="Language"></optgroup>
+            </select>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <select class="form-control" id="setheme">
+                <optgroup label="Theme">
+                    <option value="vs">Visual Studio</option>
+                    <option value="vs-dark">Visual Studio Dark</option>
+                    <option value="hc-black">High Contrast Dark</option>
+                </optgroup>
+            </select>
+        </div>
+    </div>
+    <div class="row mt15">
         <div class="col-md-12">
-            <div class="row" id="jteBox">
-                <div class="col-sm-12">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-2 col-md-2">
-                            <button class="btn btn-danger btn-block btn-lg" id="btnJsonToEntity">生成实体</button>
-                        </div>
-                        <div class="col-xs-6 col-sm-10 col-md-10">
-                            <label><input type="checkbox" id="chkNotes" checked />注释</label>
-                            <label><input type="checkbox" id="chkClassNameFirstBig" checked />类名大写开头</label>
-                        </div>
-                    </div>
-                    <hr />
-                </div>
-                <div class="col-sm-6">
-                    <textarea class="form-control" id="txt1" placeholder=" 来一串 JSON">
-{
-  "site": {
-    "title": "NET牛人",
-    "domain": "https://www.netnr.com",
-    "foreverdomain": "http://netnr.top",
-    "createtime": "2014.01.01",
-    "qqgroup": 83084426
-  },
-  "about": {
-    "name": "netnr",
-    "sex": "男",
-    "birthday": "1992.07.13",
-    "injob": "2012.03.01",
-    "live": "中国重庆",
-    "stain": null,
-    "qq": 1041911384,
-    "mail": "netnr@netnr.com",
-    "git": [
-      {
-        "name": "github",
-        "url": "https://github.com/netnr"
-      },
-      {
-        "name": "gitee",
-        "url": "https://gitee.com/netnr"
-      }
-    ]
-  },
-  "updaet": "2018.01.08",
-  "version": "v.1.0.0"
-}</textarea>
-                </div>
-                <div class="col-sm-6">
-                    <textarea class="form-control" id="txt2"></textarea>
-                </div>
-            </div>
+            <div id="editor" style="border:1px solid #ddd;"></div>
         </div>
     </div>
 </div>
 
-<script src="/js/jsontocsharp.js?v=a9asyOgjJY6OVNSqQqJ1m6Eyz2cGQQloaIavIBS77B0"></script>
+<script>
+    var require = { paths: { 'vs': 'https://lib.baomitu.com/monaco-editor/0.13.1/min/vs' } }, editor = null,
+        defaultLang = localStorage["vscode-lang"] || 'javascript',
+        defaultContent = localStorage["vscode-content"] || 'console.log("Hello world!");',
+        defaultTheme = localStorage["vscode-theme"] || 'vs';
+    function AutoHeight() {
+        var ch = $(window).height() - $('#editor').offset().top - 15;
+        $('#editor').css('height', Math.max(200, ch));
+    }
+    AutoHeight();
+    $(window).resize(AutoHeight);
+</script>
+<link href="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/editor/editor.main.css" rel="stylesheet">
+<script src="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/loader.js"></script>
+<script src="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/editor/editor.main.nls.js"></script>
+<script src="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/editor/editor.main.js"></script>
+
+<script>
+    require(['vs/editor/editor.main'], function () {
+        var modesIds = monaco.languages.getLanguages().map(function (lang) { return lang.id }).sort();
+
+        var te = $("#editor"), selang = $('#selanguage'),
+            languagehtm = [];
+        for (var i = 0; i < modesIds.length; i++) {
+            var mo = modesIds[i];
+            languagehtm.push('<option>' + mo + '</option>');
+        }
+        selang.children()[0].innerHTML = languagehtm.join('');
+
+        editor = monaco.editor.create(te[0], {
+            value: defaultContent,
+            language: defaultLang,
+            automaticLayout: true,
+            theme: defaultTheme,
+            minimap: {
+                _enabled: false
+            }
+        });
+
+        selang.change(function () {
+            var oldModel = editor.getModel();
+            var newModel = monaco.editor.createModel(editor.getValue(), this.value);
+            editor.setModel(newModel);
+            if (oldModel) {
+                oldModel.dispose();
+            }
+            localStorage["vscode-lang"] = this.value;
+        }).val(defaultLang);
+
+        $('#setheme').change(function () {
+            monaco.editor.setTheme(this.value);
+            localStorage["vscode-theme"] = this.value;
+        }).val(defaultTheme);
+
+        editor.onDidChangeModelContent(function (e) {
+            clearTimeout(window.defer1);
+            window.defer1 = setTimeout(function () {
+                localStorage["vscode-content"] = editor.getValue();
+            }, 1000 * 1)
+        });
+    });
+</script>
+
 
     </div>
 
