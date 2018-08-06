@@ -6,6 +6,7 @@
         "idcard": "身份证号码查询",
         "qrcode": "生成二维码",
         "lottery": "彩票查询",
+        "express": "快递查询",
         "wallpaper": "壁纸",
         "bed": "图床",
         "weather": "天气预报",
@@ -16,10 +17,12 @@
       "group": "网络工具",
       "items": {
         "code": "加密转码",
-        "vscode": "vscode在线编辑器",
+        "vscode": "VSCode在线编辑器",
         "diff": "文本对比",
         "domainname": "域名备案信息查询",
-        "jsontocsharp": "JSON转Csharp实体"
+        "jsontocsharp": "JSON生成C#实体类",
+        "jsontoxml": "JSON转换XML",
+        "ip": "IP"
       }
     }
   ]

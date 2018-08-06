@@ -33,6 +33,14 @@
     margin-top: 15px;
 }
 
+.ml15 {
+    margin-left: 15px;
+}
+
+.mr15 {
+    margin-right: 15px;
+}
+
 .panel-mc > .panel-heading {
     color: #ffffff;
     letter-spacing: 1px;

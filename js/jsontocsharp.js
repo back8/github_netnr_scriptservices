@@ -197,6 +197,10 @@ var rt = {
 //点击生成
 $('#btnJsonToEntity').click(function () {
     var json = $('#txt1').val();
+    if (json == "") {
+        jz.msg('JSON 不能为空');
+        return false;
+    }
     try {
         json = $.parseJSON(json);
 
@@ -210,7 +214,15 @@ $('#btnJsonToEntity').click(function () {
     }
 });
 
-$(window).load(function () {
-    var ch = $(this).height(), sh = ch - 210;
-    $('#jteBox').find('textarea').css('height', sh);
+function autoformatjson() {
+    try {
+        $('#chkformat1').is(':checked') && $("#txt1").format({ method: 'json' });
+    } catch (e) { }
+}
+$('#chkformat1').click(autoformatjson);
+$('#txt1').on('input', autoformatjson);
+
+$(window).on('load resize', function () {
+    var ch = $(this).height(), sh = ch - $('#tobox').offset().top - 100;
+    $('#tobox').find('textarea').css('height', Math.max(200, sh));
 });

@@ -53,6 +53,7 @@ $('#btnUpload2').click(function () {
         var fm = $('#form2');
         var files = fm.find('input[type="file"]')[0].files;
         ActionUpload(files);
+        return false;
     }
 });
 function ActionUpload(files) {
