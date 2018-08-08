@@ -10,10 +10,10 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link href="/favicon.svg" rel="Shortcut Icon" type="image/svg" />
 
-    <title>&#x5FEB;&#x9012;&#x67E5;&#x8BE2; NET牛人</title>
+    <title>&#x7559;&#x8A00; NET牛人</title>
 
-    <meta name="keywords" content="netnr,NET牛人,快递查询" />
-    <meta name="description" content="netnr,NET牛人,快递查询" />
+    <meta name="keywords" content="netnr,NET牛人,留言" />
+    <meta name="description" content="netnr,NET牛人,留言" />
 
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -59,17 +59,37 @@
         </nav>
 
     <div class="bodym">
-        <div class="container">
-    <div class="row">
+        <style>
+    .messagebox img {
+        width: 32px;
+    }
+
+    .messagebox textarea {
+        height: 90px;
+    }
+</style>
+<div class="container">
+    <div class="row messagebox">
+        <div class="col-md-12" id="messagelist"></div>
         <div class="col-md-12">
-            <iframe src="https://www.kuaidi100.com/frame/hao123/new.html" frameborder="0" scrolling="no" style="width:100%;height:1000px"></iframe>
-            <script>
-                window.Error = function () { return false; }
-            </script>
+            <hr />
+            <form id="form1">
+                <div class="form-group">
+                    <label>昵称</label>
+                    <input class="form-control" placeholder="输入昵称（可选）" name="UserNickname" maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label>内容</label>
+                    <textarea class="form-control" name="Content" placeholder=" 内容：写留言内容，文明点 ^_^ &#xD;&#xA;&#xD;&#xA; 快捷提交：Ctrl + Enter"></textarea>
+                </div>
+            </form>
+            <button class="btn btn-success" id="btnSave">留言</button>
         </div>
     </div>
 </div>
 
+<script src="/js/plus/bmob-min.js?v=sTQvN6jNf8NG1oA-8TlwqmUdcX244H4zCxAMPsqaXBM"></script>
+<script src="/js/message.js?v=oEvlqedgskqg-nP9KHtmcASLAaCmSco9ljXi7A7ST6Y"></script>
     </div>
 
         <footer class="footer">

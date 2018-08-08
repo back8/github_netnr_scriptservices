@@ -19,13 +19,14 @@
 }
 
 //请求天气预报信息
-QueryWeather(101040100, '重庆');
-function QueryWeather(cityCode, cityName) {
+QueryWeather(101040100);
+function QueryWeather(cityCode) {
+    loading();
     ss.ajax({
         url: "http://wthrcdn.etouch.cn/weather_mini?citykey=" + cityCode,
         dataType: "json",
         success: function (data) {
-            data = data.query.results.json;
+            data = ss.datalocation(data);
             if (data.desc == "OK") {
                 var jsons = data.data.forecast,
                     htm = '<h4><em>' + data.data.city + '</em>实时温度：<b>' + data.data.wendu + '℃</b></h4>';
@@ -60,7 +61,11 @@ function QueryWeather(cityCode, cityName) {
             }
         },
         error: function () {
+            loading(0);
             jz.msg("网络错误");
+        },
+        complete: function () {
+            loading(0);
         }
     });
 }

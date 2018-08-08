@@ -25,6 +25,10 @@
     min-height: 300px;
 }
 
+.min300 {
+    min-height: 300px;
+}
+
 .mb15 {
     margin-bottom: 15px;
 }
@@ -40,6 +44,44 @@
 .mr15 {
     margin-right: 15px;
 }
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-repeat: no-repeat;
+    background-position: 48% 45%;
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: url('/images/loading.gif');
+}
+
+.totop {
+    position: fixed;
+    z-index: 2;
+    right: 15px;
+    bottom: 80px;
+    height: 35px;
+    font-size: 3em;
+    padding: 0 8px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: #009a61 !important;
+    text-decoration: none !important;
+    background-color: rgba(217, 217, 217, .5);
+    opacity: .4;
+    filter: alpha(opacity=40);
+    font-family: 'Microsoft YaHei';
+}
+
+    .totop:hover {
+        color: white !important;
+        background-color: #009a61;
+    }
 
 .panel-mc > .panel-heading {
     color: #ffffff;

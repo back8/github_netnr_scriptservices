@@ -10,10 +10,10 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link href="/favicon.svg" rel="Shortcut Icon" type="image/svg" />
 
-    <title>&#x5FEB;&#x9012;&#x67E5;&#x8BE2; NET牛人</title>
+    <title>&#x56FE;&#x7247;&#x8F6C;Base64 NET牛人</title>
 
-    <meta name="keywords" content="netnr,NET牛人,快递查询" />
-    <meta name="description" content="netnr,NET牛人,快递查询" />
+    <meta name="keywords" content="netnr,NET牛人,图片转Base64" />
+    <meta name="description" content="netnr,NET牛人,图片转Base64" />
 
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -62,13 +62,22 @@
         <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <iframe src="https://www.kuaidi100.com/frame/hao123/new.html" frameborder="0" scrolling="no" style="width:100%;height:1000px"></iframe>
-            <script>
-                window.Error = function () { return false; }
-            </script>
+            <label class="btn btn-success">
+                <input type="file" class="hidden" id="txtFile" /> 选择图片
+            </label>
+            <label id="labSize" class="ml15"></label>
+        </div>
+        <div class="col-md-12 mt15 mb15">
+            <textarea class="form-control min300" id="txtBase64"></textarea>
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-success" id="btnBase64ToImage">Base64转图片</button>
+            <div id="viewBase64" class="mt15"></div>
         </div>
     </div>
 </div>
+
+<script src="/js/imagetobase64.js?v=EOUhfdlbh8fh6Ds55PJIug2d4q9NEPTlP6iW4g7OYlA"></script>
 
     </div>
 

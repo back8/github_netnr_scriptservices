@@ -2,39 +2,45 @@
 $("#seLotteryType").change(QueryLottery);
 
 function QueryLottery() {
+    loading();
+
     ss.ajax({
         url: "http://cp.zgzcw.com/lottery/hisnumber.action?lotteryId=" + $("#seLotteryType").val() + "&issueLen=18",
         dataType: "json",
         success: function (data) {
-            data = data.query.results.json.json;
-
-            var htm = [];
-            $(data).each(function () {
-                var codes = (this.lotteryNumber || this.tryoutNumber).split('+'),
-                    code1 = codes[0].split(','), spans1 = spans2 = '';
-                for (var k = 0; k < code1.length; k++) {
-                    spans1 += '<span class="sp1">' + code1[k] + '</span>';
-                }
-
-                if (codes[1] != undefined) {
-                    var code2 = codes[1].split(',');
-                    for (var u = 0; u < code2.length; u++) {
-                        spans2 += '<span class="sp2">' + code2[u] + '</span>';
+            data = ss.datalocation(data);
+            if (data.length) {
+                var htm = [];
+                $(data).each(function () {
+                    var codes = (this.lotteryNumber || this.tryoutNumber).split('+'),
+                        code1 = codes[0].split(','), spans1 = spans2 = '';
+                    for (var k = 0; k < code1.length; k++) {
+                        spans1 += '<span class="sp1">' + code1[k] + '</span>';
                     }
-                }
 
-                htm.push(
-                    '<div class="col-md-4 col-sm-6 col-xs-12"><div class="panel panel-primary"><div class="panel-body">'
-                    + '<div class="et"><label>' + this.lotteryExpect + '</label> <small> ' + formatDateTime(this.ernieDate).substr(0, 10) + '</small></div>'
-                    + spans1 + spans2
-                    + '</div></div></div>'
-                );
-            });
-            $("#divlottery").html(htm.join(''));
+                    if (codes[1] != undefined) {
+                        var code2 = codes[1].split(',');
+                        for (var u = 0; u < code2.length; u++) {
+                            spans2 += '<span class="sp2">' + code2[u] + '</span>';
+                        }
+                    }
+
+                    htm.push(
+                        '<div class="col-md-4 col-sm-6 col-xs-12"><div class="panel panel-primary"><div class="panel-body">'
+                        + '<div class="et"><label>' + this.lotteryExpect + '</label> <small> ' + formatDateTime(this.ernieDate).substr(0, 10) + '</small></div>'
+                        + spans1 + spans2
+                        + '</div></div></div>'
+                    );
+                });
+                $("#divlottery").html(htm.join(''));
+            }
         },
         error: function () {
-            console.log(arguments)
-            $("#divlottery").html('<div style="text-align:center;line-height:70px">网络错误</div>')
+            loading(0);
+            jz.msg("网络错误");
+        },
+        complete: function () {
+            loading(0);
         }
     })
 }

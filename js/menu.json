@@ -10,7 +10,10 @@
         "wallpaper": "壁纸",
         "bed": "图床",
         "weather": "天气预报",
-        "fanyi": "在线翻译"
+        "fanyi": "在线翻译",
+        "symbol": "符号大全",
+        "laifudao": "来福岛笑话",
+        "qiushibaike": "糗事百科笑话"
       }
     },
     {
@@ -20,9 +23,17 @@
         "vscode": "VSCode在线编辑器",
         "diff": "文本对比",
         "domainname": "域名备案信息查询",
+        "imagetobase64": "图片转Base64",
         "jsontocsharp": "JSON生成C#实体类",
         "jsontoxml": "JSON转换XML",
         "ip": "IP"
+      }
+    },
+    {
+      "group": "其它",
+      "items": {
+        "message": "留言",
+        "contact": "联系"
       }
     }
   ]

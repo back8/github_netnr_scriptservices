@@ -34,11 +34,12 @@ $(document).keydown(function (e) {
 $("#btnTransl").click(transl);
 function transl() {
     if ($.trim($("#txt").val()) != "") {
+        loading();
         ss.ajax({
             url: "http://fanyi.youdao.com/openapi.do?keyfrom=NET-BBS&key=1734763581&type=data&doctype=json&version=1.1&q=" + encodeURIComponent($("#txt").val()),
             dataType: "json",
             success: function (data) {
-                data = data.query.results.json;
+                data = ss.datalocation(data);
                 if (data.errorCode == "0") {
                     var basic = '';
                     if ('basic' in data) {
@@ -58,7 +59,11 @@ function transl() {
                 }
             },
             error: function () {
+                loading(0);
                 $("#divTranslResult").html('<span style="color:red">网络错误</span>');
+            },
+            complete: function () {
+                loading(0);
             }
         });
     } else { $("#divTranslResult").html('') }

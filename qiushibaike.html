@@ -10,10 +10,10 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link href="/favicon.svg" rel="Shortcut Icon" type="image/svg" />
 
-    <title>&#x5FEB;&#x9012;&#x67E5;&#x8BE2; NET牛人</title>
+    <title>&#x7CD7;&#x4E8B;&#x767E;&#x79D1;&#x7B11;&#x8BDD; NET牛人</title>
 
-    <meta name="keywords" content="netnr,NET牛人,快递查询" />
-    <meta name="description" content="netnr,NET牛人,快递查询" />
+    <meta name="keywords" content="netnr,NET牛人,糗事百科笑话" />
+    <meta name="description" content="netnr,NET牛人,糗事百科笑话" />
 
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -59,17 +59,49 @@
         </nav>
 
     <div class="bodym">
-        <div class="container">
+        <style>
+    .joke-item {
+        padding: 15px;
+        font-size: 18px;
+        letter-spacing: 1px;
+        border: 1px solid #ddd;
+        border-top: none;
+    }
+
+        .joke-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .joke-item:first-child {
+            border-top: none;
+        }
+
+        .joke-item img, .joke-item video {
+            max-width: 100%;
+            margin-top: 15px;
+        }
+
+        .joke-item video {
+            max-height: 600px;
+        }
+</style>
+
+<div class="container">
     <div class="row">
         <div class="col-md-12">
-            <iframe src="https://www.kuaidi100.com/frame/hao123/new.html" frameborder="0" scrolling="no" style="width:100%;height:1000px"></iframe>
-            <script>
-                window.Error = function () { return false; }
-            </script>
+            <ul class="nav nav-tabs" id="navtype">
+                <li><a href="#type=latest&page=1">最新</a></li>
+                <li><a href="#type=text&page=1">文字</a></li>
+                <li><a href="#type=image&page=1">图片</a></li>
+                <li><a href="#type=video&page=1">视频</a></li>
+            </ul>
+            <div id="divJoke"></div>
+            <div id="tabPage" class="mt15"></div>
         </div>
     </div>
 </div>
 
+<script src="/js/qiushibaike.js?v=93M-CyaZhZx8LcV6Ip7r9IB7NHlZ0HzEV450XPk9Dgo"></script>
     </div>
 
         <footer class="footer">

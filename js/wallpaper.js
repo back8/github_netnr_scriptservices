@@ -34,7 +34,7 @@
             url: uri,
             dataType: 'json',
             success: function (data) {
-                data = data.query.results.json;
+                data = ss.datalocation(data);
                 if (!data.data.length) {
                     config.isend = true;
                     rt.ThEnd();
@@ -48,6 +48,9 @@
             error: function (ex) {
                 config.isload = false;
                 console.log(ex);
+            },
+            complete: function () {
+                loading(0);
             }
         });
     },
@@ -137,6 +140,7 @@ $('#ulType').click(function (e) {
         config.cid = target.hash.substring(1);
         rt.LoadList();
         document.title = target.innerHTML + " 在线壁纸 NET牛人";
+        loading();
     }
 });
 
@@ -159,6 +163,7 @@ $(window).load(function () {
             return false;
         }
     });
+    loading();
     rt.LoadList();
 }).on('scroll mousewheel DOMMouseScroll', function () {
     var sb = $(document).height() - $(this).height() - $(this).scrollTop();

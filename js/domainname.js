@@ -16,12 +16,12 @@ function QueryDomainName() {
         })
         return
     }
-    $("#btnSearch")[0].disabled = true;
+    loading();
     ss.ajax({
         url: "https://www.sojson.com/api/beian/" + encodeURIComponent($("#txtSearch").val()),
         dataType: "json",
         success: function (data) {
-            data = data.query.results.json;
+            data = ss.datalocation(data);
             if (data.type == 200) {
                 var htm = [];
                 htm.push('<tr><td>主办单位名称</td><td>' + data.name + '</td></tr>');
@@ -37,10 +37,11 @@ function QueryDomainName() {
             }
         },
         error: function () {
+            loading(0);
             jz.msg("网络错误");
         },
         complete: function () {
-            $("#btnSearch")[0].disabled = false;
+            loading(0);
         }
     })
 }
