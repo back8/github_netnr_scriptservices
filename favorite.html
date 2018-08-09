@@ -10,10 +10,10 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link href="/favicon.svg" rel="Shortcut Icon" type="image/svg" />
 
-    <title>&#x6765;&#x798F;&#x5C9B;&#x7B11;&#x8BDD; NET牛人</title>
+    <title>&#x6536;&#x85CF;&#x5939; NET牛人</title>
 
-    <meta name="keywords" content="netnr,NET牛人,来福岛笑话" />
-    <meta name="description" content="netnr,NET牛人,来福岛笑话" />
+    <meta name="keywords" content="netnr,NET牛人,收藏夹" />
+    <meta name="description" content="netnr,NET牛人,收藏夹" />
 
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -57,50 +57,20 @@
         </nav>
 
     <div class="bodym">
-        <style>
-    #divJoke {
-        border: 1px solid #ddd;
-        padding-top: 10px;
-        border-top: none;
-        margin-top: 0;
-    }
-
-    .joke-item {
-        font-size: 18px;
-        padding: 20px 10px;
-        letter-spacing: 1px;
-        border-top: 2px dashed #ddd;
-    }
-
-        .joke-item:first-child {
-            border-top: none;
-        }
-
-        .joke-item p {
-            margin: 0 0 5px;
-            color: #009a61;
-            font-size: 21px;
-            font-weight: 400;
-        }
-
-        .joke-item img {
-            max-width: 100%;
-        }
-</style>
-
-<div class="container">
+        <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <ul class="nav nav-tabs" id="navtype">
-                <li><a href="#xiaohua">文本笑话</a></li>
-                <li><a href="#tupian">图片笑话</a></li>
-            </ul>
-            <div id="divJoke"></div>
+            <!--搜索-->
+            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="position:relative">
+                <input id="txtSearch" type="text" class="form-control" placeholder="输入城市名 ， 例如：重庆 或 CQ" autocomplete="off">
+                <div id="divWeatherCode"></div>
+            </div>
+            <div id="divweather" class="row"></div>
         </div>
     </div>
 </div>
+<script src="/js/favorite.js"></script>
 
-<script src="/js/laifudao.js?v=HUWan7jYvmdIpVR4IyatKXsqAtWzTg6SZD98SrqoO98"></script>
     </div>
 
         <footer class="footer">

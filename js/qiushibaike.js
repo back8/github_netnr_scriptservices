@@ -52,7 +52,7 @@ function QueryJoke() {
                             htm.push(di.content);
                             break;
                         case "image":
-                            htm.push(di.content + '<div><img src="' + di.high_loc.replace("http:", "https:") + '"/></div>');
+                            htm.push(di.content + '<div><img src="' + (di.high_loc || di.high_url).replace("http:", "https:") + '"/></div>');
                             break;
                         case "video":
                             htm.push(di.content + '<div><video controls="controls" preload="meta" src="' + di.high_url.replace("http:", "https:") + '"></video></div>');

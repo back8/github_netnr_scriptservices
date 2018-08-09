@@ -28,8 +28,6 @@
     <script src="https://lib.baomitu.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
 <script>($.fn.emulateTransitionEnd||document.write("\u003Cscript src=\u0022https:\/\/static.netnr.com\/lib\/bootstrap\/3.3.7\/js\/bootstrap.min.js\u0022\u003E\u003C\/script\u003E"));</script>
-    <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-<meta name="x-stylesheet-fallback-test" content="" class="fa" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("display","inline-block",["https:\/\/static.netnr.com\/lib\/font-awesome\/4.7.0\/css\/font-awesome.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
 
     <link href="/css/global.css?v=iVIzUdvj5WZFuRgzivjpknp8Il76w2o79wBO4g_CjaA" rel="stylesheet" />
     <script src="/js/global.js?v=63SkV8QMmgdpL01P-ePvUVhSt_NLf1W0sRggBOFPbY8"></script>
@@ -87,17 +85,12 @@
 </div>
 
 <script>
-    var defaultLang = localStorage["vscode-lang"] || 'javascript',
-        defaultContent = localStorage["vscode-content"] || 'console.log("Hello world!");',
-        defaultTheme = localStorage["vscode-theme"] || 'vs';
     function AutoHeight() {
         var ch = $(window).height() - $('#editor').offset().top - 15;
         $('#editor').css('height', Math.max(200, ch));
     }
     AutoHeight();
-    $(window).resize(AutoHeight);
 </script>
-
 <link href="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/editor/editor.main.css" rel="stylesheet">
 
 <script>
@@ -107,54 +100,7 @@
 <script src="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/loader.js"></script>
 <script src="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/editor/editor.main.nls.js"></script>
 <script src="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/editor/editor.main.js"></script>
-
-<script>
-    require(['vs/editor/editor.main'], function () {
-        var modesIds = monaco.languages.getLanguages().map(function (lang) { return lang.id }).sort();
-
-        var te = $("#editor"), selang = $('#selanguage'),
-            languagehtm = [];
-        for (var i = 0; i < modesIds.length; i++) {
-            var mo = modesIds[i];
-            languagehtm.push('<option>' + mo + '</option>');
-        }
-        selang.children()[0].innerHTML = languagehtm.join('');
-
-        editor = monaco.editor.create(te[0], {
-            value: defaultContent,
-            language: defaultLang,
-            automaticLayout: true,
-            theme: defaultTheme,
-            minimap: {
-                _enabled: false
-            }
-        });
-
-        selang.change(function () {
-            var oldModel = editor.getModel();
-            var newModel = monaco.editor.createModel(editor.getValue(), this.value);
-            editor.setModel(newModel);
-            if (oldModel) {
-                oldModel.dispose();
-            }
-            localStorage["vscode-lang"] = this.value;
-        }).val(defaultLang);
-
-        $('#setheme').change(function () {
-            monaco.editor.setTheme(this.value);
-            localStorage["vscode-theme"] = this.value;
-        }).val(defaultTheme);
-
-        editor.onDidChangeModelContent(function (e) {
-            clearTimeout(window.defer1);
-            window.defer1 = setTimeout(function () {
-                localStorage["vscode-content"] = editor.getValue();
-            }, 1000 * 1)
-        });
-    });
-</script>
-
-
+<script src="/js/vscode.js?v=FFYpqRENHMV9HVjxwaPfz8Uko1-heluTzGV0Rsq-g10"></script>
     </div>
 
         <footer class="footer">
