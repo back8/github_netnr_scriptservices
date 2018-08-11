@@ -86,8 +86,8 @@
 .panel-mc > .panel-heading {
     color: #ffffff;
     letter-spacing: 1px;
-    border-color: #009a61;
-    background-color: #009a61;
+    border-color: #5cb85c;
+    background-color: #5cb85c;
 }
 
 .panel-mc > .panel-body {
@@ -96,7 +96,7 @@
 
 /*menu*/
 .menubox .mba {
-    padding: 10px 25px;
+    padding: 5px 20px;
     white-space: nowrap;
 }
 

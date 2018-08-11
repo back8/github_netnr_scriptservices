@@ -1,101 +1,6 @@
 ﻿{
   "links": [
     {
-      "group": "SSL 工具",
-      "items": [
-        {
-          "url": "https://letsencrypt.org/",
-          "title": "Let's Encrypt",
-          "remark": "Free SSL/TLS Certificates"
-        },
-        {
-          "url": "https://freessl.org/",
-          "title": "FreeSSL",
-          "remark": "一个申请免费HTTPS证书的网站,免费HTTPS证书,免费SSL证书,免费证书"
-        },
-        {
-          "url": "https://www.sslforfree.com/",
-          "title": "SSL For Free",
-          "remark": "Free SSL Certificate issued in less than a minute"
-        },
-        {
-          "url": "https://myssl.com/",
-          "title": "SSL/TLS安全评估报告",
-          "remark": "检测网站的SSL证书是否安全，是否存在漏洞，是否达到SSL行业标准，符合苹果ATS规范，能否通过微信小程序安全要求。同时提供证书格式转换，CSR，证书链，SSL配置生成等工具"
-        },
-        {
-          "url": "https://www.chinassl.net/ssltools/convert-ssl.html",
-          "title": "SSL证书格式转换工具",
-          "remark": "SSL证书格式转换,PEM格式转换DER,PEM证书转换PFX证书,CRT证书转换PFX证书,PEM证书转换JKS证书,CRT证书转换JKS格式"
-        },
-        {
-          "url": "https://www.sslshopper.com/ssl-converter.html",
-          "title": "SSL Converter",
-          "remark": "SSL Converter - Convert SSL Certificates to different formats"
-        }
-      ]
-    },
-    {
-      "group": "站点工具",
-      "items": [
-        {
-          "url": "http://ta.qq.com/",
-          "title": "腾讯分析",
-          "remark": "腾讯分析 腾讯分析为您提供专业网站分析服务，为您提供免费的网站监控、实时分析、来源分析、页面分析、pv统计、uv统计、访客行为分析和广告效果分析等，为网站运营提供充分的数据参考"
-        },
-        {
-          "url": "https://ziyuan.baidu.com/site/index",
-          "title": "百度搜索资源平台",
-          "remark": "全球最大的面向中文互联网管理者、移动开发者、创业者的搜索流量管理的官方平台。提供有助于搜索引擎收录的工具、SEO建议、API接口、多端适配服务的能力等"
-        },
-        {
-          "url": "https://www.aizhan.com/",
-          "title": "爱站网",
-          "remark": "爱站网站长工具提供网站收录查询和站长查询以及百度权重值查询等多个站长工具，免费查询各种工具，包括有关键词排名查询，百度收录查询等"
-        },
-        {
-          "url": "https://viewdns.info/",
-          "title": "ViewDNS",
-          "remark": "viewdns, dns, info, reverse ip, pagerank, portscan, port scan, lookup, records, whois, ipwhois, dnstools, web hosting, hosting, traceroute, dns report, dnsreport, ip location, ip location finder, spam, spam database, dnsbl, propagation, dns propagation checker, checker, china, chinese, firewall, great firewall, is my site down, is site down, site down, down, dns propagate"
-        }
-      ]
-    },
-    {
-      "group": "CDN",
-      "items": [
-        {
-          "url": "https://cdn.baomitu.com/",
-          "title": "75CDN",
-          "remark": "360前端静态资源库"
-        },
-        {
-          "url": "https://www.bootcdn.cn/",
-          "title": "BootCDN",
-          "remark": "Bootstrap 中文网开源项目免费 CDN 加速服务 - 我们致力于为 Bootstrap、jQuery、Angular、Vue.js 一样优秀的开源项目提供稳定、快速、免费的 CDN 加速服务。BootCDN 是运营时间最长、用户量最大、最早同时支持 HTTPS（SSL）和 HTTP/2.0 协议的中立免费 CDN"
-        },
-        {
-          "url": "https://staticfile.org/",
-          "title": "Staticfile CDN",
-          "remark": "免费、快速、开放的 CDN 服务"
-        },
-        {
-          "url": "http://libs.cdnjs.net/",
-          "title": "前端公共库CDN加速服务",
-          "remark": "前端公共库CDN"
-        },
-        {
-          "url": "http://cdn.code.baidu.com/",
-          "title": "百度静态资源公共库",
-          "remark": "百度静态资源公共库"
-        },
-        {
-          "url": "http://lib.sinaapp.com/",
-          "title": "新浪CDN",
-          "remark": "新浪CDN"
-        }
-      ]
-    },
-    {
       "group": "前端开发包",
       "items": [
         {
@@ -122,6 +27,11 @@
           "url": "https://angularjs.org/",
           "title": "AngularJS",
           "remark": "AngularJS is what HTML would have been, had it been designed for building web-apps.Declarative templates with data-binding, MVW, MVVM, MVC, dependency injection and great testability story all implemented with pure client-side JavaScript"
+        },
+        {
+          "url": "http://www.jeasyui.com/",
+          "title": "EasyUI",
+          "remark": "EasyUI is a complete framework for HTML5 web page. It provides easy to use components for building modern, interactive, javascript applications that work on pc and mobile devices"
         },
         {
           "url": "https://fontawesome.com/",
@@ -202,6 +112,116 @@
           "url": "https://www.v2ex.com/",
           "title": "V2EX",
           "remark": "V2EX 是一个关于分享和探索的地方"
+        },
+        {
+          "url": "https://www.zhihu.com/",
+          "title": "知乎",
+          "remark": "有问题，上知乎。知乎作为中文互联网最大的知识分享平台，以「知识连接一切」为愿景，致力于构建一个人人都可以便捷接入的知识分享网络，让人们便捷地与世界分享知识、经验和见解，发现更大的世界"
+        }
+      ]
+    },
+    {
+      "group": "SSL",
+      "items": [
+        {
+          "url": "https://letsencrypt.org/",
+          "title": "Let's Encrypt",
+          "remark": "Free SSL/TLS Certificates"
+        },
+        {
+          "url": "https://freessl.org/",
+          "title": "FreeSSL",
+          "remark": "一个申请免费HTTPS证书的网站,免费HTTPS证书,免费SSL证书,免费证书"
+        },
+        {
+          "url": "https://www.sslforfree.com/",
+          "title": "SSL For Free",
+          "remark": "Free SSL Certificate issued in less than a minute"
+        },
+        {
+          "url": "https://myssl.com/",
+          "title": "SSL/TLS安全评估报告",
+          "remark": "检测网站的SSL证书是否安全，是否存在漏洞，是否达到SSL行业标准，符合苹果ATS规范，能否通过微信小程序安全要求。同时提供证书格式转换，CSR，证书链，SSL配置生成等工具"
+        },
+        {
+          "url": "https://www.chinassl.net/ssltools/convert-ssl.html",
+          "title": "SSL证书格式转换工具",
+          "remark": "SSL证书格式转换,PEM格式转换DER,PEM证书转换PFX证书,CRT证书转换PFX证书,PEM证书转换JKS证书,CRT证书转换JKS格式"
+        },
+        {
+          "url": "https://www.sslshopper.com/ssl-converter.html",
+          "title": "SSL Converter",
+          "remark": "SSL Converter - Convert SSL Certificates to different formats"
+        }
+      ]
+    },
+    {
+      "group": "站点工具",
+      "items": [
+        {
+          "url": "http://ta.qq.com/",
+          "title": "腾讯分析",
+          "remark": "腾讯分析 腾讯分析为您提供专业网站分析服务，为您提供免费的网站监控、实时分析、来源分析、页面分析、pv统计、uv统计、访客行为分析和广告效果分析等，为网站运营提供充分的数据参考"
+        },
+        {
+          "url": "https://ziyuan.baidu.com/site/index",
+          "title": "百度搜索资源平台",
+          "remark": "全球最大的面向中文互联网管理者、移动开发者、创业者的搜索流量管理的官方平台。提供有助于搜索引擎收录的工具、SEO建议、API接口、多端适配服务的能力等"
+        },
+        {
+          "url": "https://www.aizhan.com/",
+          "title": "爱站网",
+          "remark": "爱站网站长工具提供网站收录查询和站长查询以及百度权重值查询等多个站长工具，免费查询各种工具，包括有关键词排名查询，百度收录查询等"
+        },
+        {
+          "url": "https://viewdns.info/",
+          "title": "ViewDNS",
+          "remark": "viewdns, dns, info, reverse ip, pagerank, portscan, port scan, lookup, records, whois, ipwhois, dnstools, web hosting, hosting, traceroute, dns report, dnsreport, ip location, ip location finder, spam, spam database, dnsbl, propagation, dns propagation checker, checker, china, chinese, firewall, great firewall, is my site down, is site down, site down, down, dns propagate"
+        }
+      ]
+    },
+    {
+      "group": "CDN",
+      "items": [
+        {
+          "url": "https://cdn.baomitu.com/",
+          "title": "75CDN",
+          "remark": "360前端静态资源库"
+        },
+        {
+          "url": "https://www.bootcdn.cn/",
+          "title": "BootCDN",
+          "remark": "Bootstrap 中文网开源项目免费 CDN 加速服务 - 我们致力于为 Bootstrap、jQuery、Angular、Vue.js 一样优秀的开源项目提供稳定、快速、免费的 CDN 加速服务。BootCDN 是运营时间最长、用户量最大、最早同时支持 HTTPS（SSL）和 HTTP/2.0 协议的中立免费 CDN"
+        },
+        {
+          "url": "https://staticfile.org/",
+          "title": "Staticfile CDN",
+          "remark": "免费、快速、开放的 CDN 服务"
+        },
+        {
+          "url": "https://cdnjs.com/",
+          "title": "cdnjs",
+          "remark": "cdnjs.com - The best FOSS CDN for web related libraries to speed up your websites"
+        },
+        {
+          "url": "https://unpkg.com/",
+          "title": "unpkg",
+          "remark": "The CDN for everything on npm"
+        },
+        {
+          "url": "http://libs.cdnjs.net/",
+          "title": "前端公共库CDN加速服务",
+          "remark": "前端公共库CDN"
+        },
+        {
+          "url": "http://cdn.code.baidu.com/",
+          "title": "百度静态资源公共库",
+          "remark": "百度静态资源公共库"
+        },
+        {
+          "url": "http://lib.sinaapp.com/",
+          "title": "新浪CDN",
+          "remark": "新浪CDN"
         }
       ]
     },

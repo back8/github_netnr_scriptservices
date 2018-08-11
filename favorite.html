@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,13 +29,11 @@
     <script src="https://lib.baomitu.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
 <script>($.fn.emulateTransitionEnd||document.write("\u003Cscript src=\u0022https:\/\/static.netnr.com\/lib\/bootstrap\/3.3.7\/js\/bootstrap.min.js\u0022\u003E\u003C\/script\u003E"));</script>
-
-    <link href="/css/global.css?v=iVIzUdvj5WZFuRgzivjpknp8Il76w2o79wBO4g_CjaA" rel="stylesheet" />
+    <link href="/css/global.css?v=OaLeMwqxW20YQUB3ivsjTYdOxs7FE-cVmNifgEoL2Mg" rel="stylesheet" />
     <script src="/js/global.js?v=63SkV8QMmgdpL01P-ePvUVhSt_NLf1W0sRggBOFPbY8"></script>
     <script src="/js/jz/jz.min.js?v=LQvPjEmTgtZ-qcu_4JSfOJgI_SO_QBUKWOMvMvk3f2c"></script>
 </head>
 <body>
-
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
@@ -43,10 +42,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="index.html" class="siteIcon pull-left">
+                    <a href="/" class="siteIcon pull-left">
                         <img src="/favicon.svg" />
                     </a>
-                    <a href="index.html" class="navbar-brand" title="脚本服务">Script Services</a>
+                    <a href="/" class="navbar-brand" title="脚本服务">Script Services</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav pull-right">
@@ -58,18 +57,280 @@
 
     <div class="bodym">
         <div class="container">
-    <div class="row">
+    <div class="row mb15">
         <div class="col-md-12">
-            <!--搜索-->
-            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="position:relative">
-                <input id="txtSearch" type="text" class="form-control" placeholder="输入城市名 ， 例如：重庆 或 CQ" autocomplete="off">
-                <div id="divWeatherCode"></div>
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <select class="form-control" style="width:150px;" id="seGroup">
+                        <option value="">全部</option>
+                            <option value="&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x5305;">&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x5305;</option>
+                            <option value="CODE">CODE</option>
+                            <option value="&#x793E;&#x533A;">&#x793E;&#x533A;</option>
+                            <option value="SSL">SSL</option>
+                            <option value="&#x7AD9;&#x70B9;&#x5DE5;&#x5177;">&#x7AD9;&#x70B9;&#x5DE5;&#x5177;</option>
+                            <option value="CDN">CDN</option>
+                            <option value="MarkDown&#x7F16;&#x8F91;&#x5668;">MarkDown&#x7F16;&#x8F91;&#x5668;</option>
+                            <option value="&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;">&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;</option>
+                            <option value="&#x54CD;&#x5E94;&#x5F0F;&#x6846;&#x67B6;">&#x54CD;&#x5E94;&#x5F0F;&#x6846;&#x67B6;</option>
+                    </select>
+                </div>
+                <input type="text" class="form-control" placeholder="搜索" id="txtSearch">
+                <div class="input-group-btn">
+                    <button class="btn btn-success" id="btnSearch">搜索</button>
+                </div>
             </div>
-            <div id="divweather" class="row"></div>
         </div>
     </div>
+    <div class="row menubox" id="favoritebox">
+            <div class="col-md-12" data-group="&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x5305;">
+                <div class="panel panel-mc">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x5305;</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="http://getbootstrap.com/" title="The most popular HTML, CSS, and JS library in the world" target="_blank">Bootstrap</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://jquery.com/" title="The Write Less, Do More, JavaScript Library" target="_blank">jQuery</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://reactjs.org/" title="A JavaScript library for building user interfaces" target="_blank">React</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://vuejs.org/" title="The Progressive JavaScript Framework" target="_blank">Vue</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://angularjs.org/" title="AngularJS is what HTML would have been, had it been designed for building web-apps.Declarative templates with data-binding, MVW, MVVM, MVC, dependency injection and great testability story all implemented with pure client-side JavaScript" target="_blank">AngularJS</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="http://www.jeasyui.com/" title="EasyUI is a complete framework for HTML5 web page. It provides easy to use components for building modern, interactive, javascript applications that work on pc and mobile devices" target="_blank">EasyUI</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://fontawesome.com/" title="The world&#x2019;s most popular and easiest to use icon set just got an upgrade" target="_blank">Font Awesome</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" data-group="CODE">
+                <div class="panel panel-mc">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">CODE</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://github.com/" title="GitHub is where people build software. More than 28 million people use GitHub to discover, fork, and contribute to over 85 million projects" target="_blank">GitHub</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://gitee.com/" title="&#x7801;&#x4E91;(gitee.com)&#x662F;&#x5F00;&#x6E90;&#x4E2D;&#x56FD;&#x63A8;&#x51FA;&#x7684;&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x5E73;&#x53F0;&#xFF0C;&#x652F;&#x6301; Git &#x548C; SVN&#xFF0C;&#x63D0;&#x4F9B;&#x514D;&#x8D39;&#x7684;&#x79C1;&#x6709;&#x4ED3;&#x5E93;&#x6258;&#x7BA1;&#x3002;&#x76EE;&#x524D;&#x5DF2;&#x6709;&#x8D85;&#x8FC7; 300 &#x4E07;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x9009;&#x62E9;&#x7801;&#x4E91;" target="_blank">&#x7801;&#x4E91; Gitee</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://coding.net/" title="Coding.net &#x662F;&#x4E00;&#x4E2A;&#x9762;&#x5411;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x4E91;&#x7AEF;&#x5F00;&#x53D1;&#x5E73;&#x53F0;&#xFF0C;&#x63D0;&#x4F9B; git/svn &#x4EE3;&#x7801;&#x6258;&#x7BA1;&#xFF0C;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x5206;&#x6790;&#xFF0C;&#x5728;&#x7EBF; WebIDE&#xFF0C;&#x9879;&#x76EE;&#x7BA1;&#x7406;&#xFF0C;&#x5F00;&#x53D1;&#x534F;&#x4F5C;&#xFF0C;&#x5192;&#x6CE1;&#x793E;&#x533A;&#xFF0C;&#x63D0;&#x4F9B;&#x4E2A;&#x4EBA;&#x548C;&#x4F01;&#x4E1A;&#x516C;&#x6709;&#x4E91;&#x53CA;&#x4F01;&#x4E1A;&#x79C1;&#x6709;&#x4E91;&#x7684;&#x670D;&#x52A1;" target="_blank">CODING</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://gitlab.com/" title="GitLab is the leading integrated product for modern software development. Connecting issue management, version control, code review, CI, CD, and monitoring into a single, easy-to-install application, we help teams go faster from planning to monitoring" target="_blank">GitLab</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://bitbucket.org/" title="Collaborate on code with inline comments and pull requests. Manage and share your Git repositories to build and ship software, as a team" target="_blank">Bitbucket</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://codegit.net/" title="CodeGit&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x4E91;&#x5E73;&#x53F0;&#xFF0C;Git&#x79C1;&#x6709;&#x4ED3;&#x5E93;&#xFF0C;Git&#x56E2;&#x961F;&#x534F;&#x4F5C;,&#x514D;&#x8D39;&#x4EE3;&#x7801;&#x7BA1;&#x7406;&#x5E73;&#x53F0;,Git&#x5206;&#x5E03;&#x5F0F;&#x4EE3;&#x7801;&#x6258;&#x7BA1;,&#x9879;&#x76EE;&#x7BA1;&#x7406;,&#x56E2;&#x961F;&#x534F;&#x4F5C;,&#x5F00;&#x6E90;&#x4EE3;&#x7801;&#x6258;&#x7BA1;" target="_blank">CodeGit</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://try.gogs.io/" title="Gogs is a painless self-hosted Git service" target="_blank">Gogs</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://code.aliyun.com/" title="&#x4EE3;&#x7801;&#x6258;&#x7BA1;,Git,&#x4EE3;&#x7801;&#x7BA1;&#x7406;,&#x534F;&#x4F5C;&#x5F00;&#x53D1;,&#x79C1;&#x6709;&#x4ED3;&#x5E93;,&#x5F00;&#x6E90;&#x793E;&#x533A;,&#x6DD8;&#x874C;&#x86AA;,TaoCode" target="_blank">&#x963F;&#x91CC;&#x4E91;Code</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" data-group="&#x793E;&#x533A;">
+                <div class="panel panel-mc">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">&#x793E;&#x533A;</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://stackoverflow.com/" title="Stack Overflow is the largest, most trusted online community for developers to learn, share&#x200B; &#x200B;their programming &#x200B;knowledge, and build their careers" target="_blank">Stack Overflow</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://segmentfault.com/" title="SegmentFault ( www.sf.gg ) &#x662F;&#x4E2D;&#x56FD;&#x9886;&#x5148;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x6280;&#x672F;&#x793E;&#x533A;&#x3002; &#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x4E3A;&#x7F16;&#x7A0B;&#x7231;&#x597D;&#x8005;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7EAF;&#x7CB9;&#x3001;&#x9AD8;&#x8D28;&#x7684;&#x6280;&#x672F;&#x4EA4;&#x6D41;&#x7684;&#x5E73;&#x53F0;&#xFF0C; &#x4E0E;&#x5F00;&#x53D1;&#x8005;&#x4E00;&#x8D77;&#x5B66;&#x4E60;&#x3001;&#x4EA4;&#x6D41;&#x4E0E;&#x6210;&#x957F;&#xFF0C;&#x521B;&#x9020;&#x5C5E;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x65F6;&#x4EE3;" target="_blank">segmentfault</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://juejin.im/" title="&#x6398;&#x91D1;&#x662F;&#x4E00;&#x4E2A;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x6210;&#x957F;&#x7684;&#x793E;&#x533A;&#xFF0C;&#x662F;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x7528;&#x7684; Hacker News&#xFF0C;&#x7ED9;&#x8BBE;&#x8BA1;&#x5E08;&#x7528;&#x7684; Designer News&#xFF0C;&#x548C;&#x7ED9;&#x4EA7;&#x54C1;&#x7ECF;&#x7406;&#x7528;&#x7684; Medium&#x3002;&#x6398;&#x91D1;&#x7684;&#x6280;&#x672F;&#x6587;&#x7AE0;&#x7531;&#x7A00;&#x571F;&#x4E0A;&#x805A;&#x96C6;&#x7684;&#x6280;&#x672F;&#x5927;&#x725B;&#x548C;&#x6781;&#x5BA2;&#x5171;&#x540C;&#x7F16;&#x8F91;&#x4E3A;&#x4F60;&#x7B5B;&#x9009;&#x51FA;&#x6700;&#x4F18;&#x8D28;&#x7684;&#x5E72;&#x8D27;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x62EC;&#xFF1A;Android&#x3001;iOS&#x3001;&#x524D;&#x7AEF;&#x3001;&#x540E;&#x7AEF;&#x7B49;&#x65B9;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x7528;&#x6237;&#x6BCF;&#x5929;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x627E;&#x5230;&#x6280;&#x672F;&#x4E16;&#x754C;&#x7684;&#x5934;&#x6761;&#x5185;&#x5BB9;&#x3002;&#x4E0E;&#x6B64;&#x540C;&#x65F6;&#xFF0C;&#x6398;&#x91D1;&#x5185;&#x8FD8;&#x6709;&#x6CB8;&#x70B9;&#x3001;&#x6398;&#x91D1;&#x7FFB;&#x8BD1;&#x8BA1;&#x5212;&#x3001;&#x7EBF;&#x4E0B;&#x6D3B;&#x52A8;&#x3001;&#x4E13;&#x680F;&#x6587;&#x7AE0;&#x7B49;&#x5185;&#x5BB9;&#x3002;&#x5373;&#x4F7F;&#x4F60;&#x662F; GitHub&#x3001;StackOverflow&#x3001;&#x5F00;&#x6E90;&#x4E2D;&#x56FD;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x6211;&#x4EEC;&#x76F8;&#x4FE1;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x6709;&#x6240;&#x6536;&#x83B7;" target="_blank">&#x6398;&#x91D1;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://36kr.com/" title="36&#x6C2A;&#x4E3A;&#x60A8;&#x63D0;&#x4F9B;&#x521B;&#x4E1A;&#x8D44;&#x8BAF;&#x3001;&#x79D1;&#x6280;&#x65B0;&#x95FB;&#x3001;&#x6295;&#x878D;&#x8D44;&#x5BF9;&#x63A5;&#x3001;&#x80A1;&#x6743;&#x6295;&#x8D44;&#x3001;&#x6781;&#x901F;&#x878D;&#x8D44;&#x7B49;&#x521B;&#x4E1A;&#x670D;&#x52A1;&#xFF0C;&#x81F4;&#x529B;&#x6210;&#x4E3A;&#x521B;&#x4E1A;&#x8005;&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x7684;&#x521B;&#x4E1A;&#x670D;&#x52A1;&#x5E73;&#x53F0;&#xFF0C;&#x4E3A;&#x521B;&#x4E1A;&#x8005;&#x63D0;&#x4F9B;&#x6700;&#x597D;&#x7684;&#x4EA7;&#x54C1;&#x548C;&#x670D;&#x52A1;" target="_blank">36&#x6C2A;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://www.v2ex.com/" title="V2EX &#x662F;&#x4E00;&#x4E2A;&#x5173;&#x4E8E;&#x5206;&#x4EAB;&#x548C;&#x63A2;&#x7D22;&#x7684;&#x5730;&#x65B9;" target="_blank">V2EX</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://www.zhihu.com/" title="&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4E0A;&#x77E5;&#x4E4E;&#x3002;&#x77E5;&#x4E4E;&#x4F5C;&#x4E3A;&#x4E2D;&#x6587;&#x4E92;&#x8054;&#x7F51;&#x6700;&#x5927;&#x7684;&#x77E5;&#x8BC6;&#x5206;&#x4EAB;&#x5E73;&#x53F0;&#xFF0C;&#x4EE5;&#x300C;&#x77E5;&#x8BC6;&#x8FDE;&#x63A5;&#x4E00;&#x5207;&#x300D;&#x4E3A;&#x613F;&#x666F;&#xFF0C;&#x81F4;&#x529B;&#x4E8E;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x4EBA;&#x4EBA;&#x90FD;&#x53EF;&#x4EE5;&#x4FBF;&#x6377;&#x63A5;&#x5165;&#x7684;&#x77E5;&#x8BC6;&#x5206;&#x4EAB;&#x7F51;&#x7EDC;&#xFF0C;&#x8BA9;&#x4EBA;&#x4EEC;&#x4FBF;&#x6377;&#x5730;&#x4E0E;&#x4E16;&#x754C;&#x5206;&#x4EAB;&#x77E5;&#x8BC6;&#x3001;&#x7ECF;&#x9A8C;&#x548C;&#x89C1;&#x89E3;&#xFF0C;&#x53D1;&#x73B0;&#x66F4;&#x5927;&#x7684;&#x4E16;&#x754C;" target="_blank">&#x77E5;&#x4E4E;</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" data-group="SSL">
+                <div class="panel panel-mc">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">SSL</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://letsencrypt.org/" title="Free SSL/TLS Certificates" target="_blank">Let&#x27;s Encrypt</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://freessl.org/" title="&#x4E00;&#x4E2A;&#x7533;&#x8BF7;&#x514D;&#x8D39;HTTPS&#x8BC1;&#x4E66;&#x7684;&#x7F51;&#x7AD9;,&#x514D;&#x8D39;HTTPS&#x8BC1;&#x4E66;,&#x514D;&#x8D39;SSL&#x8BC1;&#x4E66;,&#x514D;&#x8D39;&#x8BC1;&#x4E66;" target="_blank">FreeSSL</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://www.sslforfree.com/" title="Free SSL Certificate issued in less than a minute" target="_blank">SSL For Free</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://myssl.com/" title="&#x68C0;&#x6D4B;&#x7F51;&#x7AD9;&#x7684;SSL&#x8BC1;&#x4E66;&#x662F;&#x5426;&#x5B89;&#x5168;&#xFF0C;&#x662F;&#x5426;&#x5B58;&#x5728;&#x6F0F;&#x6D1E;&#xFF0C;&#x662F;&#x5426;&#x8FBE;&#x5230;SSL&#x884C;&#x4E1A;&#x6807;&#x51C6;&#xFF0C;&#x7B26;&#x5408;&#x82F9;&#x679C;ATS&#x89C4;&#x8303;&#xFF0C;&#x80FD;&#x5426;&#x901A;&#x8FC7;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x5B89;&#x5168;&#x8981;&#x6C42;&#x3002;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#xFF0C;CSR&#xFF0C;&#x8BC1;&#x4E66;&#x94FE;&#xFF0C;SSL&#x914D;&#x7F6E;&#x751F;&#x6210;&#x7B49;&#x5DE5;&#x5177;" target="_blank">SSL/TLS&#x5B89;&#x5168;&#x8BC4;&#x4F30;&#x62A5;&#x544A;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://www.chinassl.net/ssltools/convert-ssl.html" title="SSL&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#x8F6C;&#x6362;,PEM&#x683C;&#x5F0F;&#x8F6C;&#x6362;DER,PEM&#x8BC1;&#x4E66;&#x8F6C;&#x6362;PFX&#x8BC1;&#x4E66;,CRT&#x8BC1;&#x4E66;&#x8F6C;&#x6362;PFX&#x8BC1;&#x4E66;,PEM&#x8BC1;&#x4E66;&#x8F6C;&#x6362;JKS&#x8BC1;&#x4E66;,CRT&#x8BC1;&#x4E66;&#x8F6C;&#x6362;JKS&#x683C;&#x5F0F;" target="_blank">SSL&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x5DE5;&#x5177;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://www.sslshopper.com/ssl-converter.html" title="SSL Converter - Convert SSL Certificates to different formats" target="_blank">SSL Converter</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" data-group="&#x7AD9;&#x70B9;&#x5DE5;&#x5177;">
+                <div class="panel panel-mc">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">&#x7AD9;&#x70B9;&#x5DE5;&#x5177;</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="http://ta.qq.com/" title="&#x817E;&#x8BAF;&#x5206;&#x6790; &#x817E;&#x8BAF;&#x5206;&#x6790;&#x4E3A;&#x60A8;&#x63D0;&#x4F9B;&#x4E13;&#x4E1A;&#x7F51;&#x7AD9;&#x5206;&#x6790;&#x670D;&#x52A1;&#xFF0C;&#x4E3A;&#x60A8;&#x63D0;&#x4F9B;&#x514D;&#x8D39;&#x7684;&#x7F51;&#x7AD9;&#x76D1;&#x63A7;&#x3001;&#x5B9E;&#x65F6;&#x5206;&#x6790;&#x3001;&#x6765;&#x6E90;&#x5206;&#x6790;&#x3001;&#x9875;&#x9762;&#x5206;&#x6790;&#x3001;pv&#x7EDF;&#x8BA1;&#x3001;uv&#x7EDF;&#x8BA1;&#x3001;&#x8BBF;&#x5BA2;&#x884C;&#x4E3A;&#x5206;&#x6790;&#x548C;&#x5E7F;&#x544A;&#x6548;&#x679C;&#x5206;&#x6790;&#x7B49;&#xFF0C;&#x4E3A;&#x7F51;&#x7AD9;&#x8FD0;&#x8425;&#x63D0;&#x4F9B;&#x5145;&#x5206;&#x7684;&#x6570;&#x636E;&#x53C2;&#x8003;" target="_blank">&#x817E;&#x8BAF;&#x5206;&#x6790;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://ziyuan.baidu.com/site/index" title="&#x5168;&#x7403;&#x6700;&#x5927;&#x7684;&#x9762;&#x5411;&#x4E2D;&#x6587;&#x4E92;&#x8054;&#x7F51;&#x7BA1;&#x7406;&#x8005;&#x3001;&#x79FB;&#x52A8;&#x5F00;&#x53D1;&#x8005;&#x3001;&#x521B;&#x4E1A;&#x8005;&#x7684;&#x641C;&#x7D22;&#x6D41;&#x91CF;&#x7BA1;&#x7406;&#x7684;&#x5B98;&#x65B9;&#x5E73;&#x53F0;&#x3002;&#x63D0;&#x4F9B;&#x6709;&#x52A9;&#x4E8E;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x6536;&#x5F55;&#x7684;&#x5DE5;&#x5177;&#x3001;SEO&#x5EFA;&#x8BAE;&#x3001;API&#x63A5;&#x53E3;&#x3001;&#x591A;&#x7AEF;&#x9002;&#x914D;&#x670D;&#x52A1;&#x7684;&#x80FD;&#x529B;&#x7B49;" target="_blank">&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x8D44;&#x6E90;&#x5E73;&#x53F0;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://www.aizhan.com/" title="&#x7231;&#x7AD9;&#x7F51;&#x7AD9;&#x957F;&#x5DE5;&#x5177;&#x63D0;&#x4F9B;&#x7F51;&#x7AD9;&#x6536;&#x5F55;&#x67E5;&#x8BE2;&#x548C;&#x7AD9;&#x957F;&#x67E5;&#x8BE2;&#x4EE5;&#x53CA;&#x767E;&#x5EA6;&#x6743;&#x91CD;&#x503C;&#x67E5;&#x8BE2;&#x7B49;&#x591A;&#x4E2A;&#x7AD9;&#x957F;&#x5DE5;&#x5177;&#xFF0C;&#x514D;&#x8D39;&#x67E5;&#x8BE2;&#x5404;&#x79CD;&#x5DE5;&#x5177;&#xFF0C;&#x5305;&#x62EC;&#x6709;&#x5173;&#x952E;&#x8BCD;&#x6392;&#x540D;&#x67E5;&#x8BE2;&#xFF0C;&#x767E;&#x5EA6;&#x6536;&#x5F55;&#x67E5;&#x8BE2;&#x7B49;" target="_blank">&#x7231;&#x7AD9;&#x7F51;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://viewdns.info/" title="viewdns, dns, info, reverse ip, pagerank, portscan, port scan, lookup, records, whois, ipwhois, dnstools, web hosting, hosting, traceroute, dns report, dnsreport, ip location, ip location finder, spam, spam database, dnsbl, propagation, dns propagation checker, checker, china, chinese, firewall, great firewall, is my site down, is site down, site down, down, dns propagate" target="_blank">ViewDNS</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" data-group="CDN">
+                <div class="panel panel-mc">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">CDN</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://cdn.baomitu.com/" title="360&#x524D;&#x7AEF;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x5E93;" target="_blank">75CDN</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://www.bootcdn.cn/" title="Bootstrap &#x4E2D;&#x6587;&#x7F51;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x514D;&#x8D39; CDN &#x52A0;&#x901F;&#x670D;&#x52A1; - &#x6211;&#x4EEC;&#x81F4;&#x529B;&#x4E8E;&#x4E3A; Bootstrap&#x3001;jQuery&#x3001;Angular&#x3001;Vue.js &#x4E00;&#x6837;&#x4F18;&#x79C0;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x63D0;&#x4F9B;&#x7A33;&#x5B9A;&#x3001;&#x5FEB;&#x901F;&#x3001;&#x514D;&#x8D39;&#x7684; CDN &#x52A0;&#x901F;&#x670D;&#x52A1;&#x3002;BootCDN &#x662F;&#x8FD0;&#x8425;&#x65F6;&#x95F4;&#x6700;&#x957F;&#x3001;&#x7528;&#x6237;&#x91CF;&#x6700;&#x5927;&#x3001;&#x6700;&#x65E9;&#x540C;&#x65F6;&#x652F;&#x6301; HTTPS&#xFF08;SSL&#xFF09;&#x548C; HTTP/2.0 &#x534F;&#x8BAE;&#x7684;&#x4E2D;&#x7ACB;&#x514D;&#x8D39; CDN" target="_blank">BootCDN</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://staticfile.org/" title="&#x514D;&#x8D39;&#x3001;&#x5FEB;&#x901F;&#x3001;&#x5F00;&#x653E;&#x7684; CDN &#x670D;&#x52A1;" target="_blank">Staticfile CDN</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://cdnjs.com/" title="cdnjs.com - The best FOSS CDN for web related libraries to speed up your websites" target="_blank">cdnjs</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://unpkg.com/" title="The CDN for everything on npm" target="_blank">unpkg</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="http://libs.cdnjs.net/" title="&#x524D;&#x7AEF;&#x516C;&#x5171;&#x5E93;CDN" target="_blank">&#x524D;&#x7AEF;&#x516C;&#x5171;&#x5E93;CDN&#x52A0;&#x901F;&#x670D;&#x52A1;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="http://cdn.code.baidu.com/" title="&#x767E;&#x5EA6;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x516C;&#x5171;&#x5E93;" target="_blank">&#x767E;&#x5EA6;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x516C;&#x5171;&#x5E93;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="http://lib.sinaapp.com/" title="&#x65B0;&#x6D6A;CDN" target="_blank">&#x65B0;&#x6D6A;CDN</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" data-group="MarkDown&#x7F16;&#x8F91;&#x5668;">
+                <div class="panel panel-mc">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">MarkDown&#x7F16;&#x8F91;&#x5668;</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://md.netnr.com/" title="markdown,netnrmd &#x7EC4;&#x5408;&#x7F16;&#x8F91;&#x5668;&#xFF0C;markdown&#x8BED;&#x6CD5;&#x89E3;&#x6790;&#x57FA;&#x4E8E;remarkable&#xFF0C;&#x7F16;&#x8F91;&#x4E0E;&#x89E3;&#x6790;&#x5206;&#x79BB;,&#x8C03;&#x7528;&#x4EFB;&#x610F;markdown&#x89E3;&#x6790;&#x5668;&#x90FD;&#x80FD;&#x5B8C;&#x7F8E;&#x7684;&#x8FD0;&#x884C;" target="_blank">netnrmd</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://pandao.github.io/editor.md/" title="Editor.md: a simple online markdown editor" target="_blank">Editor.md</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://simplemde.com/" title="SimpleMDE is a simple, embeddable, and beautiful JS markdown editor" target="_blank">SimpleMDE</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" data-group="&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;">
+                <div class="panel panel-mc">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://ckeditor.com/" title="Product portfolio of rich text editors and collaborative editing solutions delivered through fast and secure cloud services" target="_blank">CKEditor</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="http://ueditor.baidu.com/" title="UEditor &#x662F;&#x4E00;&#x5957;&#x5F00;&#x6E90;&#x7684;&#x5728;&#x7EBF;HTML&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x8BA9;&#x7528;&#x6237;&#x5728;&#x7F51;&#x7AD9;&#x4E0A;&#x83B7;&#x5F97;&#x6240;&#x89C1;&#x5373;&#x6240;&#x5F97;&#x7F16;&#x8F91;&#x6548;&#x679C;&#xFF0C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x7528; UEditor &#x628A;&#x4F20;&#x7EDF;&#x7684;&#x591A;&#x884C;&#x6587;&#x672C;&#x8F93;&#x5165;&#x6846;(textarea)&#x66FF;&#x6362;&#x4E3A;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x5BCC;&#x6587;&#x672C;&#x8F93;&#x5165;&#x6846;&#x3002;UEditor &#x4F7F;&#x7528; JavaScript &#x7F16;&#x5199;&#xFF0C;&#x53EF;&#x4EE5;&#x65E0;&#x7F1D;&#x5730;&#x4E0E; Java&#x3001;.NET&#x3001;PHP&#x3001;ASP &#x7B49;&#x7A0B;&#x5E8F;&#x96C6;&#x6210;&#xFF0C;&#x6BD4;&#x8F83;&#x9002;&#x5408;&#x5728; CMS&#x3001;&#x5546;&#x57CE;&#x3001;&#x8BBA;&#x575B;&#x3001;&#x535A;&#x5BA2;&#x3001;Wiki&#x3001;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x7B49;&#x4E92;&#x8054;&#x7F51;&#x5E94;&#x7528;&#x4E0A;&#x4F7F;&#x7528;" target="_blank">UEditor</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="http://www.wangeditor.com/" title="&#x8F7B;&#x91CF;&#x7EA7;web&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;" target="_blank">wangEditor</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" data-group="&#x54CD;&#x5E94;&#x5F0F;&#x6846;&#x67B6;">
+                <div class="panel panel-mc">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">&#x54CD;&#x5E94;&#x5F0F;&#x6846;&#x67B6;</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://rf.netnr.com/" title="netnrf&#x54CD;&#x5E94;&#x5F0F;&#x6846;&#x67B6;,&#x57FA;&#x4E8E;Ace Admin&#x6846;&#x67B6;&#x83DC;&#x5355;&#x5BFC;&#x822A;,Bootstrap&#x5E03;&#x5C40;,fontAwesome&#x56FE;&#x6807;,&#x5185;&#x5D4C;Iframe&#x7528;EasyUI&#x505A;&#x6570;&#x636E;&#x7ED1;&#x5B9A;,&#x52A8;&#x6001;&#x914D;&#x7F6E;&#x5217;&#x8868;,&#x52A8;&#x6001;&#x914D;&#x7F6E;&#x8868;&#x5355;" target="_blank">netnrf&#x54CD;&#x5E94;&#x5F0F;&#x6846;&#x67B6;</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="http://ace.jeka.by/" title="SSL Converter - Convert SSL Certificates to different formats" target="_blank">Ace Admin</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://getbootstrapadmin.com/remark/" title="Remark | Remark Admin Template" target="_blank">Remark Admin Template</a>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-12 mba">
+                                    <a href="https://adminlte.io/" title="Best open source admin dashboard &amp;amp; control panel theme. Built on top of Bootstrap 3, AdminLTE provides a range of responsive, reusable, and commonly used components" target="_blank">AdminLTE</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
 </div>
-<script src="/js/favorite.js"></script>
+<script src="/js/favorite.js?v=oDigOU9tX9llxgI_NWVoFF5usY1YGXPucDJ8-USBZR0"></script>
 
     </div>
 
