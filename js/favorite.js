@@ -37,3 +37,14 @@ $('#btnSearch').click(function () {
 $('#txtSearch').on('input', function () {
     search($('#seGroup').val(), $('#txtSearch').val())
 });
+$('#favoritebox').find('a').each(function () {
+    var hs = this.href.split('/');
+    hs.length = 3;
+    var img = $(this).find('img');
+    img[0].onerror = function () { this.src = '/images/net.svg'; this.onerror = null; }
+    if (img.attr('data-icon') != "") {
+        img[0].src = img.attr('data-icon');
+    } else {
+        img[0].src = hs.join('/') + "/favicon.ico";
+    }
+});
