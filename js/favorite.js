@@ -29,13 +29,14 @@
     });
 }
 $('#seGroup').change(function () {
+    localStorage["favorite-group"] = this.value;
     search($('#seGroup').val(), $('#txtSearch').val())
 });
 $('#btnSearch').click(function () {
-    search($('#seGroup').val(), $('#txtSearch').val())
+    search($('#seGroup').val(), localStorage["favorite-search"] = $('#txtSearch').val())
 });
-$('#txtSearch').on('input', function () {
-    search($('#seGroup').val(), $('#txtSearch').val())
+$('#txtSearch').on('input', function () {    ;
+    search($('#seGroup').val(), localStorage["favorite-search"] = $('#txtSearch').val())
 });
 $('#favoritebox').find('a').each(function () {
     var hs = this.href.split('/');
@@ -52,3 +53,15 @@ $('#favoritebox').find('a').each(function () {
         }
     }
 });
+
+$('#txtSearch').val(localStorage["favorite-search"] || "");
+var defaultGroup = localStorage["favorite-group"] || "";
+if (defaultGroup != "") {
+    $('#seGroup').find('option').each(function () {
+        if (this.value == defaultGroup) {
+            $('#seGroup').val(this.value);
+            $('#btnSearch')[0].click();
+            return false;
+        }
+    });
+}
