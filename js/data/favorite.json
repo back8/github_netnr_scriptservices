@@ -4,7 +4,7 @@
       "group": "前端",
       "items": [
         {
-          "url": "http://getbootstrap.com/",
+          "url": "https://getbootstrap.com/",
           "title": "Bootstrap",
           "remark": "The most popular HTML, CSS, and JS library in the world"
         },
@@ -30,10 +30,9 @@
           "remark": "AngularJS is what HTML would have been, had it been designed for building web-apps.Declarative templates with data-binding, MVW, MVVM, MVC, dependency injection and great testability story all implemented with pure client-side JavaScript"
         },
         {
-          "url": "http://www.jeasyui.net/",
-          "icon": "http://www.jeasyui.net/Public/index/img/favicon.ico",
+          "url": "https://www.jeasyui.com/",
           "title": "EasyUI",
-          "remark": "jQuery EasyUI是一组基于jQuery的UI插件集合，而jQuery EasyUI的目标就是帮助web开发者更轻松的打造出功能丰富并且美观的UI界面。开发者不需要编写复杂的javascript，也不需要对css样式有深入的了解，开发者需要了解的只有一些简单的html标签"
+          "remark": "EasyUI is a complete framework for HTML5 web page. It provides easy to use components for building modern, interactive, javascript applications that work on pc and mobile devices"
         },
         {
           "url": "https://fontawesome.com/",
@@ -42,6 +41,7 @@
         },
         {
           "url": "http://www.iconfont.cn/",
+          "icon": "https://gtms04.alicdn.com/tps/i4/TB1_oz6GVXXXXaFXpXXJDFnIXXX-64-64.ico",
           "title": "阿里巴巴矢量图标库",
           "remark": "Iconfont-国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能。阿里巴巴体验团队倾力打造，设计和前端开发的便捷工具"
         }
@@ -77,11 +77,6 @@
           "remark": "Collaborate on code with inline comments and pull requests. Manage and share your Git repositories to build and ship software, as a team"
         },
         {
-          "url": "https://codegit.net/",
-          "title": "CodeGit",
-          "remark": "CodeGit代码托管项目管理云平台，Git私有仓库，Git团队协作,免费代码管理平台,Git分布式代码托管,项目管理,团队协作,开源代码托管"
-        },
-        {
           "url": "https://try.gogs.io/",
           "title": "Gogs",
           "remark": "Gogs is a painless self-hosted Git service"
@@ -97,12 +92,6 @@
     {
       "group": "SEO",
       "items": [
-        {
-          "url": "http://ta.qq.com/",
-          "icon": "http://mat1.gtimg.com/www/icon/favicon2.ico",
-          "title": "腾讯分析",
-          "remark": "腾讯分析 腾讯分析为您提供专业网站分析服务，为您提供免费的网站监控、实时分析、来源分析、页面分析、pv统计、uv统计、访客行为分析和广告效果分析等，为网站运营提供充分的数据参考"
-        },
         {
           "url": "https://ziyuan.baidu.com/site/index",
           "title": "百度搜索资源平台",
@@ -175,7 +164,7 @@
           "remark": "npm 是 JavaScript 世界的包管理工具，并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码，管理项目依赖关系"
         },
         {
-          "url": "http://msdn.itellyou.cn/",
+          "url": "https://msdn.itellyou.cn/",
           "title": "MSDN我告诉你",
           "remark": "MSDN, 我告诉"
         },
@@ -285,7 +274,8 @@
           "remark": "The CDN for everything on npm"
         },
         {
-          "url": "http://libs.cdnjs.net/",
+          "url": "https://libs.cdnjs.net/",
+          "icon": "/images/net.svg",
           "title": "前端公共库CDN加速服务",
           "remark": "前端公共库CDN"
         },
@@ -296,9 +286,30 @@
           "remark": "百度静态资源公共库"
         },
         {
-          "url": "http://lib.sinaapp.com/",
+          "url": "https://lib.sinaapp.com/",
           "title": "新浪CDN",
           "remark": "新浪CDN"
+        }
+      ]
+    },
+    {
+      "group": "正则表达式",
+      "items": [
+        {
+          "url": "http://tool.chinaz.com/regex/",
+          "title": "站长工具正则表达式",
+          "remark": "该工具主要针对程序开发人员，通过该工具可以快速准备的判断所写的正则是否能正确匹配相应的字符"
+        },
+        {
+          "url": "http://tools.jb51.net/regex/javascript",
+          "title": "脚本之家正则表达式",
+          "remark": "脚本之家在线工具，本工具提供了多个版本的JS正则在线测试工具，每一个版本都各具特色，功能不一，欢迎大家使用"
+        },
+        {
+          "url": "https://www.sojson.com/regex/",
+          "icon": "https://cdn.www.sojson.com/sojson/favicon32.png",
+          "title": "SOJSON正则表达式",
+          "remark": "正则表达式在线测试"
         }
       ]
     },
@@ -311,7 +322,7 @@
           "remark": "js压缩，css压缩、美化、格式化、加密、解密、混淆，javascript代码压缩"
         },
         {
-          "url": "http://webftp.zzbaike.com/",
+          "url": "https://webftp.zzbaike.com/",
           "title": "WEBFTP",
           "remark": "站长百科提供的在线FTP服务"
         },
@@ -319,6 +330,38 @@
           "url": "https://www.idocv.com/",
           "title": "在线文档预览",
           "remark": "在线文档预览(doc,docx,xls,xlsx,ppt,pptx,pdf等)|压缩文件在线预览(zip,rar,tar,7z等)|图纸文件在线预览(dwg,dxf,dwf)|图片文件在线预览|音视频播放|在线协作编辑|同步展示等"
+        },
+        {
+          "url": "https://app.xunjiepdf.com/",
+          "title": "迅捷转换器",
+          "remark": "迅捷在线pdf转word转换器免费版为您提供将PDF转换成WORD,word转换成pdf,ppt转换成pdf的免费在线转换服务；是一款完全免费的在线转换工具，在线免费完成PDF与word的转换体验，绿色小巧、无需安装"
+        }
+      ]
+    },
+    {
+      "group": "翻译",
+      "items": [
+        {
+          "url": "https://translate.google.cn/",
+          "title": "Google翻译",
+          "remark": "Google 的免费翻译服务可提供简体中文和另外 100 多种语言之间的互译功能，可让您即时翻译字词、短语和网页内容"
+        },
+        {
+          "url": "https://fanyi.baidu.com/",
+          "title": "百度翻译",
+          "remark": "百度翻译提供即时免费的多语种文本翻译和网页翻译服务，支持中、英、日、韩、泰、法、西、德等28种热门语言互译，覆盖756个翻译方向"
+        },
+        {
+          "url": "http://fanyi.youdao.com/",
+          "icon": "https://shared.ydstatic.com/images/favicon.ico",
+          "title": "有道翻译",
+          "remark": "在线文档预览(doc,docx,xls,xlsx,ppt,pptx,pdf等)|压缩文件在线预览(zip,rar,tar,7z等)|图纸文件在线预览(dwg,dxf,dwf)|图片文件在线预览|音视频播放|在线协作编辑|同步展示等"
+        },
+        {
+          "url": "http://fy.iciba.com/",
+          "icon": "https://www.iciba.com/favicon.ico",
+          "title": "爱词霸",
+          "remark": "爱词霸在线翻译为您提供权威准确的在线翻译、英语英文翻译、中译英、日语翻译、fanyi等在线服务"
         }
       ]
     },
@@ -331,13 +374,14 @@
           "remark": "阿里云开源镜像站由阿里巴巴的系统服务团队支持。 目前提供 Debian、Ubuntu、 Fedora、Arch Linux、 CentOS、openSUSE、Scientific Linux、Gentoo 等多个发行版的软件安装源和ISO下载服务，我们竭力为互联网用户提供全面，高效和稳定的软件服务"
         },
         {
-          "url": "http://mirrors.163.com/",
-          "icon": "http://mirrors.163.com/.media/favicon.ico",
+          "url": "https://mirrors.163.com/",
+          "icon": "https://mirrors.163.com/.media/favicon.ico",
           "title": "网易开源镜像站",
           "remark": "网易开源镜像站"
         },
         {
-          "url": "http://mirrors.ustc.edu.cn/",
+          "url": "https://mirrors.ustc.edu.cn/",
+          "icon": "/images/net.svg",
           "title": "USTC",
           "remark": "USTC Open Source Software Mirror"
         }
@@ -365,6 +409,7 @@
         },
         {
           "url": "https://simplemde.com/",
+          "icon": "/images/net.svg",
           "title": "SimpleMDE",
           "remark": "SimpleMDE is a simple, embeddable, and beautiful JS markdown editor"
         },
@@ -376,6 +421,7 @@
         },
         {
           "url": "http://ueditor.baidu.com/",
+          "icon": "https://www.baidu.com/favicon.ico",
           "title": "UEditor",
           "remark": "UEditor 是一套开源的在线HTML编辑器，主要用于让用户在网站上获得所见即所得编辑效果，开发人员可以用 UEditor 把传统的多行文本输入框(textarea)替换为可视化的富文本输入框。UEditor 使用 JavaScript 编写，可以无缝地与 Java、.NET、PHP、ASP 等程序集成，比较适合在 CMS、商城、论坛、博客、Wiki、电子邮件等互联网应用上使用"
         }

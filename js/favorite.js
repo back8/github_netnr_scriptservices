@@ -45,6 +45,10 @@ $('#favoritebox').find('a').each(function () {
     if (img.attr('data-icon') != "") {
         img[0].src = img.attr('data-icon');
     } else {
-        img[0].src = hs.join('/') + "/favicon.ico";
+        if (this.href.indexOf('http://') >= 0) {
+            img[0].src = '/images/net.svg';
+        } else {
+            img[0].src = hs.join('/') + "/favicon.ico";
+        }
     }
 });
