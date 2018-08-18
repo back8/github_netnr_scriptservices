@@ -33,7 +33,7 @@
     {
       "group": "实例",
       "items": {
-        "zonechange": "JS行政区划联动",
+        "zoning": "JS行政区划",
         "cntoen": "JS汉字转拼音",
         "jscroll": "JC滚动条"
       }
