@@ -1,37 +1,34 @@
-﻿Bmob.initialize("59a522843b951532546934352166df80", "97fcbeae1457621def948aba1db01821");
+﻿ss.bmob.init();
 var mg = {
     page: 1,
     pageNumber: 999,
-    MessageObject: Bmob.Object.extend("NetnrMessage"),
-    messageObjectQuery: function () { return new Bmob.Query(mg.MessageObject) },
+    bquery: Bmob.Query("NetnrMessage"),
     messageObjectSave: function () { return new mg.MessageObject() },
     list: function () {
         loading();
-        var dto = mg.messageObjectQuery();
-        dto.limit(mg.pageNumber);
-        dto.skip((mg.page - 1) * mg.pageNumber);
-        dto.find({
-            success: function (results) {
-                loading(0);
-                var htm = [];
-                $(results).each(function (i) {
-                    var cols = this.attributes, id = 'mi' + (i + 1);
-                    htm.push('<div class="media" id="' + id + '"><div class="media-left">');
-                    htm.push('<a href="#' + id + '"><img class="media-object" src="/images/photo.svg"></a>');
-                    htm.push('</div><div class="media-body"><h4 class="media-heading">' + htmlEncode(cols.UserNickname) + '<small class="ml15">' + this.createdAt + '</small></h4>');
-                    htm.push('<pre>' + htmlEncode(cols.Content) + '</pre></div></div>');
-                });
-                if (htm.length) {
-                    $('#messagelist').html(htm.join(''));
-                } else {
-                    $('#messagelist').html('no message');
-                }
-            },
-            error: function (error) {
-                loading(0);
-                jz.alert("查询失败: " + error.code + " " + error.message);
+        var query = mg.bquery;
+        query.limit(mg.pageNumber);
+        query.skip((mg.page - 1) * mg.pageNumber);
+        query.find().then(res => {
+            loading(0);
+            var htm = [];
+            $(res).each(function (i) {
+                var id = 'mi' + (i + 1);
+                htm.push('<div class="media" id="' + id + '"><div class="media-left">');
+                htm.push('<a href="#' + id + '"><img class="media-object" src="/images/photo.svg"></a>');
+                htm.push('</div><div class="media-body"><h4 class="media-heading">' + htmlEncode(this.UserNickname) + '<small class="ml15">' + this.createdAt + '</small></h4>');
+                htm.push('<pre>' + htmlEncode(this.Content) + '</pre></div></div>');
+            });
+            if (htm.length) {
+                $('#messagelist').html(htm.join(''));
+            } else {
+                $('#messagelist').html('no message');
             }
-        });
+        }).catch(err => {
+            jz.alert("查询失败");
+            console.log(err);
+            loading(0);
+        })
     }
 }
 
@@ -50,18 +47,19 @@ $('#btnSave').click(function () {
     if (objv.Content == "") {
         jz.msg("请输入内容")
     } else {
-        var dto = mg.messageObjectSave();
-        dto.save(objv, {
-            success: function (object) {
-                jz.msg("操作成功");
-                uc.val('');
-                mg.list();
-                localStorage["message_nickname"] = objv.UserNickname;
-            },
-            error: function (model, error) {
-                jz.alert("留言失败");
-                console.log(model, error);
-            }
+        var query = mg.bquery;
+        for (var i in objv) {
+            query.set(i, objv[i]);
+        }
+        query.save().then(res => {
+            jz.msg("操作成功");
+            uc.val('');
+            mg.list();
+            localStorage["message_nickname"] = objv.UserNickname;
+        }).catch(err => {
+            jz.alert("查询失败");
+            console.log(err);
+            loading(0);
         });
     }
 });

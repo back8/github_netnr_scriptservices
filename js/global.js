@@ -20,6 +20,11 @@
     },
     csqm: function (q) {
         return q.replace(/\'/g, "\\'");
+    },
+    bmob: {
+        init: function () {
+            Bmob.initialize("59a522843b951532546934352166df80", "97fcbeae1457621def948aba1db01821");
+        }
     }
 }
 

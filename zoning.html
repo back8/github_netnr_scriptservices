@@ -30,7 +30,7 @@
     </script>
 <script>($.fn.emulateTransitionEnd||document.write("\u003Cscript src=\u0022https:\/\/static.netnr.com\/lib\/bootstrap\/3.3.7\/js\/bootstrap.min.js\u0022\u003E\u003C\/script\u003E"));</script>
     <link href="/css/global.css?v=mvgXCs9fFtAZ6UD6rxUxkn1tYJ6IwHYHk9CV4uQvBZI" rel="stylesheet" />
-    <script src="/js/global.js?v=63SkV8QMmgdpL01P-ePvUVhSt_NLf1W0sRggBOFPbY8"></script>
+    <script src="/js/global.js?v=FWDDCQgx8cIlp0RtxyrGdwcsYJ25JA0ktggb9qWaCIw"></script>
     <script src="/js/jz/jz.min.js?v=LQvPjEmTgtZ-qcu_4JSfOJgI_SO_QBUKWOMvMvk3f2c"></script>
 </head>
 <body>
@@ -56,34 +56,63 @@
         </nav>
 
     <div class="bodym">
-        <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <a href="https://github.com/netnr/zoning" target="_blank">https://github.com/netnr/zoning</a>
-        </div>
-    </div>
-    <div class="row mt15">
-        <div class="col-sm-3 col-xs-12">
-            <select class="form-control"></select>
-        </div>
-        <div class="col-sm-3 col-xs-12">
-            <select class="form-control"></select>
-        </div>
-        <div class="col-sm-3 col-xs-12">
-            <select class="form-control"></select>
-        </div>
-        <div class="col-sm-3 col-xs-12">
-            <select class="form-control"></select>
-        </div>
-    </div>
-    <div class="row mt15">
-        <div class="col-md-12">
-            <p id="code"></p>
-        </div>
-    </div>
-</div>
+        <style>
+    .psecode {
+        height: 100px;
+        margin-top: 15px;
+    }
+</style>
 
-<script src="/js/zoning.js?v=8vaGc3Dzk_OTk2pflBr1GvaJFyoy-5hTCzmPo3YuXH0"></script>
+<div class="container">
+    <h4>
+        数据来源：<a href="https://github.com/netnr/zoning" target="_blank">https://github.com/netnr/zoning</a>
+    </h4>
+    <hr />
+    <h4>
+        省级、地级、县级、乡级 四级联动，约1.9MB &nbsp;
+        <a href="/js/data/zoning-4.json" target="_blank">zoning-4.json</a>
+    </h4>
+    <div class="row" id="zoning4">
+        <div class="col-sm-3 col-xs-12">
+            <select class="form-control"></select>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            <select class="form-control"></select>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            <select class="form-control"></select>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            <select class="form-control"></select>
+        </div>
+    </div>
+    <p class="psecode" id="zoningcode4"></p>
+    <hr />
+    <h4>
+        省级、地级、县级、乡级和村级 五级联动，约35MB，70W+行数据，数据库查询
+    </h4>
+    <div class="row" id="zoning5">
+        <div class="col-sm-2 col-xs-12">
+            <select class="form-control"></select>
+        </div>
+        <div class="col-sm-2 col-xs-12">
+            <select class="form-control"></select>
+        </div>
+        <div class="col-sm-2 col-xs-12">
+            <select class="form-control"></select>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            <select class="form-control"></select>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            <select class="form-control"></select>
+        </div>
+    </div>
+    <p class="psecode" id="zoningcode5"></p>
+</div>
+<script src="/js/plus/bmob-1.6.2.min.js"></script>
+<script src="/js/zoning.js?v=KPGdZabIcWrhTNEU5EY5tMMk0soqc6mTc6L6m01fHpU"></script>
+
     </div>
 
         <footer class="footer">
