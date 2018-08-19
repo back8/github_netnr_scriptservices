@@ -27,7 +27,8 @@
         "imagetobase64": "图片转Base64",
         "jsontocsharp": "JSON生成C#实体类",
         "jsontoxml": "JSON转换XML",
-        "ip": "IP"
+        "ip": "IP",
+        "speedtest": "网络测速"
       }
     },
     {
