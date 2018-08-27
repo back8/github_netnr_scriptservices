@@ -9,6 +9,12 @@
           "remark": "The most popular HTML, CSS, and JS library in the world"
         },
         {
+          "url": "http://www.bootcss.com/",
+          "icon": "https://getbootstrap.com/favicon.ico",
+          "title": "Bootstrap(中文)",
+          "remark": "Bootstrap是Twitter推出的一个用于前端开发的开源工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。目前，Bootstrap最新版本为3.0 。Bootstrap中文网致力于为广大国内开发者提供详尽的中文文档、代码实例等，助力开发者掌握并使用这一框架"
+        },
+        {
           "url": "https://jquery.com/",
           "title": "jQuery",
           "remark": "The Write Less, Do More, JavaScript Library"
@@ -35,9 +41,21 @@
           "remark": "EasyUI is a complete framework for HTML5 web page. It provides easy to use components for building modern, interactive, javascript applications that work on pc and mobile devices"
         },
         {
+          "url": "http://www.jeasyui.net/",
+          "icon": "https://www.jeasyui.com/favicon.ico",
+          "title": "EasyUI(中文)",
+          "remark": "jQuery EasyUI是一组基于jQuery的UI插件集合，而jQuery EasyUI的目标就是帮助web开发者更轻松的打造出功能丰富并且美观的UI界面。开发者不需要编写复杂的javascript，也不需要对css样式有深入的了解，开发者需要了解的只有一些简单的html标签"
+        },
+        {
           "url": "https://fontawesome.com/",
           "title": "Font Awesome",
           "remark": "The world’s most popular and easiest to use icon set just got an upgrade"
+        },
+        {
+          "url": "http://fontawesome.dashgame.com/",
+          "icon": "https://fontawesome.com/favicon.ico",
+          "title": "Font Awesome(中文)",
+          "remark": "Font Awesome，一套绝佳的图标字体库和CSS框架"
         },
         {
           "url": "http://www.iconfont.cn/",
@@ -93,11 +111,6 @@
       "group": "SEO",
       "items": [
         {
-          "url": "https://ziyuan.baidu.com/site/index",
-          "title": "百度搜索资源平台",
-          "remark": "全球最大的面向中文互联网管理者、移动开发者、创业者的搜索流量管理的官方平台。提供有助于搜索引擎收录的工具、SEO建议、API接口、多端适配服务的能力等"
-        },
-        {
           "url": "https://www.aizhan.com/",
           "title": "爱站网",
           "remark": "爱站网站长工具提供网站收录查询和站长查询以及百度权重值查询等多个站长工具，免费查询各种工具，包括有关键词排名查询，百度收录查询等"
@@ -111,6 +124,11 @@
           "url": "https://www.websitepulse.com/",
           "title": "WebSitePulse",
           "remark": "WebSitePulse monitoring service. Test your site and server. Design your own monitoring service"
+        },
+        {
+          "url": "https://ziyuan.baidu.com/site/index",
+          "title": "百度搜索资源平台",
+          "remark": "全球最大的面向中文互联网管理者、移动开发者、创业者的搜索流量管理的官方平台。提供有助于搜索引擎收录的工具、SEO建议、API接口、多端适配服务的能力等"
         }
       ]
     },
@@ -211,15 +229,15 @@
           "remark": "Free SSL/TLS Certificates"
         },
         {
-          "url": "https://freessl.org/",
-          "title": "FreeSSL",
-          "remark": "一个申请免费HTTPS证书的网站,免费HTTPS证书,免费SSL证书,免费证书"
-        },
-        {
           "url": "https://www.sslforfree.com/",
           "icon": "https://www.sslforfree.com/static/main/images/icon.png",
           "title": "SSL For Free",
           "remark": "Free SSL Certificate issued in less than a minute"
+        },
+        {
+          "url": "https://freessl.org/",
+          "title": "FreeSSL",
+          "remark": "一个申请免费HTTPS证书的网站,免费HTTPS证书,免费SSL证书,免费证书"
         },
         {
           "url": "https://myssl.com/",
@@ -289,27 +307,6 @@
           "url": "https://lib.sinaapp.com/",
           "title": "新浪CDN",
           "remark": "新浪CDN"
-        }
-      ]
-    },
-    {
-      "group": "正则表达式",
-      "items": [
-        {
-          "url": "http://tool.chinaz.com/regex/",
-          "title": "站长工具正则表达式",
-          "remark": "该工具主要针对程序开发人员，通过该工具可以快速准备的判断所写的正则是否能正确匹配相应的字符"
-        },
-        {
-          "url": "http://tools.jb51.net/regex/javascript",
-          "title": "脚本之家正则表达式",
-          "remark": "脚本之家在线工具，本工具提供了多个版本的JS正则在线测试工具，每一个版本都各具特色，功能不一，欢迎大家使用"
-        },
-        {
-          "url": "https://www.sojson.com/regex/",
-          "icon": "https://cdn.www.sojson.com/sojson/favicon32.png",
-          "title": "SOJSON正则表达式",
-          "remark": "正则表达式在线测试"
         }
       ]
     },
@@ -424,6 +421,27 @@
           "icon": "https://www.baidu.com/favicon.ico",
           "title": "UEditor",
           "remark": "UEditor 是一套开源的在线HTML编辑器，主要用于让用户在网站上获得所见即所得编辑效果，开发人员可以用 UEditor 把传统的多行文本输入框(textarea)替换为可视化的富文本输入框。UEditor 使用 JavaScript 编写，可以无缝地与 Java、.NET、PHP、ASP 等程序集成，比较适合在 CMS、商城、论坛、博客、Wiki、电子邮件等互联网应用上使用"
+        }
+      ]
+    },
+    {
+      "group": "正则表达式",
+      "items": [
+        {
+          "url": "http://tool.chinaz.com/regex/",
+          "title": "站长工具正则表达式",
+          "remark": "该工具主要针对程序开发人员，通过该工具可以快速准备的判断所写的正则是否能正确匹配相应的字符"
+        },
+        {
+          "url": "http://tools.jb51.net/regex/javascript",
+          "title": "脚本之家正则表达式",
+          "remark": "脚本之家在线工具，本工具提供了多个版本的JS正则在线测试工具，每一个版本都各具特色，功能不一，欢迎大家使用"
+        },
+        {
+          "url": "https://www.sojson.com/regex/",
+          "icon": "https://cdn.www.sojson.com/sojson/favicon32.png",
+          "title": "SOJSON正则表达式",
+          "remark": "正则表达式在线测试"
         }
       ]
     },

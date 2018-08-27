@@ -28,7 +28,8 @@
         "jsontocsharp": "JSON生成C#实体类",
         "jsontoxml": "JSON转换XML",
         "ip": "IP",
-        "speedtest": "网络测速"
+        "speedtest": "网络测速",
+        "useragent": "UserAgent用户终端信息"
       }
     },
     {

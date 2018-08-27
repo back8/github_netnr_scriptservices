@@ -11,10 +11,10 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link href="/favicon.svg" rel="Shortcut Icon" type="image/svg" />
 
-    <title>&#x6587;&#x672C;&#x5BF9;&#x6BD4; NET牛人</title>
+    <title>UserAgent&#x7528;&#x6237;&#x7EC8;&#x7AEF;&#x4FE1;&#x606F; NET牛人</title>
 
-    <meta name="keywords" content="netnr,NET牛人,文本对比" />
-    <meta name="description" content="netnr,NET牛人,文本对比" />
+    <meta name="keywords" content="netnr,NET牛人,UserAgent用户终端信息" />
+    <meta name="description" content="netnr,NET牛人,UserAgent用户终端信息" />
 
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -56,35 +56,40 @@
         </nav>
 
     <div class="bodym">
-        <div class="container-fluid">
+        <style>
+    .table tr th, .table tr td {
+        font-size: 1.2em;
+        text-align: center;
+    }
+</style>
+
+<div class="container">
     <div class="row">
         <div class="col-md-12">
-            <label class="btn btn-primary btn-xs">
-                <input type="file" class="hidden" id="fileOrigin" />选择原始文件
-            </label>
-            <label class="btn btn-info btn-xs ml15 mr15">
-                <input type="file" class="hidden" id="fileVary" />选择变动文件
-            </label>
-            <label>
-                <input type="checkbox" style="vertical-align:top;" id="chkDiffMode" /> 内联对比
-            </label>
-        </div>
-        <div class="col-md-12">
-            <div id="editor" style="border:1px solid #ddd;"></div>
+            <h4 class="text-danger"></h4>
+            <table class="table table-bordered">
+                <tr>
+                    <th>浏览器</th>
+                    <th>内核</th>
+                    <th>系统</th>
+                    <th>设备</th>
+                </tr>
+            </table>
+            <p>
+                开源项目：<a href="https://github.com/fex-team/ua-device">https://github.com/fex-team/ua-device</a>
+            </p>
         </div>
     </div>
 </div>
 
-<link href="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/editor/editor.main.css" rel="stylesheet">
-
+<script src="/js/ua-device/useragent-base.js?v=yR1HiF3yC_Sh12cfjZzcqmPLj6nCmvNINkb-QjwbgKc"></script>
+<script src="/js/ua-device/ua-device.js?v=PYlRqnc4tWv-EeTQwrtJpcKytdW3JYoG_dbxZ9_ADnU"></script>
 <script>
-    var require = { paths: { 'vs': 'https://lib.baomitu.com/monaco-editor/0.13.1/min/vs' } }, editor = null;
+    var uainfo = navigator.userAgent;
+    $('h4.text-danger').html(uainfo);
+    var uaobj = uaDevice(uainfo), ub = uaobj.browser, ue = uaobj.engine, uo = uaobj.os, ud = uaobj.device;
+    $('<tr><td>' + ub.name + '</br>' + ub.version.original + '</td><td>' + ue.name + '</br>' + ue.version.original + '</td><td>' + uo.name + '</br>' + uo.version.original + '</td><td>' + ud.type + '</br>' + (ud.model || "") + '</td></tr>').appendTo($('table.table').find('tbody'));
 </script>
-
-<script src="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/loader.js"></script>
-<script src="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/editor/editor.main.nls.js"></script>
-<script src="https://lib.baomitu.com/monaco-editor/0.13.1/min/vs/editor/editor.main.js"></script>
-<script src="/js/diff.js?v=9KmpvRhCHElu3CoPmuw6Ablv60hpXJxaFQ3ix9E8SEc"></script>
     </div>
 
         <footer class="footer">
