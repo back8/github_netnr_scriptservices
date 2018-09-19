@@ -109,6 +109,10 @@
           "title": "JSON编辑器"
         },
         {
+          "url": "http://www.bejson.com/zhuanyi/",
+          "title": "JSON转义"
+        },
+        {
           "url": "speedtest",
           "icon": "/favicon.ico",
           "title": "网络测速"
@@ -119,12 +123,12 @@
           "title": "UserAgent用户终端信息"
         },
         {
-          "url": "https://run.netnr.com",
+          "url": "https://netnr.com/run",
           "icon": "/favicon.ico",
           "title": "NetnRun在线运行代码"
         },
         {
-          "url": "https://gist.netnr.com",
+          "url": "https://www.netnr.com/gist",
           "icon": "/favicon.ico",
           "title": "NetnrGist代码片段"
         },

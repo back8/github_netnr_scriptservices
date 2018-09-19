@@ -54,19 +54,20 @@ setTimeout(function () {
                 imgsrc = hs.join('/') + "/favicon.ico";
             }
         }
-        img[0].src = imgsrc;
+        var ci = new Image();
+        ci.src = imgsrc;
+        ci.onload = function () {
+            img[0].src = imgsrc;
+        }
     });
-}, 10)
-
+}, 1000)
 
 $('#txtSearch').val(localStorage["favorite-search"] || "");
 var defaultGroup = localStorage["favorite-group"] || "";
-if (defaultGroup != "") {
-    $('#seGroup').find('option').each(function () {
-        if (this.value == defaultGroup) {
-            $('#seGroup').val(this.value);
-            $('#btnSearch')[0].click();
-            return false;
-        }
-    });
-}
+$('#seGroup').find('option').each(function () {
+    if (this.value == defaultGroup) {
+        $('#seGroup').val(this.value);
+        $('#btnSearch')[0].click();
+        return false;
+    }
+});
