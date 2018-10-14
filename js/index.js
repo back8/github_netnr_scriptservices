@@ -33,10 +33,10 @@ $('#seGroup').change(function () {
     search($('#seGroup').val(), $('#txtSearch').val())
 });
 $('#btnSearch').click(function () {
+    localStorage["favorite-group"] = this.value;
     search($('#seGroup').val(), localStorage["favorite-search"] = $('#txtSearch').val())
 });
 $('#txtSearch').on('input', function () {
-    ;
     search($('#seGroup').val(), localStorage["favorite-search"] = $('#txtSearch').val())
 });
 
@@ -60,7 +60,13 @@ setTimeout(function () {
             img[0].src = imgsrc;
         }
     });
-}, 1000)
+}, 1000);
+
+$(document).dblclick(function () {
+    $('#txtSearch').val('');
+    $('#seGroup').val('');
+    $('#btnSearch')[0].click();
+});
 
 $('#txtSearch').val(localStorage["favorite-search"] || "");
 var defaultGroup = localStorage["favorite-group"] || "";
@@ -71,3 +77,4 @@ $('#seGroup').find('option').each(function () {
         return false;
     }
 });
+$('#txtSearch')[0].focus();
