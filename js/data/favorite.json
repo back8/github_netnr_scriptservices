@@ -189,6 +189,18 @@
           "remark": "js压缩，css压缩、美化、格式化、加密、解密、混淆，javascript代码压缩"
         },
         {
+          "url": "https://getman.cn/",
+          "icon": "https://getman.cn/img/icon.png",
+          "title": "Getman（HTTP请求）",
+          "remark": "API接口请求模拟测试工具,支持跨域本地接口,Postman网页版,在线Curl,自定义Header JSON接口调试 User-Agent Cookie,HTTP Request,GET POST PUT PATCH DELETE RESTful XML Android iOS OAuth"
+        },
+        {
+          "url": "https://tinypng.com/",
+          "icon": "https://tinypng.com/images/apple-touch-icon.png",
+          "title": "TinyPNG",
+          "remark": "Compress PNG images while preserving transparency"
+        },
+        {
           "url": "http://www.bejson.com/zhuanyi/",
           "title": "JSON转义"
         },
@@ -275,7 +287,7 @@
       ]
     },
     {
-      "group": "Git / Svn",
+      "group": "Git / Svn / Pages",
       "items": [
         {
           "url": "https://github.com/",
@@ -313,6 +325,18 @@
           "icon": "https://g.alicdn.com/aliyun/console/1.4.30/styles/images/favicon.ico",
           "title": "阿里云Code",
           "remark": "代码托管,Git,代码管理,协作开发,私有仓库,开源社区,淘蝌蚪,TaoCode"
+        },
+        {
+          "url": "https://www.netlify.com/",
+          "icon": "https://www.netlify.com/img/global/favicon/apple-touch-icon.png",
+          "title": "Netlify",
+          "remark": "Build, deploy, and manage modern web projects"
+        },
+        {
+          "url": "https://zeit.co/now",
+          "icon": "https://assets.zeit.co/image/upload/front/favicon/favicon-96x96.png",
+          "title": "Now",
+          "remark": "Global Serverless Deployments"
         }
       ]
     },
