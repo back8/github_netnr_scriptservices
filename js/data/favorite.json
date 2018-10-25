@@ -140,7 +140,7 @@
         },
         {
           "url": "https://md.netnr.com/",
-          "title": "netnrmd",
+          "title": "netnrmd编辑器",
           "remark": "markdown,netnrmd 组合编辑器，markdown语法解析基于remarkable，编辑与解析分离,调用任意markdown解析器都能完美的运行"
         },
         {
@@ -166,7 +166,12 @@
         {
           "url": "http://emoji.netnr.com/",
           "icon": "/favicon.ico",
-          "title": "Emoji表情"
+          "title": "emoji表情"
+        },
+        {
+          "url": "fanyi",
+          "icon": "/favicon.ico",
+          "title": "在线翻译"
         },
         {
           "url": "message",
@@ -480,7 +485,8 @@
           "remark": "Free SSL Certificate issued in less than a minute"
         },
         {
-          "url": "https://freessl.org/",
+          "url": "https://freessl.cn/",
+          "icon": "https://freessl.cn/static/favicon.ico",
           "title": "FreeSSL",
           "remark": "一个申请免费HTTPS证书的网站,免费HTTPS证书,免费SSL证书,免费证书"
         },
@@ -579,11 +585,56 @@
           "icon": "https://www.iciba.com/favicon.ico",
           "title": "爱词霸",
           "remark": "爱词霸在线翻译为您提供权威准确的在线翻译、英语英文翻译、中译英、日语翻译、fanyi等在线服务"
+        }
+      ]
+    },
+    {
+      "group": "VPS",
+      "items": [
+        {
+          "url": "https://www.bwh8.net/",
+          "icon": "/images/net.svg",
+          "title": "搬瓦工",
+          "remark": "Inexpensive VPS hosting on premium hardware with RAID-10 SAS disks and E5 CPUs. Premium Gigabit bandwidth"
         },
         {
-          "url": "fanyi",
-          "icon": "/favicon.ico",
-          "title": "在线翻译"
+          "url": "https://www.vultr.com/",
+          "title": "Vultr",
+          "remark": "VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Virtualization"
+        },
+        {
+          "url": "https://cloudcone.com/",
+          "icon": "/images/net.svg",
+          "title": "cloudcone",
+          "remark": "A robust cloud computing platform offering cloud and dedicated infrastructure for your online presence, fully managed by friendly humans"
+        },
+        {
+          "url": "http://www.impactvps.com/",
+          "title": "Impact VPS",
+          "remark": "Affordable Virtual Private Server Hosting In Seattle"
+        },
+        {
+          "url": "https://hostdare.com/",
+          "icon": "https://hostdare.com/img/favicon-32x32.png",
+          "title": "HostDare",
+          "remark": "Affordable Virtual Private Server Hosting In Seattle"
+        },
+        {
+          "url": "https://www.gigsgigscloud.com/",
+          "icon": "https://www.gigsgigscloud.com/wp-content/uploads/2016/10/favicon.ico",
+          "title": "gigsgigscloud",
+          "remark": "Hong Kong VPS, Malaysia VPS, Singapore VPS, Asia VPS, Cloud Hosting, Dedicated server, VPS, SSD Cloud, VPS Hosting, OpenVZ, KVM, Asia VPS, Dedicated Hosting"
+        },
+        {
+          "url": "https://hostodo.com/",
+          "icon": "https://hostodo.com/images/icons/favicon.png",
+          "title": "hostodo",
+          "remark": "Hostodo offers reliable and low-cost unmanaged virtual private server hosting for developers and system engineers. We offer OpenVZ container based virtualizaiton and KVM virtualization, all in 3 US based locations: Los Angeles, CA, Miami, FL, and Dallas, TX. Hostodo strives for quick, easy, and flexible service"
+        },
+        {
+          "url": "https://www.zhujiceping.com/",
+          "title": "国外主机测评",
+          "remark": "本站介绍：国外VPS，国外服务器，国外主机的相关优惠信息、商家背景、网络带宽、线路走法、售前和售后技术支持等，是目前最好的一家国外主机评测平台"
         }
       ]
     },
