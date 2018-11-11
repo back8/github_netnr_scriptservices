@@ -16,6 +16,11 @@ function QueryDomainName() {
         })
         return
     }
+    var h = 140, w = 480, sh = (window.screen.availHeight - h) / 2, sw = (window.screen.availWidth - w) / 2;
+    var url = "https://www.sojson.com/api/beian/" + encodeURIComponent($("#txtSearch").val());
+    window.open(url, 'domain', 'height=' + h + ', width=' + w + ', top=' + sh + ', left=' + sw + ', toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');
+    return false;
+
     loading();
     ss.ajax({
         url: "https://www.sojson.com/api/beian/" + encodeURIComponent($("#txtSearch").val()),
