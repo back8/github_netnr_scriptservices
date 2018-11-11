@@ -223,6 +223,11 @@
           "url": "https://app.xunjiepdf.com/",
           "title": "迅捷转换器",
           "remark": "迅捷在线pdf转word转换器免费版为您提供将PDF转换成WORD,word转换成pdf,ppt转换成pdf的免费在线转换服务；是一款完全免费的在线转换工具，在线免费完成PDF与word的转换体验，绿色小巧、无需安装"
+        },
+        {
+          "url": "https://nofile.io/",
+          "title": "NoFile",
+          "remark": "Upload files, videos and images up to 10 GB without any limitations or needing to register"
         }
       ]
     },
@@ -585,6 +590,17 @@
           "icon": "https://www.iciba.com/favicon.ico",
           "title": "爱词霸",
           "remark": "爱词霸在线翻译为您提供权威准确的在线翻译、英语英文翻译、中译英、日语翻译、fanyi等在线服务"
+        }
+      ]
+    },
+    {
+      "group": "个人站点",
+      "items": [
+        {
+          "url": "https://teddysun.com/",
+          "icon": "/images/net.svg",
+          "title": "秋水逸冰",
+          "remark": "秋水逸冰"
         }
       ]
     },
