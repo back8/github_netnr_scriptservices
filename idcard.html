@@ -22,26 +22,58 @@
     <script src="https://lib.baomitu.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
     </script>
 <script>($.fn.emulateTransitionEnd||document.write("\u003Cscript src=\u0022https:\/\/static.netnr.com\/lib\/bootstrap\/3.3.7\/js\/bootstrap.min.js\u0022\u003E\u003C\/script\u003E"));</script>
-    <link href="/css/global.css?v=bDWvdt16ii20SOyhaKY1BZy6c3a_sJU87QmBnVeqT7Y" rel="stylesheet" />
-    <script src="/js/global.js?v=FWDDCQgx8cIlp0RtxyrGdwcsYJ25JA0ktggb9qWaCIw"></script>
+    <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<meta name="x-stylesheet-fallback-test" content="" class="fa" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("display","inline-block",["https:\/\/static.netnr.com\/lib\/font-awesome\/4.7.0\/css\/font-awesome.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+    <link href="/css/global.css?v=5WHsqVWW3g9h8axLLvnu4FxPBGIKZTMYg2fFAthWUo0" rel="stylesheet" />
+    <script src="/js/global.js?v=4cRRqedU_rFUz6lbeqJPonj23vyiRnvGYB4RH_fq5Ig"></script>
     <script src="/js/jz/jz.min.js?v=LQvPjEmTgtZ-qcu_4JSfOJgI_SO_QBUKWOMvMvk3f2c"></script>
 </head>
 <body>
-        <nav class="navbar navtop">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <a href="https://www.netnr.com" class="siteIcon pull-left"><img src="/favicon.svg" /></a>
-                        <ul class="list-inline navul pull-left mt15">
-                            <li><a href="https://www.netnr.com">首页</a></li>
-                            <li><a href="/">服务</a></li>
-                            <li><a href="https://www.netnr.com/gist" title="代码片段">Gist</a></li>
-                            <li><a href="https://www.netnr.com/run" title="在线写代码">Run</a></li>
+        <button type="button" class="MenuToggle show-in-mobile btn btn-primary">
+            <span class="fa fa-align-justify fa-2x"></span>
+        </button>
+        <div id="netnrnav" class="netnrnav horizontal">
+            <div class="netnrnav-wrapper">
+                <ul>
+                    <li><a href="https://www.netnr.com" class="siteIcon"><img src="/favicon.svg" /> 首页</a></li>
+                    <li><a href="/" title="Script Services"><span class="fa fa-fw fa-wrench"></span> 服务</a></li>
+                    <li><a href="https://www.netnr.com/gist" title="代码片段"><span class="fa fa-fw fa-code"></span> Gist</a></li>
+                    <li><a href="https://www.netnr.com/run" title="在线运行代码"><span class="fa fa-fw fa-play"></span> Run</a></li>
+                    <li>
+                        <a class="text-muted"><span class="fa fa-fw fa-external-link"></span> 子站 <span class="indicator fa fa-sort-desc"></span></a>
+                        <ul>
+                            <li><a target="_blank" href="https://rf.netnr.com">netnrf 响应式框架 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://md.netnr.com">netnrmd 编辑器 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://nav.netnr.com">netnrnav 导航 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://gs.netnr.com">GitStore 图床 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://json.netnr.com">JSON 编辑器 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://jz.netnr.com">Jz 弹窗插件 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://emoji.netnr.com">Emoji 表情 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://jcute.netnr.com">jCute 脚本 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://ad.netnr.com">API 文档 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://chat.netnr.com">Chat 聊天 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li class="divider"></li>
+                            <li><a target="_blank" href="https://v.netnr.com">VIP 视频解析 &nbsp;<span class="fa fa-external-link"></span></a></li>
                         </ul>
-                    </div>
-                </div>
+                    </li>
+                    <li>
+                        <a class="text-muted"><span class="fa fa-fw fa-ellipsis-h"></span> 更多 <span class="indicator fa fa-sort-desc"></span></a>
+                        <ul>
+                            <li><a href="https://www.netnr.com/mix/about">关于</a></li>
+                            <li><a href="https://www.netnr.com/lab">实验室</a></li>
+                            <li><a href="https://www.netnr.com/store">云存储</a></li>
+                            <li class="divider"></li>
+                            <li><a target="_blank" href="https://ss.netnr.com/contact">联系 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" href="https://ss.netnr.com/message">留言 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li class="divider"></li>
+                            <li><a target="_blank" title="码云" href="https://gitee.com/netnr">Gitee &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" title="GitHub" href="https://github.com/netnr">GitHub &nbsp;<span class="fa fa-external-link"></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+        <div style="height:30px;"></div>
     <div class="bodym">
         <div class="container">
     <div class="row">

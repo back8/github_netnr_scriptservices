@@ -76,7 +76,7 @@
         {
           "url": "https://gs.netnr.com",
           "icon": "/favicon.ico",
-          "title": "Git图床"
+          "title": "GitStore图床"
         },
         {
           "url": "https://v.netnr.com",
@@ -146,7 +146,7 @@
         {
           "url": "http://jz.netnr.com/",
           "icon": "/favicon.ico",
-          "title": "jz弹窗插件"
+          "title": "Jz弹窗插件"
         },
         {
           "url": "http://jcute.netnr.com/",
@@ -166,7 +166,7 @@
         {
           "url": "http://emoji.netnr.com/",
           "icon": "/favicon.ico",
-          "title": "emoji表情"
+          "title": "Emoji表情"
         },
         {
           "url": "fanyi",
@@ -210,11 +210,6 @@
           "title": "JSON转义"
         },
         {
-          "url": "https://webftp.zzbaike.com/",
-          "title": "WEBFTP",
-          "remark": "站长百科提供的在线FTP服务"
-        },
-        {
           "url": "https://www.idocv.com/",
           "title": "在线文档预览",
           "remark": "在线文档预览(doc,docx,xls,xlsx,ppt,pptx,pdf等)|压缩文件在线预览(zip,rar,tar,7z等)|图纸文件在线预览(dwg,dxf,dwf)|图片文件在线预览|音视频播放|在线协作编辑|同步展示等"
@@ -223,11 +218,6 @@
           "url": "https://app.xunjiepdf.com/",
           "title": "迅捷转换器",
           "remark": "迅捷在线pdf转word转换器免费版为您提供将PDF转换成WORD,word转换成pdf,ppt转换成pdf的免费在线转换服务；是一款完全免费的在线转换工具，在线免费完成PDF与word的转换体验，绿色小巧、无需安装"
-        },
-        {
-          "url": "https://nofile.io/",
-          "title": "NoFile",
-          "remark": "Upload files, videos and images up to 10 GB without any limitations or needing to register"
         }
       ]
     },
