@@ -122,23 +122,12 @@ $(function () {
 
 var ss = {
     ajax: function (obj) {
-        obj.data = {
-            q: "select * from json where url='" + ss.csqm(obj.url) + "'"
-        };
-        obj.url = "https://query.yahooapis.com/v1/public/yql?format=json";
+        obj.url = "https://bird.ioliu.cn/v2?url=" + encodeURIComponent(obj.url);
         $.ajax(obj);
     },
     datalocation: function (data) {
-        if (data.query.results) {
-            data = data.query.results.json;
-            if (data.json) {
-                data = data.json;
-            }
-            return data;
-        } else {
-            loading(0);
-            return {};
-        }
+        return data || {};
+        loading(0);
     },
     csqm: function (q) {
         return q.replace(/\'/g, "\\'");
