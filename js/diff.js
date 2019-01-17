@@ -14,7 +14,14 @@ function createDiffEditor(text1, text2) {
         var originalModel = monaco.editor.createModel(text1 || "", "text/plain");
         var modifiedModel = monaco.editor.createModel(text2 || "", "text/plain");
         editor = monaco.editor.createDiffEditor(document.getElementById("editor"), {
-            automaticLayout: true
+            automaticLayout: true,
+            scrollbar: {
+                verticalScrollbarSize: 6,
+                horizontalScrollbarSize: 6
+            },
+            minimap: {
+                enabled: false
+            }
         });
         editor.setModel({
             original: originalModel,

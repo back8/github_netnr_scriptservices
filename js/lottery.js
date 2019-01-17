@@ -26,8 +26,8 @@ function QueryLottery() {
                     }
 
                     htm.push(
-                        '<div class="col-md-4 col-sm-6 col-xs-12"><div class="panel panel-primary"><div class="panel-body">'
-                        + '<div class="et"><label>' + this.lotteryExpect + '</label> <small> ' + formatDateTime(this.ernieDate).substr(0, 10) + '</small></div>'
+                        '<div class="col-md-4 col-sm-6 mt-2 mb-2"><div class="card card-secondary"><div class="py-2 px-2">'
+                        + '<div class="et"><label class="h5 mr-2">' + this.lotteryExpect + '</label><small>' + formatDateTime(this.ernieDate).substr(0, 10) + '</small></div>'
                         + spans1 + spans2
                         + '</div></div></div>'
                     );

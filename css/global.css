@@ -14,6 +14,11 @@
             color: #009a61;
         }
 
+
+.form-control:focus, .custom-select:focus {
+    box-shadow: none;
+}
+
 /*顶部导航*/
 .navtop {
     z-index: 9;
@@ -62,8 +67,8 @@
     margin-bottom: 15px;
 }
 
-    .netnrnav .netnrnav-wrapper > ul.pull-right,
-    .netnrnav .netnrnav-wrapper-fluid > ul.pull-right {
+    .netnrnav .netnrnav-wrapper > ul.float-right,
+    .netnrnav .netnrnav-wrapper-fluid > ul.float-right {
         float: none !important;
     }
 
@@ -71,7 +76,6 @@
 .netnrnav ul li a {
     width: 100%;
     height: 100%;
-    font-size: 16px;
     white-space: nowrap;
     display: inline-block;
 }
@@ -202,8 +206,8 @@
     width: 100%;
     clear: both;
     z-index: 999;
-    min-height: 46px;
-    background-color: #fffcf5;
+    min-height: 48px;
+    border-top: 3px solid #009a61;
     box-shadow: 0 0 8px 0 rgba(0,0,0,0.1), 0 1px rgba(0,0,0,0.1);
 }
 
@@ -223,7 +227,7 @@
 
 @media (min-width: 768px) {
     .netnrnav.horizontal .netnrnav-wrapper {
-        width: 750px;
+        width: 730px;
     }
 }
 
@@ -235,7 +239,7 @@
 
 @media (min-width: 1200px) {
     .netnrnav.horizontal .netnrnav-wrapper {
-        width: 1170px;
+        width: 1140px;
     }
 }
 
@@ -282,19 +286,19 @@
                     border: 1px solid #e5e5e5;
                 }
 
-    .netnrnav.horizontal .netnrnav-wrapper > ul.pull-right,
-    .netnrnav.horizontal .netnrnav-wrapper-fluid > ul.pull-right {
+    .netnrnav.horizontal .netnrnav-wrapper > ul.float-right,
+    .netnrnav.horizontal .netnrnav-wrapper-fluid > ul.float-right {
         float: right !important;
     }
 
-        .netnrnav.horizontal .netnrnav-wrapper > ul.pull-right > li > ul,
-        .netnrnav.horizontal .netnrnav-wrapper-fluid > ul.pull-right > li > ul {
+        .netnrnav.horizontal .netnrnav-wrapper > ul.float-right > li > ul,
+        .netnrnav.horizontal .netnrnav-wrapper-fluid > ul.float-right > li > ul {
             right: 0;
             left: auto;
         }
 
-            .netnrnav.horizontal .netnrnav-wrapper > ul.pull-right > li > ul > li ul,
-            .netnrnav.horizontal .netnrnav-wrapper-fluid > ul.pull-right > li > ul > li ul {
+            .netnrnav.horizontal .netnrnav-wrapper > ul.float-right > li > ul > li ul,
+            .netnrnav.horizontal .netnrnav-wrapper-fluid > ul.float-right > li > ul > li ul {
                 left: -101%;
             }
 
@@ -339,22 +343,6 @@
     min-height: 300px;
 }
 
-.mb15 {
-    margin-bottom: 15px;
-}
-
-.mt15 {
-    margin-top: 15px;
-}
-
-.ml15 {
-    margin-left: 15px;
-}
-
-.mr15 {
-    margin-right: 15px;
-}
-
 .loading {
     position: fixed;
     top: 0;
@@ -362,12 +350,12 @@
     right: 0;
     bottom: 0;
     z-index: 9999;
+    background-image: url('/images/loading.svg');
     background-repeat: no-repeat;
-    background-position: 48% 45%;
-    background-color: rgba(255, 255, 255, 0.05);
-    background-image: url('/images/loading.gif');
+    background-position: 49% 49%
 }
 
+/*返回顶部*/
 .totop {
     position: fixed;
     z-index: 2;
@@ -380,6 +368,7 @@
     border-radius: 6px;
     text-align: center;
     border: 1px solid #ddd;
+    line-height: 1.42857143;
     color: #009a61 !important;
     text-decoration: none !important;
     background-color: rgba(217, 217, 217, .5);

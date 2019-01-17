@@ -29,7 +29,7 @@ function QueryWeather(cityCode) {
             data = ss.datalocation(data);
             if (data.desc == "OK") {
                 var jsons = data.data.forecast,
-                    htm = '<h4><em>' + data.data.city + '</em>实时温度：<b>' + data.data.wendu + '℃</b></h4>';
+                    htm = '<div class="col-sm-12"><em>' + data.data.city + '</em>实时温度：<b>' + data.data.wendu + '℃</b></div>';
                 for (var i in jsons) {
                     var lx = jsons[i].type,
                         fx = jsons[i].fengxiang,
@@ -39,7 +39,7 @@ function QueryWeather(cityCode) {
                         rq = jsons[i].date;
                     i == 0 && (rq = '今日天气');
 
-                    htm += '<div class="col-md-4 col-sm-6 col-xs-12">'
+                    htm += '<div class="col-md-4 col-sm-6">'
                         + '<b>' + rq + '</b>'
                         + '<strong>' + lx + '</strong><br/>'
                         + '<span>' + fl + '</span>'
@@ -47,17 +47,10 @@ function QueryWeather(cityCode) {
                         + '<span>' + gw + '</span>'
                         + '</div>';
                 }
-                htm += '<div class="col-md-4 col-sm-6 col-xs-12">' + data.data.ganmao + '</div>';
+                htm += '<div class="col-md-4 col-sm-6">' + data.data.ganmao + '</div>';
                 $("#divweather").html(htm);
             } else {
-                jz.tip({
-                    target: "#txtSearch",
-                    content: "没有【" + cityName + "】的天气信息",
-                    time: 4,
-                    align: "top",
-                    blank: true,
-                    focus: true
-                })
+                jz.alert("查询失败")
             }
         },
         error: function () {
@@ -81,9 +74,9 @@ function AutoLoadWeatherCode(value) {
     var htmls = [];
     if (value == "") {
         $(WeatherCode).each(function () {
-            htmls.push('<div class="panel panel-default">');
-            htmls.push('<div style="padding:5px 0 0 8px;font-weight:bold">' + this.city + '</div>');
-            htmls.push('<div class="panel-body">');
+            htmls.push('<div class="card mb-3">');
+            htmls.push('<div class="card-body">');
+            htmls.push('<h5 class="card-title">' + this.city + '</h4>');
             $(this.citys).each(function () {
                 htmls.push('<a href="javascript:void(0)" data-code="' + this.code + '" >' + this.name + '</a>');
             });
@@ -98,9 +91,9 @@ function AutoLoadWeatherCode(value) {
                 }
             });
             if (children.length) {
-                htmls.push('<div class="panel panel-default">');
-                htmls.push('<div style="padding:5px 0 0 8px;font-weight:bold">' + this.city + '</div>');
-                htmls.push('<div class="panel-body">');
+                htmls.push('<div class="card mb-3">');
+                htmls.push('<div class="card-body">');
+                htmls.push('<h5 class="card-title">' + this.city + '</h4>');
                 htmls.push(children.join(''));
                 htmls.push('</div></div>');
             }

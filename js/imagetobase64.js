@@ -18,7 +18,7 @@ $('#btnBase64ToImage').click(function () {
     $('#viewBase64').html('<img src="' + $('#txtBase64').val() + '" style="max-width:100%" />');
 });
 
-$(window).load(function () {
+$(window).on('load', function () {
     if (typeof (FileReader) === 'undefined') {
         jz.alert("你的浏览器不支持 FileReader <br />请使用现代浏览器操作！");
         $('#txtFile')[0].disabled = true;

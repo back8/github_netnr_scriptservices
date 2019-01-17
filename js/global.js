@@ -113,10 +113,12 @@
     };
 })($);
 
-var nnv = $('#netnrnav');
-if (nnv.length) {
-    $('.MenuToggle').click(nnv.netnrnav().toggle);
-}
+$(function () {
+    var nnv = $('#netnrnav');
+    if (nnv.length) {
+        $('.MenuToggle').click(nnv.netnrnav().toggle);
+    }
+});
 
 var ss = {
     ajax: function (obj) {

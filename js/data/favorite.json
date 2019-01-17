@@ -512,6 +512,7 @@
       "items": [
         {
           "url": "https://cdn.baomitu.com/",
+          "icon": "https://s2.ssl.qhres.com/static/2b10def9f0fc3c61.svg",
           "title": "75CDN",
           "remark": "360前端静态资源库"
         },
@@ -579,12 +580,6 @@
           "icon": "https://shared.ydstatic.com/images/favicon.ico",
           "title": "有道翻译",
           "remark": "在线文档预览(doc,docx,xls,xlsx,ppt,pptx,pdf等)|压缩文件在线预览(zip,rar,tar,7z等)|图纸文件在线预览(dwg,dxf,dwf)|图片文件在线预览|音视频播放|在线协作编辑|同步展示等"
-        },
-        {
-          "url": "http://fy.iciba.com/",
-          "icon": "https://www.iciba.com/favicon.ico",
-          "title": "爱词霸",
-          "remark": "爱词霸在线翻译为您提供权威准确的在线翻译、英语英文翻译、中译英、日语翻译、fanyi等在线服务"
         }
       ]
     },
@@ -637,10 +632,10 @@
           "remark": "Hong Kong VPS, Malaysia VPS, Singapore VPS, Asia VPS, Cloud Hosting, Dedicated server, VPS, SSD Cloud, VPS Hosting, OpenVZ, KVM, Asia VPS, Dedicated Hosting"
         },
         {
-          "url": "https://hostodo.com/",
-          "icon": "https://hostodo.com/images/icons/favicon.png",
-          "title": "hostodo",
-          "remark": "Hostodo offers reliable and low-cost unmanaged virtual private server hosting for developers and system engineers. We offer OpenVZ container based virtualizaiton and KVM virtualization, all in 3 US based locations: Los Angeles, CA, Miami, FL, and Dallas, TX. Hostodo strives for quick, easy, and flexible service"
+          "url": "https://common-buy.aliyun.com/?commodityCode=swas&regionId=cn-hongkong#/buy",
+          "icon": "https://www.aliyun.com/favicon.ico",
+          "title": "阿里云轻量服务器",
+          "remark": "轻量应用服务器-购买-阿里云"
         },
         {
           "url": "https://www.zhujiceping.com/",

@@ -1,4 +1,4 @@
-﻿var page = 1, pageSize = 18, type = 'latest';
+﻿var page = 1, pageSize = 9, type = 'latest';
 
 function queryP() {
     try {
@@ -122,25 +122,25 @@ function PageControlMake(json) {
     var pi = json.page, ps = json.pageSize, total = json.total, pc = Math.ceil(total / ps),
         txtHtml = '第 ' + (total == 0 ? 0 : pi) + ' 页，共 ' + pc + '页，共 ' + total + ' 条记录',
         btnHtml = '<ul class="pagination">'
-            + '<li><a href="javascript:void(0)" >«</a></li>';
+            + '<li class="page-item"><a class="page-link" class="page-link" href="javascript:void(0)" >«</a></li>';
     pi = parseInt(pi);
     if (total) {
         if (pc < 3) {
             for (var i = 1; i <= pc; i++) {
-                btnHtml += '<li><a href="javascript:void(0)">' + i + '</a></li>';
+                btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">' + i + '</a></li>';
             }
         } else {
-            btnHtml += '<li><a href="javascript:void(0)">1</a></li>';
-            pi - 3 > 1 && (btnHtml += '<li><a href="javascript:void(0)">...</a></li>');
-            pi - 2 > 1 && (btnHtml += '<li><a href="javascript:void(0)">' + (pi - 2) + '</a></li>');
-            pi - 1 > 1 && (btnHtml += '<li><a href="javascript:void(0)">' + (pi - 1) + '</a></li>');
-            pi > 1 && pi < pc && (btnHtml += '<li><a href="javascript:void(0)">' + pi + '</a></li>');
-            pi + 1 < pc && (btnHtml += '<li><a href="javascript:void(0)">' + (pi + 1) + '</a></li>');
-            pi + 2 < pc && (btnHtml += '<li><a href="javascript:void(0)">' + (pi + 2) + '</a></li>');
-            pi + 3 < pc && (btnHtml += '<li><a href="javascript:void(0)">...</a></li>');
-            btnHtml += '<li><a href="javascript:void(0)">' + pc + '</a></li>';
+            btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>';
+            pi - 3 > 1 && (btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">...</a></li>');
+            pi - 2 > 1 && (btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">' + (pi - 2) + '</a></li>');
+            pi - 1 > 1 && (btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">' + (pi - 1) + '</a></li>');
+            pi > 1 && pi < pc && (btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">' + pi + '</a></li>');
+            pi + 1 < pc && (btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">' + (pi + 1) + '</a></li>');
+            pi + 2 < pc && (btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">' + (pi + 2) + '</a></li>');
+            pi + 3 < pc && (btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">...</a></li>');
+            btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)">' + pc + '</a></li>';
         }
-        btnHtml += '<li><a href="javascript:void(0)" >»</a></li></ul>';
+        btnHtml += '<li class="page-item"><a class="page-link" href="javascript:void(0)" >»</a></li></ul>';
     } else {
         btnHtml = '';
     }

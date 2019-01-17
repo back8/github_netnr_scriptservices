@@ -79,7 +79,7 @@
     },
     //拼接容器
     JoinBox: function (content, pu) {
-        return "<div class='col-xs-12 col-md-6 " + (pu ? "pu" : "") + " '>" + content + "</div>";
+        return "<div class='col-sm-12 col-md-6 " + (pu ? "pu" : "") + " '>" + content + "</div>";
     },
     //呈现
     RenderView: function (json) {
@@ -154,7 +154,7 @@ $('#divWP').click(function (e) {
 });
 
 //初始化载入最新
-$(window).load(function () {
+$(window).on('load', function () {
     var dtype = location.hash;
     $('#ulType').find('a').each(function () {
         if (this.hash == dtype) {

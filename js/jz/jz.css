@@ -8,9 +8,9 @@
     line-height: 150%;
     box-sizing: border-box;
     background-color: #fff;
-    border: 1px solid #b4b4b4;
-    box-shadow: 0 0 4px #b4b4b4;
+    border: 1px solid white;
     font-family: Microsoft YaHei;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,.175);
 }
 
 
@@ -27,7 +27,7 @@
         line-height: 40px;
         white-space: nowrap;
         background-color: #f9f9f9;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #dedede;
     }
 
         .jzart .jzart-header .jzart-header-title {
@@ -86,7 +86,7 @@
         cursor: pointer;
         margin-left: 15px;
         text-align: center;
-        border-radius: 4px;
+        border-radius: 3px;
         white-space: nowrap;
         display: inline-block;
         padding: 0.5em 0.85em;
@@ -96,27 +96,26 @@
     /*确定按钮*/
     .jzart .art-ok {
         color: #fff;
-        background-color: #337ab7;
+        background-color: #009a61;
     }
 
         .jzart .art-ok:hover, .jzart .art-ok:active {
             text-decoration: none;
             border-color: #204d74;
-            background-color: #286090;
+            background-color: #0fc17f;
         }
 
     /*取消按钮*/
     .jzart .art-cancel {
         color: #333;
         background-color: #fff;
-        border: 1px solid #cccccc;
+        border: 1px solid #efe8e8;
     }
 
         .jzart .art-cancel:hover, .jzart .art-cancel:active {
             color: #333;
             text-decoration: none;
-            border: 1px solid #999;
-            background-color: #f2f2f2;
+            background-color: #f5f5f5;
         }
 
     /*  小提示 三角符号*/
@@ -136,28 +135,28 @@
         left: 15px;
         bottom: -13px;
         border-left-style: solid;
-        border-left-color: #337ab7;
+        border-left-color: #009a61;
     }
     /* 右 */
     .jzart .em-right {
         top: 15px;
         left: -13px;
         border-top-style: solid;
-        border-top-color: #337ab7;
+        border-top-color: #009a61;
     }
     /* 左 */
     .jzart .em-left {
         top: 15px;
         right: -13px;
         border-top-style: solid;
-        border-top-color: #337ab7;
+        border-top-color: #009a61;
     }
     /* 下 */
     .jzart .em-bottom {
         top: -13px;
         left: 15px;
         border-left-style: solid;
-        border-left-color: #337ab7;
+        border-left-color: #009a61;
     }
 
 /* msg */
@@ -165,8 +164,7 @@
     color: #fff;
     font-size: 1.2em;
     border-radius: 4px;
-    background-color: #337ab7;
-    box-shadow: 0 0 2px #2a78eb;
+    background-color: #009a61;
 }
 
 /*  遮罩层 */

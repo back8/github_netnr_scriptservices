@@ -18,6 +18,10 @@ require(['vs/editor/editor.main'], function () {
         language: defaultLang,
         automaticLayout: true,
         theme: defaultTheme,
+        scrollbar: {
+            verticalScrollbarSize: 6,
+            horizontalScrollbarSize: 6
+        },
         minimap: {
             _enabled: false
         }

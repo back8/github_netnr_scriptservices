@@ -106,7 +106,7 @@
         color: red;
         z-index: 2;
         right: 15px;
-        font-size: 3em;
+        font-size: 3rem;
         cursor: pointer;
         text-decoration: none;
     }
