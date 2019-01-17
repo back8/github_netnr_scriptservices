@@ -4,27 +4,27 @@
     fb.find('a').each(function () {
         if (keywords != "") {
             if (this.innerHTML.toLowerCase().indexOf(keywords) >= 0 || this.title.toLowerCase().indexOf(keywords) >= 0 || this.href.toLowerCase().indexOf(keywords) >= 0) {
-                $(this).parent().removeClass('hidden');
+                $(this).parent().removeClass('d-none');
             } else {
-                $(this).parent().addClass('hidden');
+                $(this).parent().addClass('d-none');
             }
         } else {
-            $(this).parent().removeClass('hidden');
+            $(this).parent().removeClass('d-none');
         }
     });
     fb.children().each(function () {
         if (group != "") {
             if ($(this).attr('data-group') == group) {
-                $(this).removeClass('hidden');
+                $(this).removeClass('d-none');
             } else {
-                $(this).addClass('hidden');
+                $(this).addClass('d-none');
             }
         } else {
-            $(this).removeClass('hidden');
+            $(this).removeClass('d-none');
         }
         var ga = $(this).find('div.mba');
-        if (ga.length == ga.filter('.hidden').length) {
-            $(this).addClass('hidden');
+        if (ga.length == ga.filter('.d-none').length) {
+            $(this).addClass('d-none');
         }
     });
 }
