@@ -37,11 +37,11 @@
         filter: alpha(opacity=90);
     }
 
-    .dnav .dropdown {
+    .dnav .btn-group {
         margin-right: 15%;
     }
 
-    .dnav ul {
+    .dnav .dropdown-menu {
         min-width: 110px;
     }
 

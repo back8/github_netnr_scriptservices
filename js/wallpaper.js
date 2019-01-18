@@ -132,7 +132,7 @@
 };
 
 //点击分类
-$('#ulType').click(function (e) {
+$('#dmType').click(function (e) {
     e = e || window.event;
     var target = e.target || e.srcElement;
     if (target.nodeName == "A") {
@@ -156,7 +156,7 @@ $('#divWP').click(function (e) {
 //初始化载入最新
 $(window).on('load', function () {
     var dtype = location.hash;
-    $('#ulType').find('a').each(function () {
+    $('#dmType').find('a').each(function () {
         if (this.hash == dtype) {
             config.cid = dtype.substring(1);
             document.title = this.innerHTML + " 在线壁纸 NET牛人";
