@@ -215,14 +215,20 @@
           "title": "JSON转义"
         },
         {
-          "url": "https://www.idocv.com/",
-          "title": "在线文档预览",
-          "remark": "在线文档预览(doc,docx,xls,xlsx,ppt,pptx,pdf等)|压缩文件在线预览(zip,rar,tar,7z等)|图纸文件在线预览(dwg,dxf,dwf)|图片文件在线预览|音视频播放|在线协作编辑|同步展示等"
+          "url": "https://www.ilovepdf.com/zh_cn",
+          "icon": "https://www.ilovepdf.com/images/favicons/favicon-16x16.png",
+          "title": "iLovePDF",
+          "remark": "iLovePDF网站提供PDF文件在线转换服务。它完全免费，而且使用方便。无论是合并PDF文件、拆分PDF文件、压缩PDF文件、Office文件转换为PDF文件，还是PDF转换为JPG图片等，iLovePDF都能满足您的需求！"
         },
         {
           "url": "https://app.xunjiepdf.com/",
           "title": "迅捷转换器",
           "remark": "迅捷在线pdf转word转换器免费版为您提供将PDF转换成WORD,word转换成pdf,ppt转换成pdf的免费在线转换服务；是一款完全免费的在线转换工具，在线免费完成PDF与word的转换体验，绿色小巧、无需安装"
+        },
+        {
+          "url": "https://www.idocv.com/",
+          "title": "在线文档预览",
+          "remark": "在线文档预览(doc,docx,xls,xlsx,ppt,pptx,pdf等)|压缩文件在线预览(zip,rar,tar,7z等)|图纸文件在线预览(dwg,dxf,dwf)|图片文件在线预览|音视频播放|在线协作编辑|同步展示等"
         }
       ]
     },
@@ -322,6 +328,7 @@
         },
         {
           "url": "https://try.gogs.io/",
+          "icon": "https://try.gogs.io/img/favicon.png",
           "title": "Gogs",
           "remark": "Gogs is a painless self-hosted Git service"
         },
@@ -512,7 +519,7 @@
       "items": [
         {
           "url": "https://cdn.baomitu.com/",
-          "icon": "https://s2.ssl.qhres.com/static/2b10def9f0fc3c61.svg",
+          "icon": "https://lib.baomitu.com/favicon.ico",
           "title": "75CDN",
           "remark": "360前端静态资源库"
         },
@@ -588,7 +595,7 @@
       "items": [
         {
           "url": "https://teddysun.com/",
-          "icon": "/images/net.svg",
+          "icon": "https://gs.zme.ink/2019/01/29/080317b91d.png",
           "title": "秋水逸冰",
           "remark": "秋水逸冰"
         }
@@ -610,12 +617,13 @@
         },
         {
           "url": "https://cloudcone.com/",
-          "icon": "/images/net.svg",
+          "icon": "https://gs.zme.ink/2019/01/29/075644775f.png",
           "title": "cloudcone",
           "remark": "A robust cloud computing platform offering cloud and dedicated infrastructure for your online presence, fully managed by friendly humans"
         },
         {
           "url": "http://www.impactvps.com/",
+          "icon": "http://www.impactvps.com/favicon.ico",
           "title": "Impact VPS",
           "remark": "Affordable Virtual Private Server Hosting In Seattle"
         },
@@ -711,6 +719,7 @@
         },
         {
           "url": "http://tools.jb51.net/regex/javascript",
+          "icon": "http://tools.jb51.net/favicon.ico",
           "title": "脚本之家正则表达式",
           "remark": "脚本之家在线工具，本工具提供了多个版本的JS正则在线测试工具，每一个版本都各具特色，功能不一，欢迎大家使用"
         },

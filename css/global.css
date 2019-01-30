@@ -1,4 +1,13 @@
-﻿.dropdown-menu {
+﻿body {
+    font-family: -apple-system,"helvetica neue",helvetica,arial,"pingfang sc","hiragino sans gb","wenquanyi micro hei","microsoft yahei",sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.form-control:focus, .custom-select:focus {
+    box-shadow: none;
+}
+
+.dropdown-menu {
     border: none;
     min-width: initial;
     border-radius: initial;
