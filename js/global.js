@@ -122,7 +122,7 @@ $(function () {
 
 var ss = {
     ajax: function (obj) {
-        obj.url = "https://bird.ioliu.cn/v2?url=" + encodeURIComponent(obj.url);
+        obj.url = "https://proxy.netnr.com/" + obj.url;
         $.ajax(obj);
     },
     datalocation: function (data) {
