@@ -19,11 +19,6 @@
           "title": "文本对比"
         },
         {
-          "url": "domainname",
-          "icon": "/favicon.ico",
-          "title": "域名备案信息查询"
-        },
-        {
           "url": "idcard",
           "icon": "/favicon.ico",
           "title": "身份证号码查询"
@@ -34,39 +29,14 @@
           "title": "生成二维码"
         },
         {
-          "url": "lottery",
-          "icon": "/favicon.ico",
-          "title": "彩票查询"
-        },
-        {
           "url": "express",
           "icon": "/favicon.ico",
           "title": "快递查询"
         },
         {
-          "url": "wallpaper",
-          "icon": "/favicon.ico",
-          "title": "壁纸"
-        },
-        {
-          "url": "laifudao",
-          "icon": "/favicon.ico",
-          "title": "来福岛笑话"
-        },
-        {
-          "url": "qiushibaike",
-          "icon": "/favicon.ico",
-          "title": "糗事百科笑话"
-        },
-        {
           "url": "symbol",
           "icon": "/favicon.ico",
           "title": "符号大全"
-        },
-        {
-          "url": "weather",
-          "icon": "/favicon.ico",
-          "title": "天气预报"
         },
         {
           "url": "bed",
@@ -124,7 +94,7 @@
           "title": "JS行政区划"
         },
         {
-          "url": "cntoen",
+          "url": "pinyin",
           "icon": "/favicon.ico",
           "title": "JS汉字转拼音"
         },
@@ -174,11 +144,6 @@
           "title": "Emoji表情"
         },
         {
-          "url": "fanyi",
-          "icon": "/favicon.ico",
-          "title": "在线翻译"
-        },
-        {
           "url": "message",
           "icon": "/favicon.ico",
           "title": "留言"
@@ -187,6 +152,41 @@
           "url": "contact",
           "icon": "/favicon.ico",
           "title": "联系"
+        }
+      ]
+    },
+    {
+      "group": "跨域服务",
+      "items": [
+        {
+          "url": "http://proxy.netnr.com/",
+          "icon": "/favicon.ico",
+          "title": "HTTP跨域代理"
+        },
+        {
+          "url": "domainname",
+          "icon": "/favicon.ico",
+          "title": "域名备案信息查询"
+        },
+        {
+          "url": "lottery",
+          "icon": "/favicon.ico",
+          "title": "彩票查询"
+        },
+        {
+          "url": "wallpaper",
+          "icon": "/favicon.ico",
+          "title": "壁纸"
+        },
+        {
+          "url": "qiushibaike",
+          "icon": "/favicon.ico",
+          "title": "糗事百科笑话"
+        },
+        {
+          "url": "weather",
+          "icon": "/favicon.ico",
+          "title": "天气预报"
         }
       ]
     },
@@ -229,6 +229,12 @@
           "url": "https://www.idocv.com/",
           "title": "在线文档预览",
           "remark": "在线文档预览(doc,docx,xls,xlsx,ppt,pptx,pdf等)|压缩文件在线预览(zip,rar,tar,7z等)|图纸文件在线预览(dwg,dxf,dwf)|图片文件在线预览|音视频播放|在线协作编辑|同步展示等"
+        },
+        {
+          "url": "https://bellard.org/jslinux/",
+          "icon": "/images/net.svg",
+          "title": "JSLinux",
+          "remark": "Run Linux or other Operating Systems in your browser!"
         }
       ]
     },
@@ -459,11 +465,6 @@
       "group": "服务",
       "items": [
         {
-          "url": "https://developer.yahoo.com/yql",
-          "title": "YQL",
-          "remark": "The YQL (Yahoo! Query Language) platform enables you to query, filter, and combine data across the web through a single interface. It exposes a SQL-like syntax that is both familiar to developers and expressive enough for getting the right data"
-        },
-        {
           "url": "https://www.bmob.cn/",
           "icon": "https://assets2016.bmob.cn/img/favicon.ico",
           "title": "Bmob后端云",
@@ -622,8 +623,7 @@
           "remark": "A robust cloud computing platform offering cloud and dedicated infrastructure for your online presence, fully managed by friendly humans"
         },
         {
-          "url": "http://www.impactvps.com/",
-          "icon": "http://www.impactvps.com/favicon.ico",
+          "url": "https://impactvps.com/",
           "title": "Impact VPS",
           "remark": "Affordable Virtual Private Server Hosting In Seattle"
         },
@@ -719,7 +719,7 @@
         },
         {
           "url": "http://tools.jb51.net/regex/javascript",
-          "icon": "http://tools.jb51.net/favicon.ico",
+          "icon": "https://gs.zme.ink/2019/02/18/102245a93e.png",
           "title": "脚本之家正则表达式",
           "remark": "脚本之家在线工具，本工具提供了多个版本的JS正则在线测试工具，每一个版本都各具特色，功能不一，欢迎大家使用"
         },
@@ -736,6 +736,7 @@
       "items": [
         {
           "url": "http://ace.jeka.by/",
+          "icon": "https://gs.zme.ink/2019/02/18/102706cc1a.png",
           "title": "Ace Admin",
           "remark": "SSL Converter - Convert SSL Certificates to different formats"
         },
