@@ -94,7 +94,7 @@
       "group": "跨域服务",
       "items": [
         {
-          "url": "http://proxy.netnr.com/",
+          "url": "https://proxy.netnr.com/",
           "icon": "/favicon.ico",
           "title": "HTTP跨域代理"
         },
