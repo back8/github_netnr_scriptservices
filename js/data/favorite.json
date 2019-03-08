@@ -94,11 +94,6 @@
       "group": "跨域服务",
       "items": [
         {
-          "url": "https://proxy.netnr.com/",
-          "icon": "/favicon.ico",
-          "title": "HTTP跨域代理"
-        },
-        {
           "url": "domainname",
           "icon": "/favicon.ico",
           "title": "域名备案信息查询"
@@ -151,7 +146,7 @@
         },
         {
           "url": "https://www.ilovepdf.com/zh_cn",
-          "icon": "https://www.ilovepdf.com/images/favicons/favicon-16x16.png",
+          "icon": "https://www.ilovepdf.com/favicon.ico",
           "title": "iLovePDF",
           "remark": "iLovePDF网站提供PDF文件在线转换服务。它完全免费，而且使用方便。无论是合并PDF文件、拆分PDF文件、压缩PDF文件、Office文件转换为PDF文件，还是PDF转换为JPG图片等，iLovePDF都能满足您的需求！"
         },
