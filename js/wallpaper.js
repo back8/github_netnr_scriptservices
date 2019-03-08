@@ -95,7 +95,11 @@
                             for (; i < r * len / (len / col);) {
                                 var item = datas[i++], url = item.url;
                                 var cuturl = url.replace("/bdr/__85", "/bdm/" + max_wh + "_80");
-                                htm.push(rt.JoinBox(rt.JoinImg(item, cuturl), 1));
+                                var inbox = ["<div class='col-sm-12 col-md-6 pu'>"];
+                                inbox.push(rt.JoinImg(item, cuturl));
+                                inbox.push(rt.DownView(item));
+                                inbox.push("</div>");
+                                htm.push(inbox.join(''));
                             }
                             htm.push("</div>");
                         }
