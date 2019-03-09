@@ -122,7 +122,7 @@ $(function () {
 
 var ss = {
     ajax: function (obj) {
-        obj.url = "https://proxy.netnr.com/" + obj.url;
+        obj.url = "https://proxy.zme.ink/" + obj.url;
         $.ajax(obj);
     },
     datalocation: function (data) {
