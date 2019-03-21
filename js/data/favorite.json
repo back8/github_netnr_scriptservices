@@ -435,6 +435,11 @@
           "remark": "一个申请免费HTTPS证书的网站,免费HTTPS证书,免费SSL证书,免费证书"
         },
         {
+          "url": "https://www.ssllabs.com/",
+          "title": "Qualys SSL Labs",
+          "remark": "Bringing you the best SSL/TLS and PKI testing tools and documentation"
+        },
+        {
           "url": "https://myssl.com/",
           "title": "SSL/TLS安全评估报告",
           "remark": "检测网站的SSL证书是否安全，是否存在漏洞，是否达到SSL行业标准，符合苹果ATS规范，能否通过微信小程序安全要求。同时提供证书格式转换，CSR，证书链，SSL配置生成等工具"
@@ -483,23 +488,6 @@
           "remark": "A free, fast, and reliable Open Source CDN for npm and GitHub with the largest network and best performance among all CDNs. Serving more than 20 billion requests per month"
         },
         {
-          "url": "https://unpkg.com/",
-          "title": "unpkg",
-          "remark": "The CDN for everything on npm"
-        },
-        {
-          "url": "https://libs.cdnjs.net/",
-          "icon": "/images/net.svg",
-          "title": "前端公共库CDN加速服务",
-          "remark": "前端公共库CDN"
-        },
-        {
-          "url": "http://cdn.code.baidu.com/",
-          "icon": "https://www.baidu.com/favicon.ico",
-          "title": "百度静态资源公共库",
-          "remark": "百度静态资源公共库"
-        },
-        {
           "url": "https://lib.sinaapp.com/",
           "title": "新浪CDN",
           "remark": "新浪CDN"
@@ -542,7 +530,7 @@
       "group": "VPS",
       "items": [
         {
-          "url": "https://www.bwh8.net/",
+          "url": "https://www.bwh88.net/",
           "icon": "/images/net.svg",
           "title": "搬瓦工",
           "remark": "Inexpensive VPS hosting on premium hardware with RAID-10 SAS disks and E5 CPUs. Premium Gigabit bandwidth"
