@@ -223,6 +223,6 @@ $('#chkformat1').click(autoformatjson);
 $('#txt1').on('input', autoformatjson);
 
 $(window).on('load resize', function () {
-    var ch = $(this).height(), sh = ch - $('#tobox').offset().top - 100;
+    var ch = $(this).height(), sh = ch - $('#tobox').offset().top - 105;
     $('#tobox').find('textarea').css('height', Math.max(200, sh));
 });

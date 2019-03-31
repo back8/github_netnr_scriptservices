@@ -51,6 +51,6 @@ $("#btnToXml").click(function () {
 });
 
 $(window).on('load resize', function () {
-    var ch = $(this).height(), sh = ch - $('#tobox').offset().top - 120;
+    var ch = $(this).height(), sh = ch - $('#tobox').offset().top - 100;
     $('#tobox').find('textarea').css('height', Math.max(200, sh));
 });

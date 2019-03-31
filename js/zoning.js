@@ -57,15 +57,12 @@ ss.bmob.init();
 var zoning5 = {
     bquery: Bmob.Query("zoning"),
     list: function (pid, callback) {
-        loading();
         var query = zoning5.bquery;
         query.equalTo("pid", "==", pid);
         query.find().then(res => {
-            loading(0);
             callback(res);
         }).catch(err => {
             console.log(err);
-            loading(0);
             jz.alert("查询失败");
         })
     },

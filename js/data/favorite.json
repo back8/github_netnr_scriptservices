@@ -44,9 +44,9 @@
           "title": "图床"
         },
         {
-          "url": "imagetobase64",
+          "url": "filetobase64",
           "icon": "/favicon.ico",
-          "title": "图片转Base64"
+          "title": "文件转Base64"
         },
         {
           "url": "jsontocsharp",
