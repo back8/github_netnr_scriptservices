@@ -52,20 +52,7 @@ zoning4.load(function () {
     zoning4.init($('#zoning4').find('select'))
 });
 
-ss.bmob.init();
-
 var zoning5 = {
-    bquery: Bmob.Query("zoning"),
-    list1: function (pid, callback) {
-        var query = zoning5.bquery;
-        query.equalTo("pid", "==", pid);
-        query.find().then(res => {
-            callback(res);
-        }).catch(err => {
-            console.log(err);
-            jz.alert("查询失败");
-        })
-    },
     list: function (pid, callback) {
         //var npmsrc = "https://unpkg.com/netnr-zoning@1.0.0/";
         //百度国内镜像
