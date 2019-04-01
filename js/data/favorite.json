@@ -369,8 +369,8 @@
           "remark": "NuGet is the package manager for .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery is the central package repository used by all package authors and consumers"
         },
         {
-          "url": "https://www.npmjs.com.cn/",
-          "icon": "https://www.npmjs.com.cn/images/favicon.ico",
+          "url": "https://www.npmjs.com/",
+          "icon": "https://static.npmjs.com/f1786e9b7cba9753ca7b9c40e8b98f67.png",
           "title": "npm",
           "remark": "npm 是 JavaScript 世界的包管理工具，并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码，管理项目依赖关系"
         },

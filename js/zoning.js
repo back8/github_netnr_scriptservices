@@ -56,7 +56,7 @@ ss.bmob.init();
 
 var zoning5 = {
     bquery: Bmob.Query("zoning"),
-    list: function (pid, callback) {
+    list1: function (pid, callback) {
         var query = zoning5.bquery;
         query.equalTo("pid", "==", pid);
         query.find().then(res => {
@@ -65,6 +65,13 @@ var zoning5 = {
             console.log(err);
             jz.alert("查询失败");
         })
+    },
+    list: function (pid, callback) {
+        //var npmsrc = "https://unpkg.com/netnr-zoning@1.0.0/";
+        //百度国内镜像
+        var npmsrc = "https://code.bdstatic.com/npm/netnr-zoning@1.0.0/";
+        var pidaspath = pid > 0 ? (pid.substring(0, 2) + "/" + pid) : 0;
+        $.getJSON(npmsrc + pidaspath + ".json", null, callback)
     },
     change: function (ses, index) {
         var se1 = ses[index++];
