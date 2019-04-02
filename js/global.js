@@ -122,8 +122,11 @@ $(function () {
 
 var ss = {
     ajax: function (obj) {
-        obj.url = "https://proxy.zme.ink/" + obj.url;
-        $.ajax(obj);
+        var hosts=["proxy.zme.ink/","bird.ioliu.cn/v2?url="];
+        upstream(hosts, function (fast, ok, bad) {
+            obj.url = fast + obj.url;
+            $.ajax(obj);
+        },1);
     },
     datalocation: function (data) {
         return data || {};
@@ -134,7 +137,7 @@ var ss = {
     },
     bmob: {
         init: function () {
-            Bmob.initialize("59a522843b951532546934352166df80", "97fcbeae1457621def948aba1db01821");
+            Bmob&&Bmob.initialize("59a522843b951532546934352166df80", "97fcbeae1457621def948aba1db01821");
         }
     }
 }

@@ -121,7 +121,7 @@
     },
     //完
     ThEnd: function () {
-        $('#divWP').append($('<div class="row"><h4 style="text-align:center;">已经加载完了 ...</h4></div>'));
+        $('#divWP').append($('<div class="row"><div class="col-sm-12 h4 text-center text-muted py-3">没有啦 ...</div></div>'));
     },
     //全屏
     FullShow: function (src) {
