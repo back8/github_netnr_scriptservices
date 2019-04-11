@@ -38,12 +38,45 @@ function fileAsBase64(file) {
     r.readAsDataURL(file);
 }
 
-$('#btnBase64ToImage').click(function () {
-    if ($('#txtBase64').val().indexOf("data:image") == 0) {
-        $('#viewBase64').html('<img src="' + $('#txtBase64').val() + '" style="max-width:100%" />');
-    } else {
-        jz.msg("非图片文件");
+function base64AsBlob(code) {
+    var parts = code.split(';base64,');
+    var contentType = parts[0].split(':')[1];
+    var raw = window.atob(parts[1]);
+    var rawLength = raw.length;
+    var uInt8Array = new Uint8Array(rawLength);
+    for (var i = 0; i < rawLength; ++i) {
+        uInt8Array[i] = raw.charCodeAt(i);
     }
+    return new Blob([uInt8Array], {
+        type: contentType
+    });
+};
+
+$('#btnBase64ToFile').click(function () {
+    var code = $('#txtBase64').val();
+    var blob = base64AsBlob(code);
+    console.log(blob);
+    var vbase = $('#viewBase64'), vnode;
+    vbase.html('');
+    if (blob.type.indexOf("image") >= 0) {
+        vnode = document.createElement("img");
+    }
+    if (blob.type.indexOf("audio") >= 0) {
+        vnode = document.createElement("audio");
+        vnode.controls = true;
+    }
+    if (blob.type.indexOf("video") >= 0) {
+        vnode = document.createElement("video");
+        vnode.controls = true;
+    }
+    if (vnode) {
+        vnode.src = URL.createObjectURL(blob);
+    } else {
+        vnode = document.createElement("a");
+        vnode.href = URL.createObjectURL(blob);
+        vnode.innerHTML = "下载";
+    }
+    vbase.append(vnode);
 });
 
 $(window).on('load', function () {
