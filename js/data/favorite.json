@@ -165,6 +165,24 @@
           "icon": "/images/net.svg",
           "title": "JSLinux",
           "remark": "Run Linux or other Operating Systems in your browser!"
+        },
+        {
+          "url": "https://www.photopea.com/",
+          "icon": "https://www.photopea.com/promo/thumb256.png",
+          "title": "Photopea",
+          "remark": "Open and edit PSD, XCF, Sketch (Photoshop, Gimp and Sketch) or any other image files. Inspect PSD and Sketch files. Convert Sketch to PSD. Apply photo effects and filters. A perfect alternative to Photoshop or Gimp"
+        },
+        {
+          "url": "https://monitor.firefox.com/",
+          "icon": "https://monitor.firefox.com/img/favicons/favicon-64.png",
+          "title": "Firefox Monitor",
+          "remark": "使用 Firefox Monitor，看看您的账号是否也在数据外泄事件当中。订阅以在未来发生外泄事件时收到警报，并获取确保账号安全的小贴士"
+        },
+        {
+          "url": "https://send.firefox.com/",
+          "icon": "https://send.firefox.com/favicon-16x16.dd949bf3.png",
+          "title": "Firefox Send",
+          "remark": "Encrypt and send files with a link that automatically expires to ensure your important documents don’t stay online forever"
         }
       ]
     },
@@ -411,6 +429,12 @@
           "icon": "https://s01.mifile.cn/favicon.ico",
           "title": "MIMC",
           "remark": "让你有能力连接一切人和设备"
+        },
+        {
+          "url": "https://uzer.me/",
+          "icon": "https://img.uzer.me/uzsite/1550820993056/static-uzsite/images/favicon.ico",
+          "title": "UZER.ME",
+          "remark": "UZER.ME超级应用空间致力于全生命周期的文档管理,无需安装,即可在线编辑Office, CAD,PS等任意格式文档,支持远程协作,全文检索,版本管理,权限管理,安全外发等.提高工作效率,降低安全风险"
         }
       ]
     },
