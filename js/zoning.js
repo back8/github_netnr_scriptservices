@@ -1,7 +1,11 @@
-﻿var zoning4 = {
+﻿//var npmsrc = "https://unpkg.com/zoningjs@1.0.0/";
+//国内镜像
+var npmsrc = "https://code.bdstatic.com/npm/zoningjs@1.0.0/";
+
+var zoning4 = {
     json: {},
     load: function (callback) {
-        $.getJSON("/js/data/zoning-4.json", null, function (data) {
+        $.getJSON(npmsrc + "zoning-4.json", null, function (data) {
             zoning4.json = data;
             callback();
         });
@@ -54,9 +58,6 @@ zoning4.load(function () {
 
 var zoning5 = {
     list: function (pid, callback) {
-        //var npmsrc = "https://unpkg.com/netnr-zoning@1.0.0/";
-        //百度国内镜像
-        var npmsrc = "https://code.bdstatic.com/npm/netnr-zoning@1.0.0/";
         var pidaspath = pid > 0 ? (pid.substring(0, 2) + "/" + pid) : 0;
         $.getJSON(npmsrc + pidaspath + ".json", null, callback)
     },
@@ -102,7 +103,7 @@ var zoning5 = {
         }).change(function () {
             zoning5.change(ses, $(this).attr('data-index'));
 
-            $('#zoningcode5').html(zoning5.getvalues(ses).join('</br>'));
+            $('#zoningcode5').html(zoning5.getvalues(ses).join(' / '));
         })
     }
 }

@@ -29,14 +29,14 @@
           "title": "生成二维码"
         },
         {
-          "url": "express",
-          "icon": "/favicon.ico",
-          "title": "快递查询"
-        },
-        {
           "url": "symbol",
           "icon": "/favicon.ico",
           "title": "符号大全"
+        },
+        {
+          "url": "express",
+          "icon": "/favicon.ico",
+          "title": "快递查询"
         },
         {
           "url": "bed",
@@ -94,9 +94,9 @@
       "group": "跨域服务",
       "items": [
         {
-          "url": "domainname",
+          "url": "weather",
           "icon": "/favicon.ico",
-          "title": "域名备案信息查询"
+          "title": "天气预报"
         },
         {
           "url": "lottery",
@@ -109,14 +109,14 @@
           "title": "壁纸"
         },
         {
+          "url": "domainname",
+          "icon": "/favicon.ico",
+          "title": "域名备案信息查询"
+        },
+        {
           "url": "qiushibaike",
           "icon": "/favicon.ico",
           "title": "糗事百科笑话"
-        },
-        {
-          "url": "weather",
-          "icon": "/favicon.ico",
-          "title": "天气预报"
         }
       ]
     },
