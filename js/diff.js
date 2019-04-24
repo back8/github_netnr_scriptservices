@@ -32,21 +32,27 @@ function createDiffEditor(text1, text2) {
 }
 $('#fileOrigin').change(function () {
     if (this.files.length) {
-        var reader = new FileReader(), txts = [];
+        var reader = new FileReader();
         reader.onload = function () {
             createDiffEditor(originContent = this.result, varyContent);
         };
         reader.readAsText(this.files[0]);
     }
 });
+$('#txtOrigin').on('input', function () {
+    createDiffEditor(originContent = this.value, varyContent);
+});
 $('#fileVary').change(function () {
     if (this.files.length) {
-        var reader = new FileReader(), txts = [];
+        var reader = new FileReader();
         reader.onload = function () {
             createDiffEditor(originContent, varyContent = this.result);
         };
         reader.readAsText(this.files[0]);
     }
+});
+$('#txtVary').on('input', function () {
+    createDiffEditor(originContent, varyContent = this.value);
 });
 
 function AutoHeight() {

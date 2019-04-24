@@ -86,21 +86,38 @@ https://zme.ink
     <script src="/js/jz/jz.min.js?v=LQvPjEmTgtZ-qcu_4JSfOJgI_SO_QBUKWOMvMvk3f2c"></script>
 
     <div class="bodym">
-        <div class="container-fluid">
+        <style>
+    .difftxt {
+        width: auto;
+        padding: 2px;
+        margin-left: 108px;
+        height: 30px !important;
+    }
+</style>
+
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <label class="btn btn-primary btn-sm">
+        <div class="col-md-5">
+            <label class="btn btn-primary btn-sm float-left">
                 <input type="file" class="d-none" id="fileOrigin" />选择原始文件
             </label>
-            <label class="btn btn-info btn-sm mx-2">
+            <textarea class="form-control difftxt" id="txtOrigin" placeholder="或 粘贴内容"></textarea>
+        </div>
+        <div class="col-md-5">
+            <label class="btn btn-info btn-sm float-left">
                 <input type="file" class="d-none" id="fileVary" />选择变动文件
             </label>
+            <textarea class="form-control difftxt" id="txtVary" placeholder="或 粘贴内容"></textarea>
+        </div>
+        <div class="col-md-2">
             <label>
                 <input type="checkbox" id="chkDiffMode" /> 内联对比
             </label>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
-            <div id="editor" style="border:1px solid #ddd;"></div>
+            <div id="editor" class="border"></div>
         </div>
     </div>
 </div>
@@ -113,7 +130,7 @@ https://zme.ink
     });
     var editor = null;
 </script>
-<script src="/js/diff.js?v=didhbK6MYIJjV8nnswVMIxLo-YAqbhIaCypjKr4roc4"></script>
+<script src="/js/diff.js?v=NZ8SNGYiEF2Xc2Y7qz5-I3xe3PehU5QaOsPXVlceaL8"></script>
     </div>
 
     <a href="javascript:totop();" class="totop" title="返回顶部">ˆ</a>
