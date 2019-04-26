@@ -1,6 +1,6 @@
-﻿//var npmsrc = "https://unpkg.com/zoningjs@1.0.0/";
+﻿//var npmsrc = "https://unpkg.com/zoningjs@2.0.18/";
 //国内镜像
-var npmsrc = "https://code.bdstatic.com/npm/zoningjs@1.0.0/";
+var npmsrc = "https://code.bdstatic.com/npm/zoningjs@2.0.18/";
 
 var zoning4 = {
     json: {},
