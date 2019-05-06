@@ -183,6 +183,11 @@
           "icon": "https://send.firefox.com/favicon-16x16.dd949bf3.png",
           "title": "Firefox Send",
           "remark": "Encrypt and send files with a link that automatically expires to ensure your important documents don’t stay online forever"
+        },
+        {
+          "url": "https://ip.sb/",
+          "title": "IP.SB",
+          "remark": "IPv4 Address Lookup, IPv6 Address Lookup"
         }
       ]
     },
@@ -435,6 +440,12 @@
           "icon": "https://img.uzer.me/uzsite/1550820993056/static-uzsite/images/favicon.ico",
           "title": "UZER.ME",
           "remark": "UZER.ME超级应用空间致力于全生命周期的文档管理,无需安装,即可在线编辑Office, CAD,PS等任意格式文档,支持远程协作,全文检索,版本管理,权限管理,安全外发等.提高工作效率,降低安全风险"
+        },
+        {
+          "url": "https://temp-mail.org/zh/",
+          "icon": "/images/net.svg",
+          "title": "TempMail",
+          "remark": "确保你的电子邮件中不再出现垃圾邮件，保证安全 - 只需使用一个匿名的一次性电子邮件地址！保护您的个人电子邮件地址免受垃圾邮件，机器人程序和钓鱼网站的攻击"
         }
       ]
     },
@@ -560,34 +571,6 @@
           "remark": "Inexpensive VPS hosting on premium hardware with RAID-10 SAS disks and E5 CPUs. Premium Gigabit bandwidth"
         },
         {
-          "url": "https://www.vultr.com/",
-          "title": "Vultr",
-          "remark": "VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Virtualization"
-        },
-        {
-          "url": "https://cloudcone.com/",
-          "icon": "https://gs.zme.ink/2019/01/29/075644775f.png",
-          "title": "cloudcone",
-          "remark": "A robust cloud computing platform offering cloud and dedicated infrastructure for your online presence, fully managed by friendly humans"
-        },
-        {
-          "url": "https://impactvps.com/",
-          "title": "Impact VPS",
-          "remark": "Affordable Virtual Private Server Hosting In Seattle"
-        },
-        {
-          "url": "https://hostdare.com/",
-          "icon": "https://hostdare.com/img/favicon-32x32.png",
-          "title": "HostDare",
-          "remark": "Affordable Virtual Private Server Hosting In Seattle"
-        },
-        {
-          "url": "https://www.gigsgigscloud.com/",
-          "icon": "https://www.gigsgigscloud.com/wp-content/uploads/2016/10/favicon.ico",
-          "title": "gigsgigscloud",
-          "remark": "Hong Kong VPS, Malaysia VPS, Singapore VPS, Asia VPS, Cloud Hosting, Dedicated server, VPS, SSD Cloud, VPS Hosting, OpenVZ, KVM, Asia VPS, Dedicated Hosting"
-        },
-        {
           "url": "https://common-buy.aliyun.com/?commodityCode=swas&regionId=cn-hongkong#/buy",
           "icon": "https://www.aliyun.com/favicon.ico",
           "title": "阿里云轻量服务器",
@@ -673,7 +656,7 @@
         },
         {
           "url": "https://www.sojson.com/regex/",
-          "icon": "https://cdn.www.sojson.com/sojson/favicon32.png",
+          "icon": "https://www.sojson.com/favicon.ico",
           "title": "SOJSON正则表达式",
           "remark": "正则表达式在线测试"
         }

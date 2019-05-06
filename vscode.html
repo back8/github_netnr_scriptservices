@@ -33,26 +33,7 @@ https://zme.ink
                     <li><a href="/" title="Script Services"><span class="fa fa-fw fa-wrench"></span> 服务</a></li>
                     <li><a href="https://www.netnr.com/gist/discover" title="代码片段"><span class="fa fa-fw fa-code"></span> Gist</a></li>
                     <li><a href="https://www.netnr.com/run/discover" title="在线运行代码"><span class="fa fa-fw fa-play"></span> Run</a></li>
-                    <li><a href="https://www.netnr.com/doc" title="文档管理"><span class="fa fa-fw fa-book"></span> Doc</a></li>
-                    <li>
-                        <a class="text-muted"><span class="fa fa-fw fa-external-link"></span> 子站 <span class="indicator fa fa-sort-desc"></span></a>
-                        <ul>
-                            <li><a target="_blank" href="https://rf.netnr.com">netnrf 响应式框架 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://md.netnr.com">netnrmd 编辑器 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://nav.netnr.com">netnrnav 导航 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://gs.netnr.com">GitStore 图床 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://json.netnr.com">JSON 编辑器 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://jz.netnr.com">Jz 弹窗插件 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://emoji.netnr.com">Emoji 表情 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://jcute.netnr.com">jCute 脚本 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://kms.netnr.com">KMS 服务 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://proxy.netnr.com">跨域代理 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://ad.netnr.com">API 文档 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li><a target="_blank" href="https://chat.netnr.com">Chat 聊天 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                            <li class="divider"></li>
-                            <li><a target="_blank" href="https://v.netnr.com">VIP 视频解析 &nbsp;<span class="fa fa-external-link"></span></a></li>
-                        </ul>
-                    </li>
+                    <li><a href="https://www.netnr.com/doc" title="文档管理"><span class="fa fa-fw fa-book"></span> Doc</a></li>                    
                     <li>
                         <a class="text-muted"><span class="fa fa-fw fa-ellipsis-h"></span> 更多 <span class="indicator fa fa-sort-desc"></span></a>
                         <ul>
@@ -111,10 +92,10 @@ https://zme.ink
     }
     AutoHeight();
 </script>
-<script src="https://lib.baomitu.com/monaco-editor/latest/min/vs/loader.js"></script>
+<script crossorigin="anonymous" integrity="sha384-bSZbZp210IfDtd4e4ajpOVcAUzBY9Le8hP+5RE1iD8hmWw/+zAALhRL3fTavt7rY" src="https://lib.baomitu.com/monaco-editor/0.16.2/min/vs/loader.js"></script>
 <script>
     require.config({
-        paths: { vs: "https://lib.baomitu.com/monaco-editor/latest/min/vs" },
+        paths: { vs: "https://lib.baomitu.com/monaco-editor/0.16.2/min/vs" },
         'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
     });
     var editor = null;
