@@ -76,6 +76,7 @@ $('#btnBase64ToFile').click(function () {
         vnode.href = URL.createObjectURL(blob);
         vnode.innerHTML = "下载";
     }
+    vnode.style.maxWidth = "100%";
     vbase.append(vnode);
 });
 
