@@ -1,0 +1,91 @@
+﻿@{
+    var mj = Netnr.Extend.ToJObject(Netnr.Core.FileTo.ReadText(Startup.HostingEnvironment.WebRootPath + "/js/data/", "favorite.json"));
+    string title = string.Empty;
+    string action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+    if (action == "index")
+    {
+        title = "服务";
+    }
+    else
+    {
+        foreach (var gi in mj["links"])
+        {
+            foreach (Newtonsoft.Json.Linq.JToken jt in gi["items"])
+            {
+                if (jt["url"].ToString().ToLower() == action)
+                {
+                    title = jt["title"].ToString();
+                    goto endfor;
+                }
+            }
+        }
+    }
+endfor: TempData["Title"] = title;
+}
+@{
+    string ca = ViewContext.RouteData.Values["controller"].ToString().ToLower() + "/" + ViewContext.RouteData.Values["action"].ToString().ToLower();
+
+    var canav = new List<string>
+    () { "home/wallpaper", "home/contact" };
+}
+<partial name="_PartialThe" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <title>@(new Microsoft.AspNetCore.Html.HtmlContentBuilder().AppendHtml(TempData["Title"].ToString())) NET牛人</title>
+    <meta name="keywords" content="netnr,NET牛人,@(new Microsoft.AspNetCore.Html.HtmlContentBuilder().AppendHtml(title))" />
+    <meta name="description" content="netnr,NET牛人,@(new Microsoft.AspNetCore.Html.HtmlContentBuilder().AppendHtml(title))" />
+
+    <partial name="_PartialLayoutQuote4" />
+
+    <link href="/css/global.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+    @if (!canav.Contains(ca))
+    {
+        <button type="button" class="MenuToggle show-in-mobile btn btn-primary">
+            <span class="fa fa-align-justify fa-2x"></span>
+        </button>
+        <div id="netnrnav" class="netnrnav horizontal">
+            <div class="netnrnav-wrapper">
+                <ul>
+                    <li><a href="https://www.netnr.com" class="siteIcon"><img src="/favicon.svg" /> 首页</a></li>
+                    <li><a href="/" title="Script Services"><span class="fa fa-fw fa-wrench"></span> 服务</a></li>
+                    <li><a href="https://www.netnr.com/gist/discover" title="代码片段"><span class="fa fa-fw fa-code"></span> Gist</a></li>
+                    <li><a href="https://www.netnr.com/run/discover" title="在线运行代码"><span class="fa fa-fw fa-play"></span> Run</a></li>
+                    <li><a href="https://www.netnr.com/doc" title="文档管理"><span class="fa fa-fw fa-book"></span> Doc</a></li>
+                    <li>
+                        <a class="text-muted"><span class="fa fa-fw fa-ellipsis-h"></span> 更多 <span class="indicator fa fa-sort-desc"></span></a>
+                        <ul>
+                            <li><a href="https://www.netnr.com/mix/about">关于</a></li>
+                            <li><a href="https://www.netnr.com/lab">实验室</a></li>
+                            <li><a href="https://www.netnr.com/store">云存储</a></li>
+                            <li class="divider"></li>
+                            <li><a href="https://ss.netnr.com/message">留言</a></li>
+                            <li><a target="_blank" href="https://ss.netnr.com/contact">联系 &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li class="divider"></li>
+                            <li><a target="_blank" title="码云" href="https://gitee.com/netnr">Gitee &nbsp;<span class="fa fa-external-link"></span></a></li>
+                            <li><a target="_blank" title="GitHub" href="https://github.com/netnr">GitHub &nbsp;<span class="fa fa-external-link"></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="height:30px;"></div>
+    }
+
+    <script src="/js/plus/upstream.js" asp-append-version="true"></script>
+    <script src="/js/global.js" asp-append-version="true"></script>
+    <script src="/js/jz/jz.min.js" asp-append-version="true"></script>
+
+    <div class="bodym">
+        @RenderBody()
+    </div>
+
+    <a href="javascript:totop();" class="totop" title="返回顶部">ˆ</a>
+</body>
+</html>

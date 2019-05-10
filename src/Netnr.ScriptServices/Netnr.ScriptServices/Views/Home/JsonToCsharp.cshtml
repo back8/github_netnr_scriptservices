@@ -1,0 +1,68 @@
+﻿<style>
+    #tobox label {
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: 400;
+        margin-right: 15px;
+    }
+
+        #tobox label input {
+            width: 1.1em;
+            height: 1.1em;
+            cursor: pointer;
+            vertical-align: sub;
+        }
+</style>
+
+<div class="container mt-4">
+    <div class="row" id="tobox">
+        <div class="col-sm-12">
+            <button class="btn btn-success mr-3" id="btnJsonToEntity">生成实体</button>
+            <label><input type="checkbox" id="chkNotes" checked />注释</label>
+            <label><input type="checkbox" id="chkClassNameFirstBig" checked />类名大写开头</label>
+        </div>
+        <div class="col-sm-6 pt-3">
+            <label>JSON</label>
+            <label><input type="checkbox" checked id="chkformat1" />自动格式化</label>
+            <textarea class="form-control" id="txt1" placeholder=" 来一串 JSON">
+{
+  "site": {
+    "title": "NET牛人",
+    "domain": "https://www.netnr.com",
+    "foreverdomain": "http://netnr.top",
+    "createtime": "2014.01.01",
+    "qqgroup": 83084426
+  },
+  "about": {
+    "name": "netnr",
+    "sex": "男",
+    "birthday": "1992.07.13",
+    "injob": "2012.03.01",
+    "live": "中国重庆",
+    "stain": null,
+    "qq": 1041911384,
+    "mail": "netnr@netnr.com",
+    "git": [
+      {
+        "name": "github",
+        "url": "https://github.com/netnr"
+      },
+      {
+        "name": "gitee",
+        "url": "https://gitee.com/netnr"
+      }
+    ]
+  },
+  "updaet": "2018.01.08",
+  "version": "v.1.0.0"
+}</textarea>
+        </div>
+        <div class="col-sm-6 pt-3">
+            <label>C#实体类</label>
+            <textarea class="form-control" id="txt2"></textarea>
+        </div>
+    </div>
+</div>
+
+<script src="/js/plus/jquery.format.js" asp-append-version="true"></script>
+<script src="/js/jsontocsharp.js" asp-append-version="true"></script>

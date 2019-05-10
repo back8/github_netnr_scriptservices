@@ -1,0 +1,70 @@
+﻿@{
+    var mj = Netnr.Extend.ToJObject(Netnr.Core.FileTo.ReadText(Startup.HostingEnvironment.WebRootPath + "/js/data/", "favorite.json"));
+
+    var isHtmlPath = Netnr.Core.CacheTo.Get("GlobalKey-HtmlPath") as string;
+}
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <select class="custom-select" style="width:150px;" id="seGroup">
+                        <option value="">全部</option>
+                        @foreach (var gi in mj["links"])
+                        {
+                            <option value="@gi["group"].ToString()">@gi["group"].ToString()</option>
+                        }
+                    </select>
+                </div>
+                <input type="text" class="form-control" placeholder="搜索" id="txtSearch">
+                <div class="input-group-prepend">
+                    <button class="btn btn-success" id="btnSearch" title="双击空白处 重置搜索条件">搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (string.IsNullOrWhiteSpace(isHtmlPath))
+    {
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <a href="/build" target="_blank">生成静态HTML</a>
+
+                <a href="/index.html" class="mx-3" target="_blank">访问静态HTML</a>
+            </div>
+        </div>
+    }
+    <div class="row menubox" id="favoritebox">
+        @foreach (var gi in mj["links"])
+        {
+            <div class="col-md-12" data-group="@gi["group"].ToString()">
+                <div class="card border-info mt-3">
+                    <div class="card-body text-info">
+                        <h5 class="card-title">@gi["group"].ToString()</h5>
+                        <div class="row">
+                            @foreach (var item in gi["items"])
+                            {
+                                var href = item["url"].ToString();
+                                if (!href.Contains("://"))
+                                {
+                                    if (string.IsNullOrWhiteSpace(isHtmlPath))
+                                    {
+                                        href = "/home/" + href;
+                                    }
+                                    else
+                                    {
+                                        href = "/" + href;
+                                    }
+                                }
+                                <div class="col-md-4 col-sm-6 mba">
+                                    <a href="@href" title="@item["remark"]?.ToString()" target="_blank"><img src="/images/net.svg" data-icon="@item["icon"]?.ToString()" />@item["title"]?.ToString()</a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script src="/js/index.js" asp-append-version="true"></script>

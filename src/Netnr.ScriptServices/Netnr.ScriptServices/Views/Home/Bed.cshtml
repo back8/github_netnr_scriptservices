@@ -1,0 +1,70 @@
+﻿<style>
+    /*进度条*/
+    .divProgress {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 0;
+        bottom: 0;
+        z-index: 9;
+        height: 3px;
+        background-color: #D44B47;
+    }
+</style>
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-12">
+            
+            <div class="card">
+                <div class="card-header">sm.ms</div>
+                <div class="card-body">
+                    <form action="https://sm.ms/api/upload" method="post" enctype="multipart/form-data" target="_blank" id="form1">
+                        <div class="form-group">
+                            <input class="form-control" type="file" id="smfile" name="smfile" required>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked id="chk1"> 在新的页面输出上传结果
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-success" id="btnUpload1">上传</button>
+                        <a href="https://sm.ms/api/list" class="btn btn-info pull-right" target="_blank">上传记录</a>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header">uploadbeta</div>
+                <div class="card-body" id="dropupload2">
+                    <div class="alert alert-warning" role="alert">
+                        <strong>限制：</strong> 大小不超过5M，图片宽度大于260px，支持BMP，PNG，JPG和GIF。
+                    </div>
+
+                    <form action="https://uploadbeta.com/api/pictures/upload/file/" method="post" enctype="multipart/form-data" target="_blank" id="form2">
+
+                        <div class="form-group">
+                            <input type="file" name="file" class="form-control" required>
+                            <p class="help-block">拖拽图片到此处</p>
+                        </div>
+
+                        <input type="hidden" name="title" value="netnr-bed" />
+                        <input type="hidden" name="desc" value="This picture is uploaded from netnr" />
+                        <input type="hidden" name="cat" value="netnr-category" />
+                        <input type="hidden" name="group" value="netnr-group" />
+
+                        <button type="submit" class="btn btn-success" id="btnUpload2">上传</button>
+                        <a href="https://uploadbeta.com/picture-gallery/?key=netnr-bed" class="btn btn-info pull-right" target="_blank">上传记录</a>
+                    </form>
+                    <div id="divUploadResult2" class="mt-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--进度条-->
+<div class="divProgress" id="divProgress"></div>
+
+<script src="/js/bed.js" asp-append-version="true"></script>
