@@ -409,11 +409,6 @@
           "remark": "MSDN, 我告诉"
         },
         {
-          "url": "https://tb.rg-adguard.net",
-          "title": "TechBench",
-          "remark": "This website was created with simplicity in mind. Here you can easily download products directly from Microsoft. This website neither its author are not affiliated with Microsoft Corporation"
-        },
-        {
           "url": "https://marketplace.visualstudio.com/",
           "title": "Visual Studio Marketplace",
           "remark": "One place for all extensions for Visual Studio, Visual Studio Team Services, Team Foundation Server and Visual Studio Code. Discover and install extensions and subscriptions to create the dev environment you need"

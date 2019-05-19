@@ -30,12 +30,7 @@ try {
     });
 } catch (e) { }
 
-function CallBack_Pconline(data) {
-    $('#txtPconline').val(data.ip)
-}
-
 function CallBack_Ipsb(data) {
-    console.log(data);
     $('#txtIpsb').val(data.ip)
 }
 

@@ -16,8 +16,8 @@ var mg = {
                 var id = 'mi' + (i + 1);
                 htm.push('<li class="media" id="' + id + '">');
                 htm.push('<a href="#' + id + '"><img class="mr-3" src="/images/photo.svg"></a>');
-                htm.push('<div class="media-body"><h5 class="mt-0 mb-2">' + htmlEncode(this.UserNickname) + '<small class="ml-3">' + this.createdAt + '</small></h5>');
-                htm.push('<pre class="bg-light border py-2 px-2" style="white-space:pre-wrap">' + htmlEncode(this.Content) + '</pre></div></li>');
+                htm.push('<div class="media-body"><h6 class="mt-0 mb-2">' + htmlEncode(this.UserNickname) + '<small class="ml-3">' + this.createdAt + '</small></h6>');
+                htm.push('<pre class="bg-light border py-2 px-2 small">' + htmlEncode(this.Content) + '</pre></div></li>');
             });
             if (htm.length) {
                 $('#messagelist').html(htm.join(''));
