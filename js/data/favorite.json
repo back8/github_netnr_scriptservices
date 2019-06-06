@@ -652,7 +652,7 @@
         },
         {
           "url": "https://www.sojson.com/regex/",
-          "icon": "https://www.sojson.com/favicon.ico",
+          "icon": "https://cdn.www.sojson.com/sojson/favicon.ico",
           "title": "SOJSON正则表达式",
           "remark": "正则表达式在线测试"
         }
@@ -672,11 +672,6 @@
           "icon": "https://getbootstrapadmin.com/remark/assets/images/favicon.ico",
           "title": "Remark Admin Template",
           "remark": "Remark | Remark Admin Template"
-        },
-        {
-          "url": "https://adminlte.io/",
-          "title": "AdminLTE",
-          "remark": "Best open source admin dashboard &amp; control panel theme. Built on top of Bootstrap 3, AdminLTE provides a range of responsive, reusable, and commonly used components"
         }
       ]
     }
