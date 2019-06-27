@@ -326,6 +326,7 @@
         },
         {
           "url": "https://viewdns.info/",
+          "icon": "https://gs.zme.ink/2019/06/28/0629516ad6.png",
           "title": "ViewDNS",
           "remark": "viewdns, dns, info, reverse ip, pagerank, portscan, port scan, lookup, records, whois, ipwhois, dnstools, web hosting, hosting, traceroute, dns report, dnsreport, ip location, ip location finder, spam, spam database, dnsbl, propagation, dns propagation checker, checker, china, chinese, firewall, great firewall, is my site down, is site down, site down, down, dns propagate"
         },
@@ -641,6 +642,7 @@
       "items": [
         {
           "url": "http://tool.chinaz.com/regex/",
+          "icon": "https://img.chinaz.com/favicon.ico",
           "title": "站长工具正则表达式",
           "remark": "该工具主要针对程序开发人员，通过该工具可以快速准备的判断所写的正则是否能正确匹配相应的字符"
         },
@@ -649,12 +651,6 @@
           "icon": "https://gs.zme.ink/2019/02/18/102245a93e.png",
           "title": "脚本之家正则表达式",
           "remark": "脚本之家在线工具，本工具提供了多个版本的JS正则在线测试工具，每一个版本都各具特色，功能不一，欢迎大家使用"
-        },
-        {
-          "url": "https://www.sojson.com/regex/",
-          "icon": "https://cdn.www.sojson.com/sojson/favicon.ico",
-          "title": "SOJSON正则表达式",
-          "remark": "正则表达式在线测试"
         }
       ]
     },
