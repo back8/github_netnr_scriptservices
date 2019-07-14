@@ -238,13 +238,8 @@
           "remark": "jQuery EasyUI是一组基于jQuery的UI插件集合，而jQuery EasyUI的目标就是帮助web开发者更轻松的打造出功能丰富并且美观的UI界面。开发者不需要编写复杂的javascript，也不需要对css样式有深入的了解，开发者需要了解的只有一些简单的html标签"
         },
         {
-          "url": "https://fontawesome.com/",
-          "title": "Font Awesome",
-          "remark": "The world’s most popular and easiest to use icon set just got an upgrade"
-        },
-        {
           "url": "http://fontawesome.dashgame.com/",
-          "icon": "https://fontawesome.com/favicon.ico",
+          "icon": "https://gs.zme.ink/2019/07/03/15134964c2.png",
           "title": "Font Awesome(中文)",
           "remark": "Font Awesome，一套绝佳的图标字体库和CSS框架"
         },
@@ -340,6 +335,11 @@
           "title": "Ping",
           "icon": "/images/net.svg",
           "remark": "The Best Ping+MTR combination Ever"
+        },
+        {
+          "url": "https://check-host.net/",
+          "title": "CHECK-HOST",
+          "remark": "Check server: website monitoring with usefull tools, Check IP, Check website"
         },
         {
           "url": "https://analytics.google.com/",
