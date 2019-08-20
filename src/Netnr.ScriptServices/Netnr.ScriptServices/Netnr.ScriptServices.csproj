@@ -20,7 +20,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
-    <PackageReference Include="Netnr.Core" Version="1.1.0" />
+    <PackageReference Include="Netnr.Core" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -92,6 +92,9 @@
     <Content Update="Views\_ViewStart.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="wwwroot\favorite.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\js\data\favorite.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -105,5 +108,11 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\icon\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4favorite_1json__JsonSchema="http://json.schemastore.org/config" /></VisualStudio></ProjectExtensions>
 
 </Project>

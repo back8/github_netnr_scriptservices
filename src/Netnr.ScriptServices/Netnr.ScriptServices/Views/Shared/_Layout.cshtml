@@ -12,7 +12,7 @@
         {
             foreach (Newtonsoft.Json.Linq.JToken jt in gi["items"])
             {
-                if (jt["url"].ToString().ToLower() == action)
+                if (jt["url"].ToString().TrimStart('/').ToLower() == action)
                 {
                     title = jt["title"].ToString();
                     goto endfor;
@@ -47,10 +47,10 @@ endfor: TempData["Title"] = title;
 <body>
     @if (!canav.Contains(ca))
     {
-        <button type="button" class="MenuToggle show-in-mobile btn btn-primary">
+        <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
             <span class="fa fa-align-justify fa-2x"></span>
         </button>
-        <div id="netnrnav" class="netnrnav horizontal">
+        <div class="netnrnav horizontal">
             <div class="netnrnav-wrapper">
                 <ul>
                     <li><a href="https://www.netnr.com" class="siteIcon"><img src="/favicon.svg" /> 首页</a></li>
@@ -65,6 +65,7 @@ endfor: TempData["Title"] = title;
                             <li><a href="https://www.netnr.com/mix/about"><i class="fa fa-fw fa-info"></i> 关于</a></li>
                             <li><a href="https://www.netnr.com/lab"><i class="fa fa-fw fa-flask"></i> 实验室</a></li>
                             <li><a href="https://www.netnr.com/store"><i class="fa fa-fw fa-hdd-o"></i> 云存储</a></li>
+                            <li><a href="https://www.netnr.com/note"><i class="fa fa-fw fa-file-text-o"></i> 记事本</a></li>
                             <li class="divider"></li>
                             <li><a href="https://ss.netnr.com/message"><i class="fa fa-fw fa-commenting-o"></i> 留言</a></li>
                             <li><a target="_blank" href="https://ss.netnr.com/contact"><i class="fa fa-fw fa-envelope-open-o"></i> 联系 <sup><i class="fa small fa-external-link"></i></sup></a></li>
@@ -79,9 +80,9 @@ endfor: TempData["Title"] = title;
         <div style="height:30px;"></div>
     }
 
-    <script src="/js/plus/upstream.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/gh/netnr/upstream@master/upstream.js"></script>
     <script src="/js/global.js" asp-append-version="true"></script>
-    <script src="/js/jz/jz.min.js" asp-append-version="true"></script>
+    <script src="https://code.bdstatic.com/npm/jzjs@2.0.2/2.0.2/jz.min.js"></script>
 
     <div class="bodym">
         @RenderBody()
