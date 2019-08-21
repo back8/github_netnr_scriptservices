@@ -1,4 +1,4 @@
-﻿/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -333,6 +333,12 @@ body {
 .netnrnav.horizontal .hide-in-horizontal {
     display: none !important;
 }
+
+
+.CodeMirror {
+    font-size: 1.2rem;
+}
+
 /*logo*/
 .siteIcon * {
     height: 26px;
@@ -417,6 +423,10 @@ body {
 }
 
 /*menu*/
+.menubox .card:hover {
+    border-color: green;
+}
+
 .menubox .card-body {
     padding: .5rem;
 }

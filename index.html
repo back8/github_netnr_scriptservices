@@ -15,14 +15,17 @@ https://zme.ink
     <meta name="keywords" content="netnr,NET牛人,服务" />
     <meta name="description" content="netnr,NET牛人,服务" />
 
+</head>
+<body>
+    <div id="LoadingMask" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: white; z-index: 9999; background-image:url('/images/loading.svg');background-repeat:no-repeat;background-position:48% 45%"></div>
+
     <link rel="stylesheet" href="https://code.bdstatic.com/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" />
 <script src="https://code.bdstatic.com/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="https://code.bdstatic.com/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link href="/css/global.css?v=YaQ3JWl802IcWPta9E75J_e-bT1eLY0Fms-U6sPPz4g" rel="stylesheet" />
-</head>
-<body>
+    <link href="/css/global.css?v=Rep0XR9ByAu8jr9G2KfAPIQB4mFyBF4GVtxXHNNZii4" rel="stylesheet" />
+
         <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
             <span class="fa fa-align-justify fa-2x"></span>
         </button>
@@ -55,12 +58,11 @@ https://zme.ink
         </div>
         <div style="height:30px;"></div>
 
-    <script src="https://cdn.jsdelivr.net/gh/netnr/upstream@master/upstream.js"></script>
-    <script src="/js/global.js?v=ocNd2UaCzuc29O6HwmCfUL8Zd-uz-dPo8eIAADmeKjk"></script>
+    <script src="/js/global.js?v=_bOBwi08KSboLYM8zuSJjXZMGUUOfhUeMdzpWouqWzs"></script>
     <script src="https://code.bdstatic.com/npm/jzjs@2.0.2/2.0.2/jz.min.js"></script>
 
     <div class="bodym">
-        <div class="container my-3">
+        <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="input-group">
@@ -106,6 +108,39 @@ https://zme.ink
                     <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
+                                <a href="//md.netnr.com" target="_blank">
+                                    <img src="/favicon.svg" data-icon="/icon/markdown.svg" />
+                                    <h5>Markdown&#x7F16;&#x8F91;&#x5668;</h5>
+                                    <small>Markdown&#x7F16;&#x8F91;&#x5668;</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="//json.netnr.com" target="_blank">
+                                    <img src="/favicon.svg" data-icon="/icon/json.svg" />
+                                    <h5>JSON&#x7F16;&#x8F91;&#x5668;</h5>
+                                    <small>JSON&#x7F16;&#x8F91;&#x5668;</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="/nginx" target="_blank">
+                                    <img src="/favicon.svg" data-icon="/icon/nginx.svg" />
+                                    <h5>Nginx&#x7F16;&#x8F91;&#x5668;</h5>
+                                    <small>Nginx&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x5316;</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                        <div class="card">
+                            <div class="card-body">
                                 <a href="/diff" target="_blank">
                                     <img src="/favicon.svg" data-icon="/icon/diff.svg" />
                                     <h5>&#x6587;&#x672C;&#x5BF9;&#x6BD4;</h5>
@@ -121,17 +156,6 @@ https://zme.ink
                                     <img src="/favicon.svg" data-icon="/icon/code.svg" />
                                     <h5>&#x6587;&#x4EF6;&#x8F6C;Base64</h5>
                                     <small>Base64&#x7F16;&#x7801;&#x8F6C;&#x6362;</small>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <a href="//json.netnr.com" target="_blank">
-                                    <img src="/favicon.svg" data-icon="/icon/json.svg" />
-                                    <h5>JSON&#x7F16;&#x8F91;&#x5668;</h5>
-                                    <small>JSON&#x7F16;&#x8F91;&#x5668;</small>
                                 </a>
                             </div>
                         </div>
@@ -161,28 +185,6 @@ https://zme.ink
                     <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
-                                <a href="//md.netnr.com" target="_blank">
-                                    <img src="/favicon.svg" data-icon="/icon/markdown.svg" />
-                                    <h5>Markdown&#x7F16;&#x8F91;&#x5668;</h5>
-                                    <small>Markdown&#x7F16;&#x8F91;&#x5668;</small>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <a href="//nginxbeautifier.com" target="_blank">
-                                    <img src="/favicon.svg" data-icon="/icon/nginx.svg" />
-                                    <h5>Nginx&#x683C;&#x5F0F;&#x5316;</h5>
-                                    <small>Nginx&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x5316;</small>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
-                        <div class="card">
-                            <div class="card-body">
                                 <a href="//tiny.netnr.com" target="_blank">
                                     <img src="/favicon.svg" data-icon="/icon/tiny.svg" />
                                     <h5>&#x56FE;&#x7247;&#x538B;&#x7F29;</h5>
@@ -197,7 +199,7 @@ https://zme.ink
                                 <a href="//tool.css-js.com" target="_blank">
                                     <img src="/favicon.svg" data-icon="/icon/js.svg" />
                                     <h5>JS&#x538B;&#x7F29;</h5>
-                                    <small>JS&#x538B;&#x7F29;</small>
+                                    <small>JS&#x538B;&#x7F29;&#x3001;CSS&#x538B;&#x7F29;</small>
                                 </a>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-﻿@{
+@{
     var mj = Netnr.Extend.ToJObject(Netnr.Core.FileTo.ReadText(Startup.HostingEnvironment.WebRootPath + "/js/data/", "favorite.json"));
     string title = string.Empty;
     string action = ViewContext.RouteData.Values["action"].ToString().ToLower();
@@ -40,11 +40,14 @@ endfor: TempData["Title"] = title;
     <meta name="keywords" content="netnr,NET牛人,@(new Microsoft.AspNetCore.Html.HtmlContentBuilder().AppendHtml(title))" />
     <meta name="description" content="netnr,NET牛人,@(new Microsoft.AspNetCore.Html.HtmlContentBuilder().AppendHtml(title))" />
 
+</head>
+<body>
+    <partial name="_PartialLoading" />
+
     <partial name="_PartialLayoutQuote4" />
 
     <link href="/css/global.css" rel="stylesheet" asp-append-version="true" />
-</head>
-<body>
+
     @if (!canav.Contains(ca))
     {
         <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
@@ -80,7 +83,6 @@ endfor: TempData["Title"] = title;
         <div style="height:30px;"></div>
     }
 
-    <script src="https://cdn.jsdelivr.net/gh/netnr/upstream@master/upstream.js"></script>
     <script src="/js/global.js" asp-append-version="true"></script>
     <script src="https://code.bdstatic.com/npm/jzjs@2.0.2/2.0.2/jz.min.js"></script>
 

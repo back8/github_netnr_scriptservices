@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Netnr.ScriptServices.Controllers
 {
@@ -59,6 +59,15 @@ namespace Netnr.ScriptServices.Controllers
         /// </summary>
         /// <returns></returns>
         public IActionResult IdCard()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Nginx配置文件格式化
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Nginx()
         {
             return View();
         }

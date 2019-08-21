@@ -1,4 +1,4 @@
-﻿{
+{
   "links": [
     {
       "group": "开发",
@@ -16,6 +16,22 @@
           "remark": "Monaco Editor 编辑器"
         },
         {
+          "url": "//md.netnr.com",
+          "icon": "/icon/markdown.svg",
+          "title": "Markdown编辑器"
+        },
+        {
+          "url": "//json.netnr.com",
+          "icon": "/icon/json.svg",
+          "title": "JSON编辑器"
+        },
+        {
+          "url": "/nginx",
+          "icon": "/icon/nginx.svg",
+          "title": "Nginx编辑器",
+          "remark": "Nginx配置文件格式化"
+        },
+        {
           "url": "/diff",
           "icon": "/icon/diff.svg",
           "title": "文本对比",
@@ -26,11 +42,6 @@
           "icon": "/icon/code.svg",
           "title": "文件转Base64",
           "remark": "Base64编码转换"
-        },
-        {
-          "url": "//json.netnr.com",
-          "icon": "/icon/json.svg",
-          "title": "JSON编辑器"
         },
         {
           "url": "/jsontocsharp",
@@ -45,17 +56,6 @@
           "remark": "JSON与XML相互转换"
         },
         {
-          "url": "//md.netnr.com",
-          "icon": "/icon/markdown.svg",
-          "title": "Markdown编辑器"
-        },
-        {
-          "url": "//nginxbeautifier.com",
-          "icon": "/icon/nginx.svg",
-          "title": "Nginx格式化",
-          "remark": "Nginx配置文件格式化"
-        },
-        {
           "url": "//tiny.netnr.com",
           "icon": "/icon/tiny.svg",
           "title": "图片压缩"
@@ -63,7 +63,8 @@
         {
           "url": "//tool.css-js.com",
           "icon": "/icon/js.svg",
-          "title": "JS压缩"
+          "title": "JS压缩",
+          "remark": "JS压缩、CSS压缩"
         },
         {
           "url": "//getman.cn",

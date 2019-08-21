@@ -1,72 +1,101 @@
-﻿var st = {
-    config: {
-        bout: 15,
-        singlesize: 6355,
-        longtime: 10 * 1000,
-        path: "",
-        origin: [
-            "https://lib.baomitu.com/sql.js/0.5.0/js/sql-debug.js",
-            "https://cdn.bootcss.com/sql.js/0.5.0/js/sql-debug.js",
-            "https://cdn.staticfile.org/sql.js/0.5.0/js/sql-debug.js",
-            "https://cdn.jsdelivr.net/npm/sql.js@0.5.0/js/sql-debug.js",
-            "https://cdnjs.cloudflare.com/ajax/libs/sql.js/0.5.0/js/sql-debug.js"
-        ]
+﻿var sp = {
+    origin: [
+        "https://lib.baomitu.com/sql.js/0.5.0/js/sql-debug.js",
+        "https://cdn.jsdelivr.net/npm/sql.js@1.0.0/dist/sql-asm-debug.js",
+        "https://code.bdstatic.com/npm/sql.js@1.0.0/dist/sql-asm-debug.js"
+    ],
+    //测试时长
+    time: 1000 * 20,
+    //开始时间
+    start: null,
+    //下载大小
+    downsize: 0,
+    //源索引
+    urindex: -1,
+    //源标识
+    urid: 0,
+    //连接数.
+    conn: 0,
+    //允许连接数
+    maxconn: 3,
+    //结果
+    result: [],
+    //数据项
+    data: [],
+    //压缩率（根据开发环境的测试结果计算所得）
+    cr: 3.9,
+    //获取请求的源
+    geturi: function () {
+        if (++sp.urindex >= sp.origin.length) {
+            sp.urindex = 0;
+        }
+        return sp.origin[sp.urindex] + "?" + Math.random();
     },
-    speed: function () {
-        var dsize = st.complete * st.config.singlesize, ctime = new Date().valueOf() - st.startTime;
-        var speed = dsize / ctime;
-        return speed.toFixed(2);
-    },
-    startTime: null,
-    endTime: null,
-    complete: 0,
-    speeds: [],
-    showspeed: function (speed) {
-        console.log(speed);
-        $('#divresult').html('<h2>' + speed + ' MB/s</h2>');
+    addconn: function () {
+        var si1 = setInterval(function () {
+            if (sp.conn < sp.maxconn) {
+                sp.conn++;
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', sp.geturi());
+                var urid = sp.urid++;
+                xhr.onprogress = function (event) {
+                    sp.result[urid] = event.loaded;
+                };
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        sp.conn--;
+                    }
+                }
+                xhr.send();
+            }
+        }, 50);
+
+        //统计
+        var si2 = setInterval(function () {
+            var now = new Date().valueOf(), ds = 0;
+            sp.result.map(x => {
+                ds += (x || 0);
+            });
+            sp.downsize = ds;
+            var speed = ((sp.downsize / 1024 / 1024 / sp.cr) / ((now - sp.start) / 1000)).toFixed(2);
+            sp.data.push(speed);
+
+            //回调
+            sp.progress && sp.progress(speed);
+
+            //结束
+            if (now - sp.start > sp.time) {
+                window.clearInterval(si1);
+                window.clearInterval(si2);
+                //完成
+                sp.complete && sp.complete();
+            }
+        }, 500)
     },
     run: function () {
-        $('#btnRunSpeedTest')[0].disabled = true;
-        st.complete = 0;
-        st.speeds = [];
-        st.taskout = setInterval(function () {
-            st.showspeed(st.speed());
-        }, 500);
-        st.task = setInterval(function () {
-            var speed = st.speed();
-            if (speed != 0) {
-                st.speeds.push(parseFloat(speed));
-            }
-            var ctime = new Date().valueOf() - st.startTime;
-            if (ctime > st.config.longtime || st.complete == st.config.bout) {
-                clearInterval(st.task);
-                clearInterval(st.taskout);
-
-                st.speeds.sort(function (a, b) {
-                    return a > b ? -1 : 1;
-                });
-                st.speeds.length = Math.ceil(st.speeds.length * .4);
-
-                var sum = eval(st.speeds.join("+"));
-                var lastspeed = (sum / st.speeds.length).toFixed(2);
-
-                st.showspeed(lastspeed);
-
-                $('#btnRunSpeedTest')[0].disabled = false;
-            }
-        }, 100);
-
-        st.startTime = new Date().valueOf();
-
-        for (var i = 0; i < st.config.bout; i++) {
-            var src = st.config.origin[i % 3] + st.config.path + "?" + i + Math.random();
-            fetch(src).then(res => res.text()).then(function () {
-                st.complete += 1;
-            }).catch(err => {
-                console.log(err)
-            });
-        }
+        sp.downsize = 0;
+        sp.urindex = -1;
+        sp.urid = 0;
+        sp.conn = 0;
+        sp.result = [];
+        sp.start = new Date().valueOf();
+        sp.addconn();
     }
 }
 
-$('#btnRunSpeedTest').click(st.run);
+$('#btnRunSpeedTest').click(function () {
+    //过程
+    sp.progress = function (speed) {
+        $('#divresult').html('<h2>当前速率：' + speed + ' MB/s</h2>');
+    };
+    //完成
+    sp.complete = function () {
+        var sum = 0;
+        sp.data.map(x => {
+            sum += x * 1;
+        })
+        var avg = (sum / sp.data.length).toFixed(2);
+        $('#divresult').html('<h2>平均速率：' + avg + ' MB/s</h2>');
+    };
+    sp.run();
+});

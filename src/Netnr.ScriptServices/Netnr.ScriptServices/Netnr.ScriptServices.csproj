@@ -113,6 +113,6 @@
     <Folder Include="wwwroot\icon\" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4favorite_1json__JsonSchema="http://json.schemastore.org/config" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
