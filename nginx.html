@@ -39,7 +39,7 @@ https://zme.ink
                     <li><a href="https://www.netnr.com/doc" title="文档管理"><span class="fa fa-fw fa-book"></span> Doc</a></li>
                     <li><a href="https://www.netnr.com/draw/discover" title="绘制"><span class="fa fa-fw fa-paint-brush"></span> Draw</a></li>
                     <li>
-                        <a class="text-muted"><span class="fa fa-fw fa-ellipsis-h"></span> More <span class="indicator fa fa-sort-desc"></span></a>
+                        <a class="text-muted"><span class="fa fa-fw fa-ellipsis-h"></span></a>
                         <ul>
                             <li><a href="https://www.netnr.com/mix/about"><i class="fa fa-fw fa-info"></i> 关于</a></li>
                             <li><a href="https://www.netnr.com/lab"><i class="fa fa-fw fa-flask"></i> 实验室</a></li>
@@ -77,8 +77,8 @@ https://zme.ink
                 </select>
                 <select class="custom-select" id="senewline">
                     <optgroup label="格式化选项">
-                        <option value="1">大括号在行首</option>
-                        <option value="2">大括号在行尾</option>
+                        <option value="1">大括号在行尾</option>
+                        <option value="2">大括号在行首（新的一行）</option>
                     </optgroup>
                 </select>
             </div>
@@ -95,41 +95,8 @@ https://zme.ink
 <link href="https://cdn.jsdelivr.net/gh/codemirror/codemirror@5.19.0/lib/codemirror.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/gh/codemirror/codemirror@5.19.0/lib/codemirror.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/codemirror/codemirror@5.19.0/mode/nginx/nginx.min.js"></script>
-<script src="/js/plus/nginxbeautifier.js?v=E3MwyRFrOMl7ALGClA2FMG4jgLLtsxcTBIxYoGMj6M0"></script>
 
-<script>
-    var ebox = $('#ebox');
-
-    this.cme = CodeMirror.fromTextArea(ebox.children()[0], {
-        mode: 'nginx',
-        lineNumbers: true
-    })
-
-    var lseg = localStorage.getItem("editor_nginx");
-    if (lseg && lseg != "") {
-        cme.setValue(lseg);
-    }
-    cme.on("change", function () {
-        localStorage.setItem("editor_nginx", cme.getValue())
-    });
-
-    $(window).on('load resize', function () {
-        cme.setSize("100%", $(this).height() - ebox.offset().top - 15);
-    })
-
-    $('#btnFormatterNginxConf').click(function () {
-        var indent = $('#seindent').val();
-        modifyOptions({ INDENTATION: indent });
-        var cleanLines = clean_lines(cme.getValue());
-        var newline = $('#senewline').val();
-        if (newline == 2) {
-            modifyOptions({ trailingBlankLines: false });
-            cleanLines = join_opening_bracket(cleanLines);
-        }
-        cleanLines = perform_indentation(cleanLines, indent);
-        cme.setValue(cleanLines.join("\n"));
-    });
-</script>
+<script src="/js/nginx.js?v=lK-vq-E-JnM73x3LHXUWm39QtmtnZAeH39F53tz80sQ"></script>
     </div>
 
     <a href="javascript:totop();" class="totop" title="返回顶部">ˆ</a>

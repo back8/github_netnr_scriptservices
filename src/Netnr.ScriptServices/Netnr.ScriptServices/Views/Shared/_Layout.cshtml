@@ -1,4 +1,4 @@
-@{
+﻿@{
     var mj = Netnr.Extend.ToJObject(Netnr.Core.FileTo.ReadText(Startup.HostingEnvironment.WebRootPath + "/js/data/", "favorite.json"));
     string title = string.Empty;
     string action = ViewContext.RouteData.Values["action"].ToString().ToLower();
@@ -63,7 +63,7 @@ endfor: TempData["Title"] = title;
                     <li><a href="https://www.netnr.com/doc" title="文档管理"><span class="fa fa-fw fa-book"></span> Doc</a></li>
                     <li><a href="https://www.netnr.com/draw/discover" title="绘制"><span class="fa fa-fw fa-paint-brush"></span> Draw</a></li>
                     <li>
-                        <a class="text-muted"><span class="fa fa-fw fa-ellipsis-h"></span> More <span class="indicator fa fa-sort-desc"></span></a>
+                        <a class="text-muted"><span class="fa fa-fw fa-ellipsis-h"></span></a>
                         <ul>
                             <li><a href="https://www.netnr.com/mix/about"><i class="fa fa-fw fa-info"></i> 关于</a></li>
                             <li><a href="https://www.netnr.com/lab"><i class="fa fa-fw fa-flask"></i> 实验室</a></li>

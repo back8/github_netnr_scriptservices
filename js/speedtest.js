@@ -5,7 +5,7 @@
         "https://code.bdstatic.com/npm/sql.js@1.0.0/dist/sql-asm-debug.js"
     ],
     //测试时长
-    time: 1000 * 20,
+    time: 1000 * 12,
     //开始时间
     start: null,
     //下载大小

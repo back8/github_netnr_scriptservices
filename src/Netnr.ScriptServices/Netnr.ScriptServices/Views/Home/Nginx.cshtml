@@ -13,8 +13,8 @@
                 </select>
                 <select class="custom-select" id="senewline">
                     <optgroup label="格式化选项">
-                        <option value="1">大括号在行首</option>
-                        <option value="2">大括号在行尾</option>
+                        <option value="1">大括号在行尾</option>
+                        <option value="2">大括号在行首（新的一行）</option>
                     </optgroup>
                 </select>
             </div>
@@ -28,38 +28,5 @@
 </div>
 
 <partial name="_PartialCodeMirrorQuote" model="@("nginx")" />
-<script src="/js/plus/nginxbeautifier.js" asp-append-version="true"></script>
 
-<script>
-    var ebox = $('#ebox');
-
-    this.cme = CodeMirror.fromTextArea(ebox.children()[0], {
-        mode: 'nginx',
-        lineNumbers: true
-    })
-
-    var lseg = localStorage.getItem("editor_nginx");
-    if (lseg && lseg != "") {
-        cme.setValue(lseg);
-    }
-    cme.on("change", function () {
-        localStorage.setItem("editor_nginx", cme.getValue())
-    });
-
-    $(window).on('load resize', function () {
-        cme.setSize("100%", $(this).height() - ebox.offset().top - 15);
-    })
-
-    $('#btnFormatterNginxConf').click(function () {
-        var indent = $('#seindent').val();
-        modifyOptions({ INDENTATION: indent });
-        var cleanLines = clean_lines(cme.getValue());
-        var newline = $('#senewline').val();
-        if (newline == 2) {
-            modifyOptions({ trailingBlankLines: false });
-            cleanLines = join_opening_bracket(cleanLines);
-        }
-        cleanLines = perform_indentation(cleanLines, indent);
-        cme.setValue(cleanLines.join("\n"));
-    });
-</script>
+<script src="/js/nginx.js" asp-append-version="true"></script>
