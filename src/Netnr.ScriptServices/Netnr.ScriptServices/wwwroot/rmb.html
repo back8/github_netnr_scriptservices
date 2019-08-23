@@ -11,9 +11,9 @@ https://zme.ink
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <title>UserAgent NET牛人</title>
-    <meta name="keywords" content="netnr,NET牛人,UserAgent" />
-    <meta name="description" content="netnr,NET牛人,UserAgent" />
+    <title>人民币转大写 NET牛人</title>
+    <meta name="keywords" content="netnr,NET牛人,人民币转大写" />
+    <meta name="description" content="netnr,NET牛人,人民币转大写" />
 
 </head>
 <body>
@@ -61,38 +61,23 @@ https://zme.ink
     <script src="https://code.bdstatic.com/npm/jzjs@2.0.2/2.0.2/jz.min.js"></script>
 
         <h4 class="text-center mt-3 mb-4">
-            <img src="/icon/info.svg" class="titleicon" onerror="this.src = '/favicon.svg'; this.onerror = null;" />
-            UserAgent
+            <img src="/icon/rmb.svg" class="titleicon" onerror="this.src = '/favicon.svg'; this.onerror = null;" />
+            &#x4EBA;&#x6C11;&#x5E01;&#x8F6C;&#x5927;&#x5199;
         </h4>
 
     <div class="min300">
         <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h5></h5>
-            <table class="table table-bordered">
-                <tr>
-                    <th>浏览器</th>
-                    <th>内核</th>
-                    <th>系统</th>
-                    <th>设备</th>
-                </tr>
-            </table>
-            <p>
-                开源项目：<a href="https://github.com/fex-team/ua-device">https://github.com/fex-team/ua-device</a>
-            </p>
+            <input class="form-control form-control-lg" placeholder="请输入金额 ￥" id="txtMoney" autofocus />
+        </div>
+        <div class="col-md-12 my-3">
+            <input class="form-control form-control-lg" id="txtCapital" />
         </div>
     </div>
 </div>
 
-<script src="/js/ua-device/useragent-base.js?v=NFO6440jzrNiAhgkvwfZxYfkTwb0RLY5XkIpYTA-GYM"></script>
-<script src="/js/ua-device/ua-device.js?v=GLRQsDtvdfFPYL7AVMAjBG9PD80UZlfk92u49LHql6Y"></script>
-<script>
-    var uainfo = navigator.userAgent;
-    $('h5').html(uainfo);
-    var uaobj = uaDevice(uainfo), ub = uaobj.browser, ue = uaobj.engine, uo = uaobj.os, ud = uaobj.device;
-    $('<tr><td>' + ub.name + '</br>' + ub.version.original + '</td><td>' + ue.name + '</br>' + ue.version.original + '</td><td>' + uo.name + '</br>' + uo.version.original + '</td><td>' + ud.type + '</br>' + (ud.model || "") + '</td></tr>').appendTo($('table.table').find('tbody'));
-</script>
+<script src="/js/rmb.js?v=Vjw7J0uFeeA3Hf13Gai4dNcVTLpSikY6Zbl0JOtG9io"></script>
     </div>
 
     <a href="javascript:totop();" class="totop" title="返回顶部">ˆ</a>

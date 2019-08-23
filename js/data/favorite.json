@@ -212,6 +212,11 @@
           "remark": "资源下载速率"
         },
         {
+          "url": "/rmb",
+          "icon": "/icon/rmb.svg",
+          "title": "人民币转大写"
+        },
+        {
           "url": "/qiushibaike",
           "icon": "/icon/qsbk.svg",
           "title": "糗事百科笑话"

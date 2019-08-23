@@ -233,5 +233,14 @@ namespace Netnr.ScriptServices.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// RMB
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult RMB()
+        {
+            return View();
+        }
     }
 }

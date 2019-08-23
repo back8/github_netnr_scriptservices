@@ -1,9 +1,9 @@
-﻿@{
+@{
     var mj = Netnr.Extend.ToJObject(Netnr.Core.FileTo.ReadText(Startup.HostingEnvironment.WebRootPath + "/js/data/", "favorite.json"));
 
     var isHtmlPath = Netnr.Core.CacheTo.Get("GlobalKey-HtmlPath") as string;
 }
-<div class="container">
+<div class="container my-4">
     <div class="row">
         <div class="col-md-12">
             <div class="input-group">
@@ -33,11 +33,11 @@
             </div>
         </div>
     }
-    <div class="menubox my-3" id="favoritebox">
+    <div class="menubox" id="favoritebox">
         @foreach (var gi in mj["links"])
         {
             <div class="row">
-                <div class="col-md-12 h5 mt-3">@gi["group"].ToString()</div>
+                <div class="col-md-12 h5 mt-3"><i class="fa fa-fw text-muted fa-reorder"></i>@gi["group"].ToString()</div>
                 @foreach (var item in gi["items"])
                 {
                     var href = item["url"].ToString();

@@ -364,10 +364,6 @@ body {
     margin-left: 0 !important;
 }
 
-.bodym {
-    min-height: 300px;
-}
-
 .min300 {
     min-height: 300px;
 }
@@ -453,6 +449,12 @@ body {
         height: 48px;
         margin: 3px 8px 0 0;
     }
+
+.titleicon {
+    width: 28px;
+    height: 28px;
+    vertical-align: text-top;
+}
 
 /*footer*/
 .footer {

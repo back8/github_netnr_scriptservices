@@ -1,4 +1,4 @@
-﻿var sp = {
+var sp = {
     origin: [
         "https://lib.baomitu.com/sql.js/0.5.0/js/sql-debug.js",
         "https://cdn.jsdelivr.net/npm/sql.js@1.0.0/dist/sql-asm-debug.js",
@@ -70,7 +70,7 @@
                 //完成
                 sp.complete && sp.complete();
             }
-        }, 500)
+        }, 900)
     },
     run: function () {
         sp.downsize = 0;
@@ -79,14 +79,19 @@
         sp.conn = 0;
         sp.result = [];
         sp.start = new Date().valueOf();
+        $('#divresult').html('');
         sp.addconn();
     }
 }
 
 $('#btnRunSpeedTest').click(function () {
+    if (sp.start && new Date().valueOf() - sp.start <= sp.time) {
+        jz.msg('正在测速中');
+        return false;
+    }
     //过程
     sp.progress = function (speed) {
-        $('#divresult').html('<h2>当前速率：' + speed + ' MB/s</h2>');
+        $('#divresult').append('<div>' + speed + ' MB/s</div>');
     };
     //完成
     sp.complete = function () {
@@ -95,7 +100,7 @@ $('#btnRunSpeedTest').click(function () {
             sum += x * 1;
         })
         var avg = (sum / sp.data.length).toFixed(2);
-        $('#divresult').html('<h2>平均速率：' + avg + ' MB/s</h2>');
+        $('<h2>平均：' + avg + ' MB/s</h2>').insertBefore($('#divresult').children().first())
     };
     sp.run();
 });
