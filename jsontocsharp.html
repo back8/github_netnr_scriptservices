@@ -24,7 +24,7 @@ https://zme.ink
 <script src="https://code.bdstatic.com/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="https://code.bdstatic.com/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link href="/css/global.css?v=5_U8o5jXwZAoKhiyA79qojo6HtWwE4uNJ41SsUd-pFc" rel="stylesheet" />
+    <link href="/css/global.css?v=lZSw_iR55koYpX1XFuSZfdYeMif6W-TW3yzs47zKwLA" rel="stylesheet" />
 
         <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
             <span class="fa fa-align-justify fa-2x"></span>
@@ -66,32 +66,31 @@ https://zme.ink
         </h4>
 
     <div class="min300">
-        <style>
-    #tobox label {
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: 400;
-        margin-right: 15px;
-    }
-
-        #tobox label input {
-            width: 1.1em;
-            height: 1.1em;
-            cursor: pointer;
-            vertical-align: sub;
-        }
-</style>
-
-<div class="container">
+        <div class="container">
     <div class="row" id="tobox">
-        <div class="col-sm-12">
-            <button class="btn btn-success mr-3" id="btnJsonToEntity">生成实体</button>
-            <label><input type="checkbox" id="chkNotes" checked />注释</label>
-            <label><input type="checkbox" id="chkClassNameFirstBig" checked />类名大写开头</label>
+        <div class="col-sm-12 mb-3">
+            <div class="input-group">
+                <button class="btn btn-warning" id="btnJsonToEntity">生成实体</button>
+                <div class="input-group-append">
+                    <select class="form-control" id="seNotes">
+                        <optgroup label="是否带注释">
+                            <option value="1">带注释</option>
+                            <option value="2">不带注释</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="input-group-append">
+                    <select class="form-control" id="seClassNameFirstBig">
+                        <optgroup label="类名强制大写开头">
+                            <option value="1">强制大写</option>
+                            <option value="2">不强制大写</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-6 pt-3">
+        <div class="col-sm-6">
             <label>JSON</label>
-            <label><input type="checkbox" checked id="chkformat1" />自动格式化</label>
             <textarea class="form-control" id="txt1" placeholder=" 来一串 JSON">
 {
   "site": {
@@ -125,15 +124,15 @@ https://zme.ink
   "version": "v.1.0.0"
 }</textarea>
         </div>
-        <div class="col-sm-6 pt-3">
-            <label>C#实体类</label>
+        <div class="col-sm-6">
+            <label>C#</label>
             <textarea class="form-control" id="txt2"></textarea>
         </div>
     </div>
 </div>
 
-<script src="/js/plus/jquery.format.js?v=7x0AGyrnd4dahqt-34xA5WkUJuDj25SsCu_3naWHqgI"></script>
-<script src="/js/jsontocsharp.js?v=qrIX8ZqcX-YmmgWywOoBxr5qRwe8MqzjYDUM3u0wFDM"></script>
+<script src="https://cdn.jsdelivr.net/gh/zachofalltrades/jquery.format@0.1.2/jquery.format.min.js"></script>
+<script src="/js/jsontocsharp.js?v=n5rSS2qfJfmaj8lzrPnU049E2WDhMrSxSt2cYLll_5o"></script>
 
     </div>
 

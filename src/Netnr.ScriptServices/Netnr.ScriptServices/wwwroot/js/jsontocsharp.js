@@ -1,4 +1,4 @@
-﻿/*                      *\
+/*                      *\
     Author：netnr
     Date：2018-01-08
 \*                      */
@@ -204,8 +204,8 @@ $('#btnJsonToEntity').click(function () {
     try {
         json = $.parseJSON(json);
 
-        rt.config.notes = $('#chkNotes')[0].checked;
-        rt.config.classNameFirstBig = $('#chkClassNameFirstBig')[0].checked;
+        rt.config.notes = $('#seNotes').val() == 1;
+        rt.config.classNameFirstBig = $('#seClassNameFirstBig').val() == 1;
 
         var ort = rt.init(json);
         $('#txt2').val(ort);
@@ -214,13 +214,11 @@ $('#btnJsonToEntity').click(function () {
     }
 });
 
-function autoformatjson() {
+$('#txt1').on('input', function () {
     try {
-        $('#chkformat1').is(':checked') && $("#txt1").format({ method: 'json' });
+        $("#txt1").format({ method: 'json' });
     } catch (e) { }
-}
-$('#chkformat1').click(autoformatjson);
-$('#txt1').on('input', autoformatjson);
+});
 
 $(window).on('load resize', function () {
     var ch = $(this).height(), sh = ch - $('#tobox').offset().top - 105;

@@ -345,21 +345,6 @@ body {
     margin: -2px 2px 0 0;
 }
 
-.siteIcon img {
-    user-select: none;
-    animation: myrotate 60s infinite;
-}
-
-@keyframes myrotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
     margin-left: 0 !important;
 }

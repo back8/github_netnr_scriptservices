@@ -1,4 +1,4 @@
-﻿<style>
+<style>
     #tobox label {
         cursor: pointer;
         font-size: 1.2em;
@@ -16,15 +16,14 @@
 
 <div class="container">
     <div class="row" id="tobox">
-        <div class="col-sm-12">
+        <div class="col-sm-12 mb-3">
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-success" id="btnToXml">JSON 转 XML</button>
                 <button type="button" class="btn btn-info" id="btnToJson">XML 转 JSON</button>
             </div>
         </div>
-        <div class="col-sm-6 pt-3">
+        <div class="col-sm-6">
             <label>JSON</label>
-            <label><input type="checkbox" checked id="chkformat1" />自动格式化</label>
             <textarea class="form-control" id="txt1" placeholder=" 来一串 JSON">
 {
   "site": {
@@ -58,15 +57,14 @@
   "version": "v.1.0.0"
 }</textarea>
         </div>
-        <div class="col-sm-6 pt-3">
+        <div class="col-sm-6">
             <label>XML</label>
-            <label><input type="checkbox" checked id="chkformat2" />自动格式化</label>
             <label title="根节点有且只有一个，没有自动加root">❤</label>
             <textarea class="form-control" id="txt2"></textarea>
         </div>
     </div>
 </div>
 
-<script src="https://lib.baomitu.com/x2js/1.2.0/xml2json.min.js"></script>
-<script src="/js/plus/jquery.format.js" asp-append-version="true"></script>
+<script src="https://cdn.jsdelivr.net/gh/abdolence/x2js@1.2.0/xml2json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/zachofalltrades/jquery.format@0.1.2/jquery.format.min.js"></script>
 <script src="/js/jsontoxml.js" asp-append-version="true"></script>

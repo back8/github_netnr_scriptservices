@@ -40,13 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js\jz\jz.js" />
-    <None Include="wwwroot\js\jz\jz.min.js" />
-    <None Include="wwwroot\js\ua-device\ua-device.js" />
-    <None Include="wwwroot\js\ua-device\useragent-base.js" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -98,21 +91,12 @@
     <Content Update="wwwroot\js\data\favorite.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\js\jz\jz.css">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="wwwroot\js\jz\jz.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="wwwroot\js\jz\jz.min.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\icon\" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4js_4data_4favorite_1json__JsonSchema="http://json.schemastore.org/ansible-stable-2.7" /></VisualStudio></ProjectExtensions>
 
 </Project>

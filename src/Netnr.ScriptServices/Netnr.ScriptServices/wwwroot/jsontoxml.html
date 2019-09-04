@@ -24,7 +24,7 @@ https://zme.ink
 <script src="https://code.bdstatic.com/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="https://code.bdstatic.com/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link href="/css/global.css?v=5_U8o5jXwZAoKhiyA79qojo6HtWwE4uNJ41SsUd-pFc" rel="stylesheet" />
+    <link href="/css/global.css?v=lZSw_iR55koYpX1XFuSZfdYeMif6W-TW3yzs47zKwLA" rel="stylesheet" />
 
         <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
             <span class="fa fa-align-justify fa-2x"></span>
@@ -84,15 +84,14 @@ https://zme.ink
 
 <div class="container">
     <div class="row" id="tobox">
-        <div class="col-sm-12">
+        <div class="col-sm-12 mb-3">
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-success" id="btnToXml">JSON 转 XML</button>
                 <button type="button" class="btn btn-info" id="btnToJson">XML 转 JSON</button>
             </div>
         </div>
-        <div class="col-sm-6 pt-3">
+        <div class="col-sm-6">
             <label>JSON</label>
-            <label><input type="checkbox" checked id="chkformat1" />自动格式化</label>
             <textarea class="form-control" id="txt1" placeholder=" 来一串 JSON">
 {
   "site": {
@@ -126,18 +125,17 @@ https://zme.ink
   "version": "v.1.0.0"
 }</textarea>
         </div>
-        <div class="col-sm-6 pt-3">
+        <div class="col-sm-6">
             <label>XML</label>
-            <label><input type="checkbox" checked id="chkformat2" />自动格式化</label>
             <label title="根节点有且只有一个，没有自动加root">❤</label>
             <textarea class="form-control" id="txt2"></textarea>
         </div>
     </div>
 </div>
 
-<script src="https://lib.baomitu.com/x2js/1.2.0/xml2json.min.js"></script>
-<script src="/js/plus/jquery.format.js?v=7x0AGyrnd4dahqt-34xA5WkUJuDj25SsCu_3naWHqgI"></script>
-<script src="/js/jsontoxml.js?v=pCqgiemQ3GVbFzeqcLQzmOuGxMKtNOhzYOY-zUGtQos"></script>
+<script src="https://cdn.jsdelivr.net/gh/abdolence/x2js@1.2.0/xml2json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/zachofalltrades/jquery.format@0.1.2/jquery.format.min.js"></script>
+<script src="/js/jsontoxml.js?v=FfX1GOK6w7mSigMIN7hgvlbREdXpfACy5NIaUtUmIbc"></script>
 
     </div>
 
