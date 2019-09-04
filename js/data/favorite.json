@@ -136,6 +136,12 @@
           "icon": "/icon/vector.svg",
           "title": "阿里矢量图标",
           "remark": "矢量图标库"
+        },
+        {
+          "url": "//whois.aliyun.com",
+          "icon": "/icon/whois.svg",
+          "title": "Whois查询",
+          "remark": "域名信息查询"
         }
       ]
     },

@@ -1,18 +1,14 @@
-﻿function autoformatjson() {
+$('#txt1').on('input', function () {
     try {
-        $('#chkformat1').is(':checked') && $("#txt1").format({ method: 'json' });
+        $("#txt1").format({ method: 'json' })
     } catch (e) { }
-}
-$('#chkformat1').click(autoformatjson);
-$('#txt1').on('input', autoformatjson);
+});
 
-function autoformatxml() {
+$('#txt2').on('input', function () {
     try {
-        $('#chkformat2').is(':checked') && $("#txt2").format({ method: 'xml' });
+        $("#txt2").format({ method: 'xml' });
     } catch (e) { }
-}
-$('#chkformat2').click(autoformatxml);
-$('#txt2').on('input', autoformatxml);
+});
 
 
 $("#btnToJson").click(function (e) {
