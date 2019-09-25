@@ -58,7 +58,6 @@ $('#seGroup').find('option').each(function () {
         return false;
     }
 });
-$('#txtSearch')[0].focus();
 
 $('#favoritebox').find('img').each(function () {
     var that = this;
