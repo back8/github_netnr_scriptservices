@@ -13,7 +13,7 @@ namespace Netnr.ScriptServices
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .UseWebRoot(Directory.GetCurrentDirectory().Replace("\\", "/").Replace("/src/Netnr.ScriptServices/Netnr.ScriptServices", ""))
+            .UseWebRoot(Directory.GetCurrentDirectory().Replace("\\", "/").Split("/src/")[0])
             .UseUrls(args)
             .UseStartup<Startup>();
     }

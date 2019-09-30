@@ -17,7 +17,6 @@
 }
 
 body {
-    font-family: -apple-system,"helvetica neue",helvetica,arial,"pingfang sc","hiragino sans gb","wenquanyi micro hei","microsoft yahei",sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -416,6 +415,7 @@ body {
     display: block;
     overflow-x: hidden;
     white-space: nowrap;
+    line-height: initial;
     text-overflow: ellipsis;
 }
 
