@@ -1,7 +1,6 @@
 @{
-    var mj = Netnr.Extend.ToJObject(Netnr.Core.FileTo.ReadText(Startup.HostingEnvironment.WebRootPath + "/js/data/", "favorite.json"));
-
-    var isHtmlPath = Netnr.Core.CacheTo.Get("GlobalKey-HtmlPath") as string;
+    var mj = FileTo.ReadText(Startup.HostingEnvironment.WebRootPath + "/js/data/", "favorite.json").ToJObject();
+    var isHtmlPath =  CacheTo.Get("GlobalKey-HtmlPath") as string;
 }
 <div class="container my-4">
     <div class="row">

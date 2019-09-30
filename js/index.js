@@ -1,4 +1,4 @@
-﻿function search(group, keywords) {
+function search(group, keywords) {
     keywords = keywords.trim().toLowerCase();
     var fb = $('#favoritebox');
     fb.find('a').each(function () {
@@ -65,4 +65,10 @@ $('#favoritebox').find('img').each(function () {
     var ci = new Image();
     ci.onload = function () { that.src = this.src; }
     ci.src = that.getAttribute('data-icon');
+
+    //本地环境兼容
+    var na = that.parentNode;
+    if (na.href.indexOf("//localhost") >= 0 && na.href.indexOf("/home/") == -1) {
+        na.href += ".html";
+    }
 });

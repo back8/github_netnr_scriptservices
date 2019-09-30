@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace Netnr.ScriptServices
 {
@@ -12,6 +13,8 @@ namespace Netnr.ScriptServices
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .UseWebRoot(Directory.GetCurrentDirectory().Replace("\\", "/").Replace("/src/Netnr.ScriptServices/Netnr.ScriptServices", ""))
+            .UseUrls(args)
+            .UseStartup<Startup>();
     }
 }

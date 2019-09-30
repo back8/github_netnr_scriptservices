@@ -1,21 +1,19 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Netnr.ScriptServices
 {
     public class Startup
     {
-        public static IConfiguration Configuration;
-        public static IHostingEnvironment HostingEnvironment;
+        public static IWebHostEnvironment HostingEnvironment;
 
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            HostingEnvironment = env;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -28,12 +26,23 @@ namespace Netnr.ScriptServices
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddRazorPages();
+            services.AddControllersWithViews();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                //Action原样输出JSON
+                options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
+                //日期格式化
+                options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IMemoryCache memoryCache)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IMemoryCache memoryCache)
         {
+            //缓存
+            Core.CacheTo.memoryCache = memoryCache;
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -43,21 +52,23 @@ namespace Netnr.ScriptServices
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseCookiePolicy();
-
-            app.UseMvc(routes =>
+            //静态资源允许跨域
+            app.UseStaticFiles(new StaticFileOptions()
             {
-                routes.MapRoute(
-                   name: "default",
-                   template: "{controller=Home}/{action=Index}/{id?}");
+                OnPrepareResponse = (x) =>
+                {
+                    x.Context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+                }
             });
 
-            //缓存
-            Core.CacheTo.memoryCache = memoryCache;
+            app.UseRouting();
 
-            HostingEnvironment = env;
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
