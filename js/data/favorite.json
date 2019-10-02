@@ -85,15 +85,22 @@
           "remark": "CHECK-HOST"
         },
         {
-          "url": "//tool.chinaz.com/regex/",
-          "icon": "/icon/regex.svg",
-          "title": "正则表达式"
+          "url": "/ip",
+          "icon": "/icon/ip.svg",
+          "title": "IP",
+          "remark": "客户端IP地址"
         },
         {
-          "url": "//www.chinassl.net/ssltools/convert-ssl.html",
-          "icon": "/icon/ssl.svg",
-          "title": "SSL证书转换",
-          "remark": "格式转换"
+          "url": "/localhost",
+          "icon": "/icon/dns.svg",
+          "title": "域名本地解析",
+          "remark": "域名解析127.0.0.1"
+        },
+        {
+          "url": "//whois.aliyun.com",
+          "icon": "/icon/whois.svg",
+          "title": "Whois查询",
+          "remark": "域名信息查询"
         },
         {
           "url": "/useragent",
@@ -102,10 +109,15 @@
           "remark": "客户端信息"
         },
         {
-          "url": "/ip",
-          "icon": "/icon/ip.svg",
-          "title": "IP",
-          "remark": "客户端IP地址"
+          "url": "//www.chinassl.net/ssltools/convert-ssl.html",
+          "icon": "/icon/ssl.svg",
+          "title": "SSL证书转换",
+          "remark": "格式转换"
+        },
+        {
+          "url": "//tool.chinaz.com/regex/",
+          "icon": "/icon/regex.svg",
+          "title": "正则表达式"
         },
         {
           "url": "/bed",
@@ -136,12 +148,6 @@
           "icon": "/icon/vector.svg",
           "title": "阿里矢量图标",
           "remark": "矢量图标库"
-        },
-        {
-          "url": "//whois.aliyun.com",
-          "icon": "/icon/whois.svg",
-          "title": "Whois查询",
-          "remark": "域名信息查询"
         }
       ]
     },
@@ -183,16 +189,22 @@
           "remark": "激活Windows系统"
         },
         {
+          "url": "/tempsms",
+          "icon": "/icon/sms.svg",
+          "title": "临时短信",
+          "remark": "接收临时短信"
+        },
+        {
+          "url": "/tempmail",
+          "icon": "/icon/email.svg",
+          "title": "临时邮箱",
+          "remark": "接收临时邮件"
+        },
+        {
           "url": "//v.netnr.com",
           "icon": "/icon/video.svg",
           "title": "VIP视频解析",
           "remark": "免费看会员视频"
-        },
-        {
-          "url": "//bccto.me",
-          "icon": "/icon/email.svg",
-          "title": "临时邮箱",
-          "remark": "接收临时邮件"
         },
         {
           "url": "/symbol",
