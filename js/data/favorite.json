@@ -73,6 +73,12 @@
           "remark": "在线HTTP请求"
         },
         {
+          "url": "/pingcloud",
+          "icon": "/icon/pingcloud.svg",
+          "title": "Ping云",
+          "remark": "Ping各大云服务节点"
+        },
+        {
           "url": "//ping.pe",
           "icon": "/icon/ping.svg",
           "title": "Ping",
@@ -148,6 +154,11 @@
           "icon": "/icon/vector.svg",
           "title": "阿里矢量图标",
           "remark": "矢量图标库"
+        },
+        {
+          "url": "//c.runoob.com/more/svgeditor/",
+          "icon": "/icon/svg.svg",
+          "title": "SVG在线编辑器"
         }
       ]
     },
@@ -161,10 +172,10 @@
           "remark": "360高清壁纸"
         },
         {
-          "url": "/idcard",
-          "icon": "/icon/idcard.svg",
-          "title": "身份证号码查询",
-          "remark": "查询地区、性别，纠正尾数"
+          "url": "/speedtest",
+          "icon": "/icon/speed.svg",
+          "title": "网络测速",
+          "remark": "资源下载速率"
         },
         {
           "url": "/qrcode",
@@ -175,6 +186,12 @@
           "url": "/lottery",
           "icon": "/icon/lottery.svg",
           "title": "彩票查询"
+        },
+        {
+          "url": "/idcard",
+          "icon": "/icon/idcard.svg",
+          "title": "身份证号码查询",
+          "remark": "查询地区、性别，纠正尾数"
         },
         {
           "url": "//ps.netnr.com",
@@ -189,6 +206,12 @@
           "remark": "激活Windows系统"
         },
         {
+          "url": "//v.netnr.com",
+          "icon": "/icon/video.svg",
+          "title": "VIP视频解析",
+          "remark": "免费看会员视频"
+        },
+        {
           "url": "/tempsms",
           "icon": "/icon/sms.svg",
           "title": "临时短信",
@@ -199,12 +222,6 @@
           "icon": "/icon/email.svg",
           "title": "临时邮箱",
           "remark": "接收临时邮件"
-        },
-        {
-          "url": "//v.netnr.com",
-          "icon": "/icon/video.svg",
-          "title": "VIP视频解析",
-          "remark": "免费看会员视频"
         },
         {
           "url": "/symbol",
@@ -222,12 +239,6 @@
           "url": "/weather",
           "icon": "/icon/weather.svg",
           "title": "天气预报"
-        },
-        {
-          "url": "/speedtest",
-          "icon": "/icon/speed.svg",
-          "title": "网络测速",
-          "remark": "资源下载速率"
         },
         {
           "url": "/rmb",

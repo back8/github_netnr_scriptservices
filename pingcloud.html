@@ -11,9 +11,9 @@ https://zme.ink
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <title>彩票查询 NET牛人</title>
-    <meta name="keywords" content="netnr,NET牛人,彩票查询" />
-    <meta name="description" content="netnr,NET牛人,彩票查询" />
+    <title>Ping云 NET牛人</title>
+    <meta name="keywords" content="netnr,NET牛人,Ping云" />
+    <meta name="description" content="netnr,NET牛人,Ping云" />
 
 </head>
 <body>
@@ -61,58 +61,25 @@ https://zme.ink
     <script src="https://code.bdstatic.com/npm/jzjs@2.0.2/2.0.2/jz.min.js"></script>
 
         <h4 class="text-center mt-3 mb-4">
-            <img src="/icon/lottery.svg" class="titleicon" onerror="this.src = '/favicon.svg'; this.onerror = null;" />
-            &#x5F69;&#x7968;&#x67E5;&#x8BE2;
+            <img src="/icon/pingcloud.svg" class="titleicon" onerror="this.src = '/favicon.svg'; this.onerror = null;" />
+            Ping&#x4E91;
         </h4>
 
     <div class="min300">
         <style>
-    #divlottery span {
-        width: 25px;
-        height: 25px;
-        font-size: 14px;
-        line-height: 25px;
-        text-align: center;
-        border-radius: 12px;
-        display: inline-block;
-        margin: 5px 10px 5px 0;
+    #divbox {
+        position: relative;
     }
 
-    #divlottery .sp1 {
-        color: white;
-        background-color: #cc0000;
-    }
-
-    #divlottery .sp2 {
-        color: white;
-        background-color: #3074da;
-    }
+        #divbox > div {
+            position: absolute;
+            transition: all .4s;
+        }
 </style>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <form>
-                <div class="input-group">
-                    <span class="input-group-append">
-                        <button class="btn btn-warning" type="button" id="btnSearch">彩票类型</button>
-                    </span>
-                    <select class="custom-select" id="seLotteryType" name="code">
-                        <option value="001">双色球</option>
-                        <option value="110">七星彩</option>
-                        <option value="003">七乐彩</option>
-                        <option value="002">福彩3d</option>
-                        <option value="113">大乐透</option>
-                        <option value="108">排列3</option>
-                        <option value="109">排列5</option>
-                    </select>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div id="divlottery" class="row mt-3"></div>
-</div>
-<script src="/js/lottery.js?v=mOQuoJcfZPyg0oRf-ehR-ev6GgDM7GWdp4VBt3ZFXGI"></script>
+<div id="divbox"></div>
+
+<script src="/js/pingcloud.js?v=DLCMHlzOzo_bNdzAktXKrk-tWQjO2QlDmR5xw4vMxrg"></script>
     </div>
 
     <a href="javascript:totop();" class="totop" title="返回顶部">ˆ</a>

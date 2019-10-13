@@ -269,5 +269,14 @@ namespace Netnr.ScriptServices.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// Ping云服务
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult PingCloud()
+        {
+            return View();
+        }
     }
 }
