@@ -894,7 +894,7 @@ var pc = {
     init: function () {
         var htm = [], tbheader = '<tr><th style="width:40%">区域</th><th style="width:40%">别名</th><th style="width:20%">ms</th></tr>';
         PingCloud.forEach(p => {
-            htm.push('<div style="width:470px;" class="py-4 px-5"><table class="table table-sm table-bordered table-hover">')
+            htm.push('<div class="col-xl-3 col-lg-4 col-md-6 py-3 px-3"><table class="table table-sm table-bordered table-hover">')
 
             var pname = p.name;
             if (p.alias != pname) {
@@ -948,27 +948,29 @@ var pc = {
 
         //流
         $(window).on('load resize', function () {
-            var dbox = $('#divbox'),
-                dcard = dbox.children(),
-                colWidth = dcard.outerWidth(),
-                colHeights = [],
-                colCount = Math.floor(dbox.width() / colWidth);
-            colHeights.length = colCount;
-            dcard.each(function () {
-                var minValue = colHeights[0] || 0
-                var minIndex = 0
-                for (var i = 0; i < colCount; i++) {
-                    if ((colHeights[i] || 0) < minValue) {
-                        minValue = colHeights[i] || 0;
-                        minIndex = i
+            setTimeout(function () {
+                var dbox = $('#divbox'),
+                    dcard = dbox.children(),
+                    colWidth = dcard.outerWidth(),
+                    colHeights = [],
+                    colCount = Math.floor(dbox.width() / colWidth);
+                colHeights.length = colCount;
+                dcard.each(function () {
+                    var minValue = colHeights[0] || 0
+                    var minIndex = 0
+                    for (var i = 0; i < colCount; i++) {
+                        if ((colHeights[i] || 0) < minValue) {
+                            minValue = colHeights[i] || 0;
+                            minIndex = i
+                        }
                     }
-                }
-                $(this).css({
-                    left: minIndex * colWidth,
-                    top: minValue
+                    $(this).css({
+                        left: minIndex * colWidth,
+                        top: minValue
+                    })
+                    colHeights[minIndex] = (colHeights[minIndex] || 0) + $(this).outerHeight(true)
                 })
-                colHeights[minIndex] = (colHeights[minIndex] || 0) + $(this).outerHeight(true)
-            })
+            }, 310)
         });
 
         //提示

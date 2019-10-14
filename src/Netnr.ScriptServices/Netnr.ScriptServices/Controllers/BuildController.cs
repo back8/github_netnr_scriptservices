@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Netnr.ScriptServices.Controllers
@@ -12,37 +14,50 @@ namespace Netnr.ScriptServices.Controllers
         /// <returns></returns>
         public IActionResult Index()
         {
-            var listOut = new List<string>();
             var startNow = DateTime.Now;
-            listOut.Add("Starting time：" + startNow.ToString("yyyy-MM-dd HH:mm:ss"));
 
+            var url = Request.Scheme + "://" + Request.Host.ToString() + "/home/";
+            var path = Startup.HostingEnvironment.WebRootPath + "/";
+            var pageTotal = 0;
+
+            var listOut = new List<string>();
             var cacheKey = "GlobalKey-HtmlPath";
             Core.CacheTo.Set(cacheKey, "yes");
 
-            string url = Request.Scheme + "://" + Request.Host.ToString() + "/home/";
-            string path = Startup.HostingEnvironment.WebRootPath + "/";
-
-            int pageCount = 0;
             //反射action
             var type = typeof(HomeController);
             var methods = type.GetMethods();
-            foreach (var item in methods)
+            //并行请求
+            Parallel.ForEach(methods, mh =>
             {
-                if (item.DeclaringType == type)
+                if (mh.DeclaringType == type)
                 {
-                    string html = Core.HttpTo.Get(url + item.Name);
-                    Core.FileTo.WriteText(html, path, item.Name.ToLower() + ".html", false);
-                    pageCount++;
+                    string html = Core.HttpTo.Get(url + mh.Name);
+                    Core.FileTo.WriteText(html, path, mh.Name.ToLower() + ".html", false);
+                    pageTotal++;
                 }
-            }
+
+            });
 
             Core.CacheTo.Remove(cacheKey);
 
-            listOut.Add("Time：" + (DateTime.Now - startNow).TotalMilliseconds + " MS");
-            listOut.Add("Count：" + pageCount);
+            listOut.Add("Starting time：" + startNow.ToString("yyyy-MM-dd HH:mm:ss"));
+
+            listOut.Add("Time：" + (DateTime.Now - startNow).TotalMilliseconds + " ms");
+            listOut.Add("Count：" + pageTotal);
             listOut.Add("Successful");
 
             return Content(string.Join(Environment.NewLine, listOut));
         }
+
+        public void GetUrl()
+        {
+            Console.WriteLine(DateTime.Now.Ticks);
+
+            //string html = Core.HttpTo.Get(url + key);
+            //Core.FileTo.WriteText(html, path, key.ToLower() + ".html", false);
+            //dicAction[key] = true;
+        }
+
     }
 }
