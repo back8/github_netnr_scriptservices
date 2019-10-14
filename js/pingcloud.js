@@ -912,7 +912,6 @@ var pc = {
         })
         document.getElementById("divbox").innerHTML = htm.join('');
 
-
         //点击委托
         $(document).click(function (e) {
             e = e || window.event;
@@ -947,34 +946,36 @@ var pc = {
         })
 
         //流
-        $(window).on('load resize', function () {
-            setTimeout(function () {
-                var dbox = $('#divbox'),
-                    dcard = dbox.children(),
-                    colWidth = dcard.outerWidth(),
-                    colHeights = [],
-                    colCount = Math.floor(dbox.width() / colWidth);
-                colHeights.length = colCount;
-                dcard.each(function () {
-                    var minValue = colHeights[0] || 0
-                    var minIndex = 0
-                    for (var i = 0; i < colCount; i++) {
-                        if ((colHeights[i] || 0) < minValue) {
-                            minValue = colHeights[i] || 0;
-                            minIndex = i
-                        }
-                    }
-                    $(this).css({
-                        left: minIndex * colWidth,
-                        top: minValue
-                    })
-                    colHeights[minIndex] = (colHeights[minIndex] || 0) + $(this).outerHeight(true)
-                })
-            }, 310)
+        pc.flow();
+        $(window).on('resize', function () {
+            setTimeout(pc.flow, 310)
         });
 
         //提示
         $('.tipep').tooltip();
+    },
+    flow: function () {
+        var dbox = $('#divbox'),
+            dcard = dbox.children(),
+            colWidth = dcard.outerWidth(),
+            colHeights = [],
+            colCount = Math.floor(dbox.width() / colWidth);
+        colHeights.length = colCount;
+        dcard.each(function () {
+            var minValue = colHeights[0] || 0
+            var minIndex = 0
+            for (var i = 0; i < colCount; i++) {
+                if ((colHeights[i] || 0) < minValue) {
+                    minValue = colHeights[i] || 0;
+                    minIndex = i
+                }
+            }
+            $(this).css({
+                left: minIndex * colWidth,
+                top: minValue
+            })
+            colHeights[minIndex] = (colHeights[minIndex] || 0) + $(this).outerHeight(true)
+        })
     },
     //Ping
     ping: function (url, cb) {
