@@ -167,7 +167,7 @@ $(function () {
 /* ScriptServices */
 var ss = {
     ajax: function (obj) {
-        var hosts = ["https://cors.zme.ink/", "https://proxy.zme.ink/", "https://bird.ioliu.cn/v2?url="];
+        var hosts = ["https://cors.zme.ink/", "https://bird.ioliu.cn/v2?url="];
         upstream(hosts, function (fast, ok, bad) {
             obj.url = fast + obj.url;
             $.ajax(obj);
