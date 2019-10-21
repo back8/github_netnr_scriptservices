@@ -103,6 +103,12 @@
           "remark": "域名解析127.0.0.1"
         },
         {
+          "url": "//zijian.aliyun.com",
+          "icon": "/icon/detect.svg",
+          "title": "域名检测",
+          "remark": "检测域名状态、DNS、站点"
+        },
+        {
           "url": "//whois.aliyun.com",
           "icon": "/icon/whois.svg",
           "title": "Whois查询",
