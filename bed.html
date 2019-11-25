@@ -64,65 +64,64 @@ https://zme.ink
         </h4>
 
     <div class="min300">
-        <style>
-    /*进度条*/
-    .divProgress {
-        position: fixed;
-        left: 0;
-        right: 0;
-        width: 0;
-        bottom: 0;
-        z-index: 9;
-        height: 3px;
-        background-color: #D44B47;
-    }
-</style>
+        <link href="/lib/bed/css/bed.css?v=90tKZhkCtatDMEOhJbp9UHAY_6LRXY4JPOqw9itiljg" rel="stylesheet" />
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            
-            <div class="card">
-                <div class="card-header">sm.ms</div>
-                <div class="card-body">
-                    <form action="https://sm.ms/api/upload" method="post" enctype="multipart/form-data" target="_blank" id="form1">
-                        <div class="form-group">
-                            <input class="form-control" type="file" id="smfile" name="smfile" required>
+
+            <p class="text-danger">请勿上传违反中国法律的文件，违者后果自负。</p>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">请选择上传的托管商</span>
+                </div>
+                <select class="custom-select" id="seup">
+                    <option value="https://imgbb.com/json">imgbb.com</option>
+                    <option value="https://jpg.dog/json">jpg.dog</option>
+                    <option value="https://uploadbeta.com/api/pictures/upload/file/">uploadbeta.com</option>
+                </select>
+            </div>
+
+            <div id="wrapper">
+                <div id="container">
+                    <div id="uploader">
+                        <div class="queueList">
+                            <div id="dndArea" class="placeholder">
+                                <div id="filePicker"></div>
+                                <p>截图粘贴、拖到这里</p>
+                            </div>
                         </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" checked id="chk1"> 在新的页面输出上传结果
-                            </label>
+                        <div class="statusBar" style="display:none;">
+                            <div class="progress">
+                                <span class="text">0%</span>
+                                <span class="percentage"></span>
+                            </div><div class="info"></div>
+                            <div class="btns">
+                                <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-success" id="btnUpload1">上传</button>
-                        <a href="https://sm.ms/api/list" class="btn btn-info pull-right" target="_blank">上传记录</a>
-                    </form>
+                    </div>
                 </div>
             </div>
 
-            <div class="card mt-3">
-                <div class="card-header">uploadbeta</div>
-                <div class="card-body" id="dropupload2">
-                    <div class="alert alert-warning" role="alert">
-                        <strong>限制：</strong> 大小不超过5M，图片宽度大于260px，支持BMP，PNG，JPG和GIF。
-                    </div>
+            <div id="divnt"></div>
 
-                    <form action="https://uploadbeta.com/api/pictures/upload/file/" method="post" enctype="multipart/form-data" target="_blank" id="form2">
-
-                        <div class="form-group">
-                            <input type="file" name="file" class="form-control" required>
-                            <p class="help-block">拖拽图片到此处</p>
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">消息</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-
-                        <input type="hidden" name="title" value="netnr-bed" />
-                        <input type="hidden" name="desc" value="This picture is uploaded from netnr" />
-                        <input type="hidden" name="cat" value="netnr-category" />
-                        <input type="hidden" name="group" value="netnr-group" />
-
-                        <button type="submit" class="btn btn-success" id="btnUpload2">上传</button>
-                        <a href="https://uploadbeta.com/picture-gallery/?key=netnr-bed" class="btn btn-info pull-right" target="_blank">上传记录</a>
-                    </form>
-                    <div id="divUploadResult2" class="mt-3">
+                        <div class="modal-body" id="myModalBody">
+                            <textarea class="form-control" style="height:300px"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -130,10 +129,8 @@ https://zme.ink
     </div>
 </div>
 
-<!--进度条-->
-<div class="divProgress" id="divProgress"></div>
-
-<script src="/js/bed.js?v=mgMyTS_ZagTPGtJzvGUg-O7aHNLITH00IKTgX5yg264"></script>
+<script src="https://code.bdstatic.com/npm/webuploader@0.1.8/dist/webuploader.html5only.min.js"></script>
+<script src="/lib/bed/js/bed.js?v=Nz8ASTbJrnO1wiv_zAHZzGJ7sMgXdBLFY5M3aLPuWpI"></script>
 
     </div>
 
