@@ -82,7 +82,7 @@ function QueryJoke() {
                 json.total = data.total;
                 //生成分页按钮
                 var pcm = PageControlMake(json);
-                $('#tabPage').html(pcm.button + '<div style="float:right;line-height:35px;margin-top:20px;">' + pcm.explain + '</div>');
+                $('#tabPage').html(pcm.button + '<div class="float-left ml-3 mt-2">' + pcm.explain + '</div>');
                 //分页按钮绑定事件
                 BindPageButtonEvent(json);
 
@@ -121,7 +121,7 @@ $("#divJoke").click(function (e) {
 function PageControlMake(json) {
     var pi = json.page, ps = json.pageSize, total = json.total, pc = Math.ceil(total / ps),
         txtHtml = '第 ' + (total == 0 ? 0 : pi) + ' 页，共 ' + pc + '页，共 ' + total + ' 条记录',
-        btnHtml = '<ul class="pagination">'
+        btnHtml = '<ul class="pagination float-left">'
             + '<li class="page-item"><a class="page-link" class="page-link" href="javascript:void(0)" >«</a></li>';
     pi = parseInt(pi);
     if (total) {
