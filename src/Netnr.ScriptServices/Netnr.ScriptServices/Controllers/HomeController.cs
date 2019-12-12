@@ -40,7 +40,7 @@ namespace Netnr.ScriptServices.Controllers
         /// 备案信息查询
         /// </summary>
         /// <returns></returns>
-        public IActionResult DomainName()
+        public IActionResult ICP()
         {
             return View();
         }

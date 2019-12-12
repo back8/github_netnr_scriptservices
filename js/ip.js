@@ -1,5 +1,11 @@
 ﻿try {
-    $('#txtSohu').val(returnCitySN.cip)
+    $('#txtSohu').val(returnCitySN.cip);
+} catch (e) { }
+
+try {
+    fetch('https://api.zme.ink/ip').then(x => x.json()).then(res => {
+        $('#txtZme').val(res.ip);
+    })
 } catch (e) { }
 
 try {
@@ -29,6 +35,7 @@ try {
         $('#txIntranet').val(ip);
     });
 } catch (e) { }
+
 
 function CallBack_Ipsb(data) {
     $('#txtIpsb').val(data.ip)
