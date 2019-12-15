@@ -260,6 +260,11 @@
           "url": "/qiushibaike",
           "icon": "/icon/qsbk.svg",
           "title": "糗事百科笑话"
+        },
+        {
+          "url": "/purine",
+          "icon": "/icon/purine.svg",
+          "title": "食物嘌呤含量"
         }
       ]
     }

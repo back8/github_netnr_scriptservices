@@ -278,5 +278,14 @@ namespace Netnr.ScriptServices.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 食物嘌呤含量
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Purine()
+        {
+            return View();
+        }
     }
 }
