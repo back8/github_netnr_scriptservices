@@ -17,7 +17,7 @@
     },
     resize: function () {
         $('#table').bootstrapTable('resetView', {
-            height: $(window).height() - 130
+            height: $(window).height() - $('#PGrid').offset().top - 15
         });
     },
     load: function () {
