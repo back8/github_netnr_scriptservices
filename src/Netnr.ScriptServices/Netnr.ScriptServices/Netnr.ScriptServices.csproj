@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
-    <PackageReference Include="Netnr.Core" Version="1.2.1" />
+    <PackageReference Include="Netnr.Core" Version="1.2.2" />
   </ItemGroup>
 
 </Project>
