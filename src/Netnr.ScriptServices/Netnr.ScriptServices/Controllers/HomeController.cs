@@ -287,5 +287,14 @@ namespace Netnr.ScriptServices.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 免费数据库
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult FreeDB()
+        {
+            return View();
+        }
     }
 }

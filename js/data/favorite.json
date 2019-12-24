@@ -170,6 +170,12 @@
           "url": "/icp",
           "icon": "/icon/icp.svg",
           "title": "ICP备案查询"
+        },
+        {
+          "url": "/freedb",
+          "icon": "/icon/db.svg",
+          "title": "免费数据库",
+          "remark": "在线免费的数据库"
         }
       ]
     },
