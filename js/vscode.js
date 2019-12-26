@@ -1,4 +1,5 @@
-﻿var defaultLang = localStorage["vscode-lang"] || 'javascript',
+﻿var editor,
+    defaultLang = localStorage["vscode-lang"] || 'javascript',
     defaultContent = localStorage["vscode-content"] || 'console.log("Hello world!");',
     defaultTheme = localStorage["vscode-theme"] || 'vs';
 

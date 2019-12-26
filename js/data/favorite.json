@@ -44,6 +44,12 @@
           "remark": "Base64编码转换"
         },
         {
+          "url": "/sqlformatter",
+          "icon": "/icon/sqlformatter.svg",
+          "title": "SQL格式化",
+          "remark": "美化SQL语句"
+        },
+        {
           "url": "/jsontocsharp",
           "icon": "/icon/csharp.svg",
           "title": "JSON生成C#实体类",

@@ -20,7 +20,7 @@
     </div>
     <div class="row mt-2">
         <div class="col-md-12">
-            <div id="editor" style="border:1px solid #ddd;"></div>
+            <div id="editor" class="border"></div>
         </div>
     </div>
 </div>
@@ -32,5 +32,7 @@
     }
     AutoHeight();
 </script>
-<partial name="_PartialMonacoEditorQuote" />
+
+<partial name="_PartialQuote" model="@("monaco-editor")" />
+
 <script src="/js/vscode.js" asp-append-version="true"></script>

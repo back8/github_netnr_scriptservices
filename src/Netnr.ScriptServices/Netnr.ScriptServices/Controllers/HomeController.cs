@@ -296,5 +296,14 @@ namespace Netnr.ScriptServices.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 格式化
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult SqlFormatter()
+        {
+            return View();
+        }
     }
 }

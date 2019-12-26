@@ -1,9 +1,10 @@
-﻿<!--
-https://github.com/netnr
-https://gitee.com/netnr
-https://www.netnr.com
-https://zme.ink
--->
+﻿            <!--
+            https://github.com/netnr
+            https://gitee.com/netnr
+            https://www.netnr.com
+            https://zme.ink
+            -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,16 +14,16 @@ https://zme.ink
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <title>JSON转换XML NET牛人</title>
     <meta name="keywords" content="netnr,NET牛人,JSON转换XML" />
-    <meta name="description" content="netnr,NET牛人,JSON转换XML" />
+    <meta name="description" content="netnr,NET牛人,JSON与XML相互转换" />
 
 </head>
 <body>
-    <div id="LoadingMask" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: white; z-index: 9999; background-image:url('/images/loading.svg');background-repeat:no-repeat;background-position:48% 45%"></div>
+                <div id="LoadingMask" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: white; z-index: 9999; background-image:url('/images/loading.svg');background-repeat:no-repeat;background-position:48% 45%"></div>
+            <link href="https://code.bdstatic.com/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+            <script src="https://code.bdstatic.com/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+            <script src="https://code.bdstatic.com/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" href="https://code.bdstatic.com/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" />
-<script src="https://code.bdstatic.com/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-<script src="https://code.bdstatic.com/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <link href="/css/global.css?v=M5KD0L7Um9ATF0UOw4IBUuIsX5R_V8zjtaf0WT4k8f4" rel="stylesheet" />
 
@@ -64,33 +65,20 @@ https://zme.ink
         </h4>
 
     <div class="min300">
-        <style>
-    #tobox label {
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: 400;
-        margin-right: 15px;
-    }
-
-        #tobox label input {
-            width: 1.1em;
-            height: 1.1em;
-            cursor: pointer;
-            vertical-align: sub;
-        }
-</style>
-
-<div class="container">
+        <div class="container">
     <div class="row" id="tobox">
-        <div class="col-sm-12 mb-3">
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-success" id="btnToXml">JSON 转 XML</button>
-                <button type="button" class="btn btn-info" id="btnToJson">XML 转 JSON</button>
-            </div>
-        </div>
         <div class="col-sm-6">
-            <label>JSON</label>
-            <textarea class="form-control" id="txt1" placeholder=" 来一串 JSON">
+            <div class="input-group mb-2">
+                <button type="button" class="btn btn-warning" id="btnToXml">JSON → XML</button>
+                <div class="input-group-prepend">
+                    <select class="custom-select" id="seautoformatter1">
+                        <option value="1">自动格式化</option>
+                        <option value="2">不格式化</option>
+                    </select>
+                </div>
+            </div>
+
+            <pre id="txt1" class="border">
 {
   "site": {
     "title": "NET牛人",
@@ -121,20 +109,49 @@ https://zme.ink
   },
   "updaet": "2018.01.08",
   "version": "v.1.0.0"
-}</textarea>
+}
+            </pre>
         </div>
         <div class="col-sm-6">
-            <label>XML</label>
-            <label title="根节点有且只有一个，没有自动加root">❤</label>
-            <textarea class="form-control" id="txt2"></textarea>
+
+            <div class="input-group mb-2">
+                <button type="button" class="btn btn-warning" id="btnToJson">XML → JSON</button>
+                <div class="input-group-prepend">
+                    <select class="custom-select" id="seautoformatter2">
+                        <option value="1">自动格式化</option>
+                        <option value="2">不格式化</option>
+                    </select>
+                </div>
+                <div class="input-group-prepend">
+                    <i class="fa fa-info-circle ml-2" data-toggle="tooltip" title="必须有一个根节点，没有则自动加 root"></i>
+                </div>
+            </div>
+
+            <div class="border" id="txt2"></div>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/abdolence/x2js@1.2.0/xml2json.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/zachofalltrades/jquery.format@0.1.2/jquery.format.min.js"></script>
-<script src="/js/jsontoxml.js?v=FfX1GOK6w7mSigMIN7hgvlbREdXpfACy5NIaUtUmIbc"></script>
+<script>
+    function AutoHeight() {
+        var ch = $(window).height() - $('#txt1').offset().top - 20;
+        $('#txt1').css('height', Math.max(200, ch));
+        $('#txt2').css('height', Math.max(200, ch));
+    }
+    AutoHeight();
+</script>
 
+            <script src="https://cdn.jsdelivr.net/gh/abdolence/x2js@1.2.0/xml2json.min.js"></script>
+            <script src="https://code.bdstatic.com/npm/monaco-editor@0.18.1/min/vs/loader.js"></script>
+            <script>
+                require.config({
+                    paths: { vs: "https://code.bdstatic.com/npm/monaco-editor@0.18.1/min/vs" },
+                    'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
+                });
+            </script>
+
+
+<script src="/js/jsontoxml.js?v=6O3WmsXDxKCjfVbFaUM2bNd0Re-ES-HfbX89XvbJ0Wg"></script>
     </div>
 
     <a href="javascript:totop();" class="totop" title="返回顶部">ˆ</a>

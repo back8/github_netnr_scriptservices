@@ -1,4 +1,4 @@
-﻿var originContent = '', varyContent = '';
+﻿var editor, originContent = '', varyContent = '';
 
 $('#chkDiffMode').click(changeDiffMode);
 function changeDiffMode() {

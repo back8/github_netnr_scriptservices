@@ -12,9 +12,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <title>人民币转大写 NET牛人</title>
-    <meta name="keywords" content="netnr,NET牛人,人民币转大写" />
-    <meta name="description" content="netnr,NET牛人,人民币转大写" />
+    <title>SQL格式化 NET牛人</title>
+    <meta name="keywords" content="netnr,NET牛人,SQL格式化" />
+    <meta name="description" content="netnr,NET牛人,美化SQL语句" />
 
 </head>
 <body>
@@ -60,23 +60,50 @@
     <script src="https://code.bdstatic.com/npm/jzjs@2.0.2/2.0.2/jz.min.js"></script>
 
         <h4 class="text-center mt-3 mb-4">
-            <img src="/icon/rmb.svg" class="titleicon" onerror="this.src = '/favicon.svg'; this.onerror = null;" />
-            &#x4EBA;&#x6C11;&#x5E01;&#x8F6C;&#x5927;&#x5199;
+            <img src="/icon/sqlformatter.svg" class="titleicon" onerror="this.src = '/favicon.svg'; this.onerror = null;" />
+            SQL&#x683C;&#x5F0F;&#x5316;
         </h4>
 
     <div class="min300">
         <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <input class="form-control form-control-lg" placeholder="请输入金额 ￥" id="txtMoney" autofocus />
+        <div class="col-lg-3 col-md-6">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <button class="btn btn-warning" id="btnSqlFormatter">格式化</button>
+                </div>
+                <select class="custom-select" id="selanguage">
+                    <option value="sql">SQL</option>
+                    <option value="n1ql">N1QL</option>
+                    <option value="db2">DB2</option>
+                </select>
+            </div>
         </div>
-        <div class="col-md-12 my-3">
-            <input class="form-control form-control-lg" id="txtCapital" />
+        <div class="col-md-12 mt-3">
+            <div id="editor" class="border"></div>
         </div>
     </div>
 </div>
 
-<script src="/js/rmb.js?v=Vjw7J0uFeeA3Hf13Gai4dNcVTLpSikY6Zbl0JOtG9io"></script>
+<script>
+    function AutoHeight() {
+        var ch = $(window).height() - $('#editor').offset().top - 15;
+        $('#editor').css('height', Math.max(200, ch));
+    }
+    AutoHeight();
+</script>
+
+            <script src="https://code.bdstatic.com/npm/sql-formatter@2.3.3/dist/sql-formatter.min.js"></script>
+            <script src="https://code.bdstatic.com/npm/monaco-editor@0.18.1/min/vs/loader.js"></script>
+            <script>
+                require.config({
+                    paths: { vs: "https://code.bdstatic.com/npm/monaco-editor@0.18.1/min/vs" },
+                    'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
+                });
+            </script>
+
+
+<script src="/js/sqlformatter.js?v=s6U9fnEE5DlldWNE1_Jr6qU_99pqe_1m53htcDiDiHI"></script>
     </div>
 
     <a href="javascript:totop();" class="totop" title="返回顶部">ˆ</a>

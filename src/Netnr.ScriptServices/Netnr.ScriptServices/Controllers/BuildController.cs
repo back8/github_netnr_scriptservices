@@ -49,15 +49,5 @@ namespace Netnr.ScriptServices.Controllers
 
             return Content(string.Join(Environment.NewLine, listOut));
         }
-
-        public void GetUrl()
-        {
-            Console.WriteLine(DateTime.Now.Ticks);
-
-            //string html = Core.HttpTo.Get(url + key);
-            //Core.FileTo.WriteText(html, path, key.ToLower() + ".html", false);
-            //dicAction[key] = true;
-        }
-
     }
 }

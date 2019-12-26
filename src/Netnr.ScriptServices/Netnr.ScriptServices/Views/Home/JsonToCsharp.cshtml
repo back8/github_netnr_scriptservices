@@ -19,11 +19,18 @@
                         </optgroup>
                     </select>
                 </div>
+                <div class="input-group-append">
+                    <select class="custom-select" id="seautoformatter1">
+                        <optgroup label="是否自动格式化">
+                            <option value="1">自动格式化</option>
+                            <option value="2">不格式化</option>
+                        </optgroup>
+                    </select>
+                </div>
             </div>
         </div>
         <div class="col-sm-6">
-            <label>JSON</label>
-            <textarea class="form-control" id="txt1" placeholder=" 来一串 JSON">
+            <pre class="border" id="txt1">
 {
   "site": {
     "title": "NET牛人",
@@ -54,14 +61,23 @@
   },
   "updaet": "2018.01.08",
   "version": "v.1.0.0"
-}</textarea>
+}</pre>
         </div>
         <div class="col-sm-6">
-            <label>C#</label>
-            <textarea class="form-control" id="txt2"></textarea>
+            <div class="border" id="txt2"></div>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/zachofalltrades/jquery.format@0.1.2/jquery.format.min.js"></script>
+<script>
+    function AutoHeight() {
+        var ch = $(window).height() - $('#txt1').offset().top - 20;
+        $('#txt1').css('height', Math.max(200, ch));
+        $('#txt2').css('height', Math.max(200, ch));
+    }
+    AutoHeight();
+</script>
+
+<partial name="_PartialQuote" model="@("monaco-editor")" />
+
 <script src="/js/jsontocsharp.js" asp-append-version="true"></script>

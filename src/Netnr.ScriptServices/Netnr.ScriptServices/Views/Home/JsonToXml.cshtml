@@ -1,30 +1,17 @@
-<style>
-    #tobox label {
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: 400;
-        margin-right: 15px;
-    }
-
-        #tobox label input {
-            width: 1.1em;
-            height: 1.1em;
-            cursor: pointer;
-            vertical-align: sub;
-        }
-</style>
-
 <div class="container">
     <div class="row" id="tobox">
-        <div class="col-sm-12 mb-3">
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-success" id="btnToXml">JSON 转 XML</button>
-                <button type="button" class="btn btn-info" id="btnToJson">XML 转 JSON</button>
-            </div>
-        </div>
         <div class="col-sm-6">
-            <label>JSON</label>
-            <textarea class="form-control" id="txt1" placeholder=" 来一串 JSON">
+            <div class="input-group mb-2">
+                <button type="button" class="btn btn-warning" id="btnToXml">JSON → XML</button>
+                <div class="input-group-prepend">
+                    <select class="custom-select" id="seautoformatter1">
+                        <option value="1">自动格式化</option>
+                        <option value="2">不格式化</option>
+                    </select>
+                </div>
+            </div>
+
+            <pre id="txt1" class="border">
 {
   "site": {
     "title": "NET牛人",
@@ -55,16 +42,38 @@
   },
   "updaet": "2018.01.08",
   "version": "v.1.0.0"
-}</textarea>
+}
+            </pre>
         </div>
         <div class="col-sm-6">
-            <label>XML</label>
-            <label title="根节点有且只有一个，没有自动加root">❤</label>
-            <textarea class="form-control" id="txt2"></textarea>
+
+            <div class="input-group mb-2">
+                <button type="button" class="btn btn-warning" id="btnToJson">XML → JSON</button>
+                <div class="input-group-prepend">
+                    <select class="custom-select" id="seautoformatter2">
+                        <option value="1">自动格式化</option>
+                        <option value="2">不格式化</option>
+                    </select>
+                </div>
+                <div class="input-group-prepend">
+                    <i class="fa fa-info-circle ml-2" data-toggle="tooltip" title="必须有一个根节点，没有则自动加 root"></i>
+                </div>
+            </div>
+
+            <div class="border" id="txt2"></div>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/abdolence/x2js@1.2.0/xml2json.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/zachofalltrades/jquery.format@0.1.2/jquery.format.min.js"></script>
+<script>
+    function AutoHeight() {
+        var ch = $(window).height() - $('#txt1').offset().top - 20;
+        $('#txt1').css('height', Math.max(200, ch));
+        $('#txt2').css('height', Math.max(200, ch));
+    }
+    AutoHeight();
+</script>
+
+<partial name="_PartialQuote" model="@("xml2json.js,monaco-editor")" />
+
 <script src="/js/jsontoxml.js" asp-append-version="true"></script>

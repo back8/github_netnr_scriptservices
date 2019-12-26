@@ -194,9 +194,65 @@ var rt = {
     }
 }
 
+
+var editor1, editor2;
+
+require(['vs/editor/editor.main'], function () {
+    var dv1 = $("#txt1").html();
+    $("#txt1").empty();
+    editor1 = monaco.editor.create($("#txt1")[0], {
+        value: dv1,
+        language: 'json',
+        scrollBeyondLastLine: false,
+        automaticLayout: true,
+        theme: 'vs',
+        scrollbar: {
+            verticalScrollbarSize: 6,
+            horizontalScrollbarSize: 6
+        },
+        minimap: {
+            enabled: false
+        }
+    });
+
+    editor1.onDidChangeModelContent(function (e) {
+        if ($('#seautoformatter1').val() == "1") {
+            window.clearTimeout(window.defer1)
+            window.defer1 = setTimeout(function () {
+                try {
+                    if (window.very1 == 'self') {
+                        window.very1 = '';
+                    } else {
+                        var val = JSON.stringify(JSON.parse(editor1.getValue()), null, 2);
+                        window.very1 = 'self';
+                        editor1.setValue(val);
+                    }
+                } catch (e) { }
+            }, 20)
+        }
+    });
+
+    editor2 = monaco.editor.create($("#txt2")[0], {
+        value: '',
+        language: 'csharp',
+        automaticLayout: true,
+        scrollBeyondLastLine: false,
+        theme: 'vs',
+        scrollbar: {
+            verticalScrollbarSize: 6,
+            horizontalScrollbarSize: 6
+        },
+        minimap: {
+            enabled: false
+        }
+    });
+});
+
+$(window).resize(AutoHeight);
+
 //点击生成
 $('#btnJsonToEntity').click(function () {
-    var json = $('#txt1').val();
+    var json = editor1.getValue();
     if (json == "") {
         jz.msg('JSON 不能为空');
         return false;
@@ -208,19 +264,9 @@ $('#btnJsonToEntity').click(function () {
         rt.config.classNameFirstBig = $('#seClassNameFirstBig').val() == 1;
 
         var ort = rt.init(json);
-        $('#txt2').val(ort);
+
+        editor2.setValue(ort);
     } catch (ex) {
-        $('#txt2').val(ex);
+        editor2.setValue(ex);
     }
-});
-
-$('#txt1').on('input', function () {
-    try {
-        $("#txt1").format({ method: 'json' });
-    } catch (e) { }
-});
-
-$(window).on('load resize', function () {
-    var ch = $(this).height(), sh = ch - $('#tobox').offset().top - 105;
-    $('#tobox').find('textarea').css('height', Math.max(200, sh));
 });

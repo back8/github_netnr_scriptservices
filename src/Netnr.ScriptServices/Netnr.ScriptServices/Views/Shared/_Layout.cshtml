@@ -1,6 +1,7 @@
 ﻿@{
     var mj = Netnr.Extend.ToJObject(Netnr.Core.FileTo.ReadText(Startup.HostingEnvironment.WebRootPath + "/js/data/", "favorite.json"));
     string title = string.Empty;
+    string remark = string.Empty;
     string icon = "/favicon.svg";
     string action = ViewContext.RouteData.Values["action"].ToString().ToLower();
     if (action == "index")
@@ -16,6 +17,7 @@
                 if (jt["url"].ToString().TrimStart('/').ToLower() == action)
                 {
                     title = jt["title"].ToString();
+                    remark = jt["remark"]?.ToString() ?? title;
                     icon = jt["icon"].ToString();
                     goto endfor;
                 }
@@ -29,7 +31,7 @@ endfor: TempData["Title"] = title;
 
     var canav = "home/wallpaper,home/contact".Split(',');
 }
-<partial name="_PartialThe" />
+<partial name="_PartialQuote" model="@("the")" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,13 +41,11 @@ endfor: TempData["Title"] = title;
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <title>@(new Microsoft.AspNetCore.Html.HtmlContentBuilder().AppendHtml(TempData["Title"].ToString())) NET牛人</title>
     <meta name="keywords" content="netnr,NET牛人,@(new Microsoft.AspNetCore.Html.HtmlContentBuilder().AppendHtml(title))" />
-    <meta name="description" content="netnr,NET牛人,@(new Microsoft.AspNetCore.Html.HtmlContentBuilder().AppendHtml(title))" />
+    <meta name="description" content="netnr,NET牛人,@(new Microsoft.AspNetCore.Html.HtmlContentBuilder().AppendHtml(remark))" />
 
 </head>
 <body>
-    <partial name="_PartialLoading" />
-
-    <partial name="_PartialLayoutQuote4" />
+    <partial name="_PartialQuote" model="@("loading,bootstrap.css,fa.css,jquery.js,bootstrap.js")" />
 
     <link href="/css/global.css" rel="stylesheet" asp-append-version="true" />
 
