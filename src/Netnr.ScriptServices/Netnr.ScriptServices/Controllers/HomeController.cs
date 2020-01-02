@@ -298,6 +298,15 @@ namespace Netnr.ScriptServices.Controllers
         }
 
         /// <summary>
+        /// 免费托管
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult FreeHosting()
+        {
+            return View();
+        }
+
+        /// <summary>
         /// 格式化
         /// </summary>
         /// <returns></returns>

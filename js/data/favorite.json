@@ -182,6 +182,12 @@
           "icon": "/icon/db.svg",
           "title": "免费数据库",
           "remark": "在线免费的数据库"
+        },
+        {
+          "url": "/freehosting",
+          "icon": "/icon/hosting.svg",
+          "title": "免费托管",
+          "remark": "免费的托管空间"
         }
       ]
     },
