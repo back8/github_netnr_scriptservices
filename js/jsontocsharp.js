@@ -197,8 +197,13 @@ var rt = {
 var editor1, editor2;
 
 require(['vs/editor/editor.main'], function () {
-    editor1 = monaco.editor.create($("#txt1")[0], {
-        value: document.getElementById('code1').value,
+
+    var txt1 = document.getElementById('txt1');
+    var tv1 = txt1.innerHTML;
+    txt1.innerHTML = '';
+
+    editor1 = monaco.editor.create(txt1, {
+        value: tv1,
         language: 'json',
         scrollBeyondLastLine: false,
         automaticLayout: true,

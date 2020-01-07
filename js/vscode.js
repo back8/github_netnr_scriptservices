@@ -36,7 +36,18 @@ require(['vs/editor/editor.main'], function () {
             oldModel.dispose();
         }
         localStorage["vscode-lang"] = this.value;
+
+        if (this.value == "javascript") {
+            $('#btnRun').removeClass('d-none');
+        } else {
+            $('#btnRun').addClass('d-none');
+        }
     }).val(defaultLang);
+    if (defaultLang == "javascript") {
+        $('#btnRun').removeClass('d-none');
+    } else {
+        $('#btnRun').addClass('d-none');
+    }
 
     $('#setheme').change(function () {
         monaco.editor.setTheme(this.value);
@@ -49,6 +60,15 @@ require(['vs/editor/editor.main'], function () {
             localStorage["vscode-content"] = editor.getValue();
         }, 1000 * 1)
     });
+});
+
+$('#btnRun').click(function () {
+    try {
+        window.ee = new Function(editor.getValue());
+        ee();
+    } catch (e) {
+        console.error(e);
+    }
 });
 
 $(window).resize(AutoHeight);

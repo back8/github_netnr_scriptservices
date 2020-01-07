@@ -69,18 +69,18 @@
     <div class="row">
         <div class="col-lg-3 col-md-6">
             <div class="input-group">
+                <button class="btn btn-warning" id="btnSqlFormatter">格式化</button>
                 <div class="input-group-prepend">
-                    <button class="btn btn-warning" id="btnSqlFormatter">格式化</button>
+                    <select class="custom-select" id="selanguage">
+                        <option value="sql">SQL</option>
+                        <option value="n1ql">N1QL</option>
+                        <option value="db2">DB2</option>
+                    </select>
                 </div>
-                <select class="custom-select" id="selanguage">
-                    <option value="sql">SQL</option>
-                    <option value="n1ql">N1QL</option>
-                    <option value="db2">DB2</option>
-                </select>
             </div>
         </div>
         <div class="col-md-12 mt-3">
-            <div id="editor" class="border"></div>
+            <div id="editor" class="border overflow-hidden"></div>
         </div>
     </div>
 </div>
@@ -94,10 +94,10 @@
 </script>
 
             <script src="https://code.bdstatic.com/npm/sql-formatter@2.3.3/dist/sql-formatter.min.js"></script>
-            <script src="https://code.bdstatic.com/npm/monaco-editor@0.19.0/min/vs/loader.js"></script>
+            <script src="https://code.bdstatic.com/npm/monaco-editor@0.19.2/min/vs/loader.js"></script>
             <script>
                 require.config({
-                    paths: { vs: "https://code.bdstatic.com/npm/monaco-editor@0.19.0/min/vs" },
+                    paths: { vs: "https://code.bdstatic.com/npm/monaco-editor@0.19.2/min/vs" },
                     'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
                 });
             </script>
