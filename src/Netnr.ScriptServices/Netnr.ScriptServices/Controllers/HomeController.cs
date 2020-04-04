@@ -314,5 +314,14 @@ namespace Netnr.ScriptServices.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 在线电视
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult TV()
+        {
+            return View();
+        }
     }
 }

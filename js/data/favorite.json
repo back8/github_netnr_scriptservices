@@ -283,6 +283,12 @@
           "url": "/purine",
           "icon": "/icon/purine.svg",
           "title": "食物嘌呤含量"
+        },
+        {
+          "url": "/tv",
+          "icon": "/icon/tv.svg",
+          "title": "在线电视",
+          "remark": "m3u8源播放"
         }
       ]
     }
