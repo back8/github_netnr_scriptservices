@@ -12,7 +12,7 @@ var sp = {
     //连接数.
     conn: 0,
     //允许连接数
-    maxconn: 5,
+    maxconn: 10,
     //结果
     result: [],
     //数据项
@@ -31,13 +31,13 @@ var sp = {
     ss: [
         {
             name: "百度 CDN",
-            cr: 530 / 2143,
-            link: "https://code.bdstatic.com/npm/monaco-editor@0.18.0/min/vs/editor/editor.main.js"
+            cr: 1331 / 10578,
+            link: "https://code.bdstatic.com/npm/sql.js@1.2.2/dist/sql-asm-debug.js"
         },
         {
             name: "jsDelivr CDN",
-            cr: 499 / 2143,
-            link: "https://cdn.jsdelivr.net/npm/monaco-editor@0.18.0/min/vs/editor/editor.main.js"
+            cr: 1116 / 10578,
+            link: "https://cdn.jsdelivr.net/npm/sql.js@1.2.2/dist/sql-asm-debug.js"
         }
     ],
     //绑定节点
@@ -67,6 +67,9 @@ var sp = {
                         sp.conn--;
                     }
                 }
+                window.setTimeout(function () {
+                    xhr.abort()
+                }, sp.time);
                 xhr.send();
             }
         }, 50);
