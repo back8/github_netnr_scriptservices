@@ -68,14 +68,17 @@
         <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h5></h5>
+            <input class="form-control mb-3" id="txtua" placeholder="请粘贴 User-Agent 信息" />
             <table class="table table-bordered">
-                <tr>
-                    <th>浏览器</th>
-                    <th>内核</th>
-                    <th>系统</th>
-                    <th>设备</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>浏览器</th>
+                        <th>内核</th>
+                        <th>系统</th>
+                        <th>设备</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
             </table>
             <p>
                 开源项目：<a href="https://github.com/fex-team/ua-device">https://github.com/fex-team/ua-device</a>
@@ -88,10 +91,33 @@
 <script src="/js/ua-device/ua-device.js?v=GLRQsDtvdfFPYL7AVMAjBG9PD80UZlfk92u49LHql6Y"></script>
 
 <script>
-    var uainfo = navigator.userAgent;
-    $('h5').html(uainfo);
-    var uaobj = uaDevice(uainfo), ub = uaobj.browser, ue = uaobj.engine, uo = uaobj.os, ud = uaobj.device;
-    $('<tr><td>' + ub.name + '</br>' + ub.version.original + '</td><td>' + ue.name + '</br>' + ue.version.original + '</td><td>' + uo.name + '</br>' + uo.version.original + '</td><td>' + ud.type + '</br>' + (ud.model || "") + '</td></tr>').appendTo($('table.table').find('tbody'));
+    var pg = {
+        ua: navigator.userAgent,
+        init: function () {
+            $('#txtua').on('input', function () {
+                if (this.value == "") {
+                    pg.parse(pg.ua);
+                } else {
+                    pg.parse(this.value);
+                }
+            }).val(pg.ua);
+
+            pg.parse(pg.ua);
+        },
+        parse: function (ua) {
+            var uaobj = uaDevice(ua),
+                ub = uaobj.browser,
+                ue = uaobj.engine || {},
+                uo = uaobj.os,
+                ud = uaobj.device,
+                ubv = ub.version || {},
+                uev = ue.version || {},
+                uov = uo.version || {};
+            $('table').find('tbody').html('<tr><td>' + ub.name + '</br>' + ubv.original + '</td><td>' + ue.name + '</br>' + uev.original + '</td><td>' + uo.name + '</br>' + uov.original + '</td><td>' + ud.type + '</br>' + (ud.model || "") + '</td></tr>');
+        }
+    }
+
+    pg.init();
 </script>
     </div>
 
