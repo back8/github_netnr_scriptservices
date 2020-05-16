@@ -188,6 +188,12 @@
           "icon": "/icon/hosting.svg",
           "title": "免费托管",
           "remark": "免费的托管空间"
+        },
+        {
+          "url": "/dk",
+          "icon": "/favicon.svg",
+          "title": "DataKit",
+          "remark": "数据库工具及代码构建"
         }
       ]
     },
