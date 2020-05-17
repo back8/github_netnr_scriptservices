@@ -13,9 +13,9 @@
     <meta name="keywords" content="netnr,NET牛人,Netnr.DataKit" />
     <meta name="description" content="netnr,NET牛人,数据库工具及代码构建" />
 
-    <link href="https://code.bdstatic.com/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://code.bdstatic.com/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://code.bdstatic.com/npm/jquery@3.5.0/dist/jquery.min.js"></script>
-    <script src="https://code.bdstatic.com/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.bdstatic.com/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <link href="https://code.bdstatic.com/npm/netnr-cdn@0.0.1/libs/jquery-easyui/1.9.0/themes/metro/easyui.css" rel="stylesheet" />
     <script src="https://code.bdstatic.com/npm/netnr-cdn@0.0.1/libs/jquery-easyui/1.9.0/jquery.easyui.min.js"></script>
@@ -200,7 +200,7 @@
                             <input class="form-control form-control-sm" id="txtDkApi" placeholder="填写自动生效">
                         </div>
                         <small class="form-text text-muted">
-                            查看 <a target="_blank" id="aapi" href="/swagger">当前接口</a>，可设置为自己部署的接口服务
+                            当前接口 <a target="_blank" id="aapi" href="/swagger"></a>，可设置为自己部署的接口服务
                         </small>
                     </div>
                     <div class="form-group">
@@ -359,8 +359,8 @@
             ],
             //默认服务接口
             dapi: location.origin,
-            //接口详情
-            apiDetail: {
+            //接口地址
+            apiPath: {
                 GetTable: "/DK/GetTable",
                 GetColumn: "/DK/GetColumn",
                 SetTableComment: "/DK/SetTableComment",
@@ -895,7 +895,7 @@
                     },
                     set: function (val) {
                         api = val;
-                        $('#aapi').attr('href', api + '/swagger');
+                        $('#aapi').attr('href', api + '/swagger').html(api);
                     }
                 })
                 dk.api = dk.dapi;
@@ -966,7 +966,7 @@
                 var tc = dk.getTC();
                 if (tc.err.length == 0) {
                     $('#sb1').removeClass('d-none');
-                    var url = dk.api + dk.apiDetail.GetTable;
+                    var url = dk.api + dk.apiPath.GetTable;
                     $.ajax({
                         url: url,
                         data: tc,
@@ -1009,7 +1009,7 @@
 
                     $('#sb2').removeClass('d-none');
 
-                    var url = dk.api + dk.apiDetail.GetColumn;
+                    var url = dk.api + dk.apiPath.GetColumn;
                     $.ajax({
                         url: url,
                         data: tc,
@@ -1058,9 +1058,9 @@
 
                     $('#sb3').removeClass('d-none');
                     try { $('#Grid3').datagrid("loading") } catch (e) { }
-                    var url = dk.api + dk.apiDetail.GetData;
+                    var url = dk.api + dk.apiPath.GetData;
                     $.ajax({
-                        url: dk.api + dk.apiDetail.GetData,
+                        url: url,
                         data: tc,
                         dataType: 'json',
                         headers: dk.apiHeaders,
@@ -1448,6 +1448,7 @@
                 mmc.children().removeClass('modal-sm').removeClass('modal-lg').addClass(ms);
                 mmc.find('.modal-body').html(msg);
                 mmc.modal();
+                return mmc;
             },
 
             /**
@@ -1735,7 +1736,7 @@
 
                     $('#sb4').removeClass('d-none');
 
-                    var url = dk.api + dk.apiDetail.SetTableComment;
+                    var url = dk.api + dk.apiPath.SetTableComment;
                     $.ajax({
                         url: url,
                         data: tc,
@@ -1783,7 +1784,7 @@
 
                     $('#sb4').removeClass('d-none');
 
-                    var url = dk.api + dk.apiDetail.SetColumnComment;
+                    var url = dk.api + dk.apiPath.SetColumnComment;
                     $.ajax({
                         url: url,
                         data: tc,
