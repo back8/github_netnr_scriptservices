@@ -8,7 +8,7 @@
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title> Netnr.DataKit</title>
+    <title>Netnr.DataKit</title>
 
     <meta name="keywords" content="netnr,NET牛人,Netnr.DataKit" />
     <meta name="description" content="netnr,NET牛人,数据库工具及代码构建" />
@@ -206,7 +206,7 @@
                     <div class="form-group">
                         <h5>✌ 说明</h5>
                         <ul>
-                            <li>项目源码：<a target="_blank" href="https://github.com/netnr/Netnr.DataKit">https://github.com/netnr/Netnr.DataKit</a></li>
+                            <li>项目源码：<a target="_blank" href="https://github.com/netnr/np">https://github.com/netnr/np</a></li>
                             <li>数据库连接字符串仅保存浏览器本地，后台不做记录，请放心使用；或者可以自己部署服务</li>
                         </ul>
                     </div>
@@ -367,6 +367,8 @@
                 SetColumnComment: "/DK/SetColumnComment",
                 GetData: "/DK/GetData"
             },
+            //接口头部参数（如：{ Authorization: "token" }）
+            apiHeaders: null,
             //缓存
             dc: {
                 //当前数据库
@@ -905,36 +907,30 @@
                     $.fn.pagination.defaults.displayMsg = '显示 <b>{from}</b> 到 <b>{to}</b>，共 <b>{total}</b> 记录';
                 }
 
-                //JSONP接口支持，支持逗号分割多个扩展包
-                var jpu = dk.getPars("jsonp");
-                if (jpu) {
-                    jpu.split(',').forEach(u => {
-                        //JSONP回调函数名：dk_文件名
-                        var jcb = "dk_" + u.split('/').slice(-1)[0].split('.')[0];
-                        $.ajax({
-                            url: u,
-                            dataType: "jsonp",
-                            jsonpCallback: jcb
-                        }).done(function (res) {
-                            try { res(dk) } catch (e) { }
-                        }).fail(function (err) {
-                            console.log('加载JSONP拓展出错：' + u, err)
-                        });
-                    })
-                }
+                //扩展接口支持（通过 location.hash 传JS脚本）
+                //监听注入并运行脚本
+                dk.runJsFromHash();
+                $(window).on('hashchange', function () {
+                    dk.runJsFromHash();
+                });
             },
 
             /**
-             * 获取Url参数
-             * @param name
-             */
-            getPars: function (name) {
-                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-                var r = location.search.substr(1).match(reg);
-                if (r != null) {
-                    return decodeURI(r[2]);
+             * 运行JS脚本 */
+            runJsFromHash: function () {
+                try {
+                    var js = location.hash.substring(1);
+                    if (js != "") {
+                        js = decodeURIComponent(js);
+
+                        //执行JS
+                        var script = document.createElement('script');
+                        script.text = js;
+                        document.head.appendChild(script);
+                    }
+                } catch (e) {
+                    console.error(e);
                 }
-                return null;
             },
 
             /**
@@ -975,6 +971,7 @@
                         url: url,
                         data: tc,
                         dataType: 'json',
+                        headers: dk.apiHeaders,
                         success: function (data) {
                             if (data.code == 200) {
                                 //记录到本地
@@ -1018,6 +1015,7 @@
                         data: tc,
                         type: 'post',
                         dataType: 'json',
+                        headers: dk.apiHeaders,
                         success: function (data) {
                             if (data.code == 200) {
                                 //记录到本地
@@ -1065,6 +1063,7 @@
                         url: dk.api + dk.apiDetail.GetData,
                         data: tc,
                         dataType: 'json',
+                        headers: dk.apiHeaders,
                         success: function (data) {
                             if (data.code == 200) {
                                 dk.dc.dataWhere.result = data.data;
@@ -1741,6 +1740,7 @@
                         url: url,
                         data: tc,
                         dataType: 'json',
+                        headers: dk.apiHeaders,
                         success: function (data) {
                             if (data.code == 200) {
                                 $('#Grid1').datagrid("updateRow", {
@@ -1788,6 +1788,7 @@
                         url: url,
                         data: tc,
                         dataType: 'json',
+                        headers: dk.apiHeaders,
                         success: function (data) {
                             if (data.code == 200) {
                                 $('#Grid2').datagrid('updateRow', {
