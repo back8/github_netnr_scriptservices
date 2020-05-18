@@ -295,6 +295,12 @@
           "icon": "/icon/tv.svg",
           "title": "在线电视",
           "remark": "m3u8源播放"
+        },
+        {
+          "url": "/bmi",
+          "icon": "/icon/bmi.svg",
+          "title": "体重标准",
+          "remark": "中国成人超重和肥胖标准"
         }
       ]
     }
