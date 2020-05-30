@@ -214,4 +214,16 @@ function htmlEncode(html) {
 
 $(function () {
     $('#LoadingMask').fadeOut();
+
+    //Monaco Editor 编辑器全屏切换
+    $('.me-full-btn').click(function () {
+        var mebox = $(this).parent();
+        if (mebox.hasClass('me-full')) {
+            mebox.removeClass('me-full')
+            mebox.addClass('position-relative')
+        } else {
+            mebox.addClass('me-full')
+            mebox.removeClass('position-relative')
+        }
+    })
 })
