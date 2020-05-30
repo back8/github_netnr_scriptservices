@@ -170,11 +170,11 @@
                             <i class="fa fa-fw fa-file-excel-o"></i>导出表（Excel）
                         </a>
                         <a class="dropdown-item p-2" href="javascript:void(0);" id="btnExportTableForJson">
-                            <i class="fa fa-fw fa-file"></i>导出表（JSON）
+                            <i class="fa fa-fw fa-file-text"></i>导出表（JSON）
                         </a>
                     </div>
-                    <button class="btn btn-success" id="btnQueryTable">
-                        <i class="fa fa-fw fa-table"></i>加载表
+                    <button class="btn btn-success dkn-queryTable" id="btnQueryTable">
+                        <i class="fa fa-fw fa-refresh"></i>加载表
                     </button>
                     <button class="btn btn-light mgbtn" id="btnMaxGridTable" title="放大/缩小 表格">
                         <i class="fa fa-fw fa-arrows-alt"></i>
@@ -182,7 +182,6 @@
                     <div class="input-group-prepend">
                         <input class="form-control form-control-sm" id="txtSearchTable" placeholder="搜索" />
                     </div>
-                    <div class="spinner-border spinner-border-sm invisible mt-2 ml-2" id="sb1"></div>
                 </div>
 
                 <div id="PGrid1">
@@ -202,16 +201,18 @@
                             <i class="fa fa-fw fa-file-excel-o"></i>导出列（Excel）
                         </a>
                         <a class="dropdown-item p-2" href="javascript:void(0);" id="btnExportColumnForJson">
-                            <i class="fa fa-fw fa-file"></i>导出列（JSON）
+                            <i class="fa fa-fw fa-file-text"></i>导出列（JSON）
+                        </a>
+                        <a class="dropdown-item p-2" href="javascript:void(0);" id="btnExportColumnForMd">
+                            <i class="fa fa-fw fa-file-text-o"></i>导出列（Markdown）
                         </a>
                     </div>
-                    <button class="btn btn-success" id="btnQueryColumn">
-                        <i class="fa fa-fw fa-list-alt"></i>加载列
+                    <button class="btn btn-success dkn-queryColumn" id="btnQueryColumn">
+                        <i class="fa fa-fw fa-refresh"></i>加载列
                     </button>
                     <button class="btn btn-light mgbtn" id="btnMaxGridColumn" title="放大/缩小 表格">
                         <i class="fa fa-fw fa-arrows-alt"></i>
                     </button>
-                    <div class="spinner-border spinner-border-sm invisible mt-2 mx-2" id="sb2"></div>
 
                     <div class="btn-group btn-group-sm">
                         <div style="width:320px">
@@ -360,11 +361,11 @@
                                         <i class="fa fa-fw fa-file-excel-o"></i>导出 Excel（注释:注释 为标题）
                                     </a>
                                     <a class="dropdown-item p-2" href="javascript:void(0);" id="btnExportDataForJson">
-                                        <i class="fa fa-fw fa-file-excel-o"></i>导出 JSON
+                                        <i class="fa fa-fw fa-file-text"></i>导出 JSON
                                     </a>
                                 </div>
                             </div>
-                            <div class="spinner-border spinner-border-sm invisible mt-1" id="sb3"></div>
+                            <div class="spinner-border spinner-border-sm invisible mt-1 dkn-queryDataWait"></div>
 
                             <button type="button" class="btn btn-sm btn-danger float-right" data-dismiss="modal">
                                 <i class="fa fa-fw fa-close"></i>关闭
@@ -397,7 +398,7 @@
                     <textarea class="form-control h150"></textarea>
                 </div>
                 <div class="modal-footer">
-                    <div class="spinner-border invisible" id="sb4"></div>
+                    <div class="spinner-border invisible dkn-updateCommentWait"></div>
                     <button type="button" class="btn btn-light" data-dismiss="modal">取消</button>
                     <button type="button" class="btn btn-primary" id="btnSaveComment">确定</button>
                 </div>
@@ -442,7 +443,7 @@
             dapi: [
                 { istemplate: true, host: "https://free-dk.zme.ink", remark: "免费的 .NET Core 服务" },
                 { istemplate: true, host: "https://free-dk.herokuapp.com", remark: "免费的 NodeJS 服务，不支持 Oracle" },
-                { istemplate: true, host: location.origin, remark: "本地" }
+                { istemplate: true, host: location.origin, remark: "当前" }
             ],
             //接口地址
             apiPath: {
@@ -673,6 +674,7 @@
                 $('#btnExportTableForExcel').click(function () {
                     dk.exportGrid({
                         id: "#Grid1",
+                        headerType: 2,
                         filename: "table.xlsx"
                     })
                 });
@@ -691,6 +693,7 @@
                 $('#btnExportColumnForExcel').click(function () {
                     dk.exportGrid({
                         id: "#Grid2",
+                        headerType: 2,
                         filename: "column.xlsx"
                     })
                 });
@@ -703,6 +706,14 @@
                     } else {
                         dk.msg('请选择列')
                     }
+                });
+
+                //导出列 Markdown
+                $('#btnExportColumnForMd').click(function () {
+                    dk.exportMd({
+                        id: "#Grid2",
+                        filename: "column.md"
+                    })
                 });
 
                 //导出数据 Excel（字段为标题）
@@ -1174,7 +1185,7 @@
                 ahosts.forEach(x => {
                     var ca = document.createElement('a');
                     ca.href = "javascript:void(0)";
-                    ca.className = "dropdown-item py-2";
+                    ca.className = "dropdown-item small py-2";
                     ca.setAttribute('data-host', x.host);
 
                     //启用的服务接口
@@ -1270,7 +1281,7 @@
             loadTable: function (fn) {
                 var tc = dk.getTC();
                 if (tc.err.length == 0) {
-                    $('#sb1').removeClass('invisible').addClass('visible')
+                    $('.dkn-queryTable').find('i').addClass('fa-spin');
                     var url = dk.api + dk.apiPath.GetTable;
                     $.ajax({
                         url: url,
@@ -1295,7 +1306,7 @@
                             dk.msgError(url)
                         },
                         complete: function () {
-                            $('#sb1').removeClass('visible').addClass('invisible');
+                            $('.dkn-queryTable').find('i').removeClass('fa-spin');
                         }
                     })
                 }
@@ -1311,7 +1322,7 @@
                 if (tc.err.length == 0) {
                     tc.filterTableName = ftn;
 
-                    $('#sb2').removeClass('invisible').addClass('visible')
+                    $('.dkn-queryColumn').find('i').addClass('fa-spin');
 
                     var url = dk.api + dk.apiPath.GetColumn;
                     $.ajax({
@@ -1338,7 +1349,7 @@
                             dk.msgError(url, 'POST');
                         },
                         complete: function () {
-                            $('#sb2').removeClass('visible').addClass('invisible')
+                            $('.dkn-queryColumn').find('i').removeClass('fa-spin');
                         }
                     })
                 }
@@ -1359,7 +1370,7 @@
                     tc.order = dk.dc.dataWhere.order || "asc";
                     tc.listFieldName = dk.dc.dataWhere.fields.join(',');
 
-                    $('#sb3').removeClass('invisible').addClass('visible');
+                    $('.dkn-queryDataWait').removeClass('invisible').addClass('visible');
                     try { $('#Grid3').datagrid("loading") } catch (e) { }
                     var url = dk.api + dk.apiPath.GetData;
                     $.ajax({
@@ -1383,7 +1394,7 @@
                             dk.msgError(url)
                         },
                         complete: function () {
-                            $('#sb3').removeClass('visible').addClass('invisible');
+                            $('.dkn-queryDataWait').removeClass('visible').addClass('invisible');
                         }
                     })
                 }
@@ -1419,7 +1430,7 @@
                     columns: [[
                         { field: "ck", checkbox: true },
                         { field: "TableName", title: "表名", width: isaw ? null : 200 },
-                        { field: "TableComment", title: "表注释", width: isaw ? null : 320 }
+                        { field: "TableComment", title: "注释", width: isaw ? null : 320 }
                     ]],
                     rownumbers: true,
                     rownumberWidth: 40,
@@ -1447,14 +1458,13 @@
                 var cols = [
                     { field: "ck", checkbox: true },
                     { field: "TableName", title: "表名", hidden: true, width: 200 },
-                    { field: "TableComment", title: "表注释", hidden: true, width: 200 },
-                    { field: "FieldName", title: "表字段", width: 150 },
+                    { field: "FieldName", title: "字段", width: 150 },
                     { field: "DataType", title: "类型", width: 100 },
                     { field: "DataLength", title: "长度", halign: "center", align: "center", width: 90 },
                     { field: "DataScale", title: "精度", halign: "center", align: "center", width: 50 },
                     { field: "FieldOrder", title: "排序", halign: "center", align: "center", width: 50 },
-                    { field: "PrimaryKey", title: "是主键", halign: "center", align: "center", width: 60 },
-                    { field: "AutoAdd", title: "是自增", halign: "center", align: "center", width: 60 },
+                    { field: "PrimaryKey", title: "主键", halign: "center", align: "center", width: 60 },
+                    { field: "AutoAdd", title: "自增", halign: "center", align: "center", width: 60 },
                     { field: "NotNull", title: "不为空", halign: "center", align: "center", width: 60 },
                     { field: "DefaultValue", title: "默认值", halign: "center", align: "center", width: 80 },
                     { field: "FieldComment", title: "注释", width: 420 }
@@ -1682,9 +1692,9 @@
                     //分组
                     if (dgo.showGroup) {
                         if (cr == null || x[dgo.groupField] != cr[dgo.groupField]) {
-                            rows.push([$('<div>' + dgo.groupFormatter('', [cr || x]) + '</div>').text()]);
-                            sgi.push(rows.length + 1);
                             cr = x;
+                            rows.push([$('<div>' + dgo.groupFormatter('', [cr]) + '</div>').text()]);
+                            sgi.push(rows.length + 1);
                         }
                     }
                     for (var i in x) {
@@ -1739,6 +1749,37 @@
             },
 
             /**
+             * 导出Markdown
+             * @param ops 参数对象
+             */
+            exportMd: function (ops) {
+                var rowDatas = $(ops.id).datagrid('getSelections'),
+                    dgo = $(ops.id).datagrid('options'), tablemd = [], cr;
+                for (var i = 0; i < rowDatas.length; i++) {
+                    var x = rowDatas[i];
+                    if (cr == null || x[dgo.groupField] != cr[dgo.groupField]) {
+                        if (i > 0) {
+                            tablemd.push('');
+                            tablemd.push('---');
+                            tablemd.push('');
+                        }
+
+                        cr = x;
+                        tablemd.push('### ' + cr[dgo.groupField]);
+                        tablemd.push('');
+                        tablemd.push((cr.TableComment || "").split('\n').join('</br>').replace(/\[/g, '\\[').replace(/\(/g, '\\('));
+                        tablemd.push('');
+                        tablemd.push('|字段|类型|主键|自增|不为空|默认值|注释|');
+                        tablemd.push('|----|----|:-----:|:-----:|:-----:|:-----:|-----|');
+                    }
+                    tablemd.push('|' + x.FieldName + ' |' + x.DataTypeLength + ' |' + (x.PrimaryKey || "") + ' |' + (x.AutoAdd || "") + ' |' + (x.NotNull || "") + ' |' + (x.DefaultValue || "") + ' |' + (x.FieldComment || "").split('\n').join('</br>').replace(/\[/g, '\\[').replace(/\(/g, '\\(') + ' |');
+                }
+                var code = tablemd.join('\n');
+                var blob = new Blob([code], { type: "text/plain;charset=utf-8" });
+                saveAs(blob, ops.filename);
+            },
+
+            /**
              * 消息提示
              * @param msg 消息
              */
@@ -1786,7 +1827,7 @@
                     if (x.type && x.conn) {
                         var ca = document.createElement('a');
                         ca.href = "javascript:void(0)";
-                        ca.className = "dropdown-item py-2";
+                        ca.className = "dropdown-item small py-2";
                         ca.setAttribute('data-type', x.type);
                         ca.setAttribute('data-conn', x.conn);
 
@@ -1988,7 +2029,7 @@
                     tc.TableName = row.TableName;
                     tc.TableComment = TableComment;
 
-                    $('#sb4').removeClass('invisible').addClass('visible');
+                    $('.dkn-updateCommentWait').removeClass('invisible').addClass('visible');
 
                     var url = dk.api + dk.apiPath.SetTableComment;
                     $.ajax({
@@ -2012,7 +2053,7 @@
                         },
                         complete: function () {
                             dk.dc.requestActive = null;
-                            $('#sb4').removeClass('visible').addClass('invisible');
+                            $('.dkn-updateCommentWait').removeClass('visible').addClass('invisible');
                         }
                     })
                 }
@@ -2037,7 +2078,7 @@
                     tc.FieldName = row.FieldName;
                     tc.FieldComment = FieldComment;
 
-                    $('#sb4').removeClass('invisible').addClass('visible');
+                    $('.dkn-updateCommentWait').removeClass('invisible').addClass('visible');
 
                     var url = dk.api + dk.apiPath.SetColumnComment;
                     $.ajax({
@@ -2061,7 +2102,7 @@
                         },
                         complete: function () {
                             dk.dc.requestActive = null;
-                            $('#sb4').removeClass('visible').addClass('invisible');
+                            $('.dkn-updateCommentWait').removeClass('visible').addClass('invisible');
                         }
                     })
                 }
