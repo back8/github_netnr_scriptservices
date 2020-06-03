@@ -22,8 +22,10 @@
     <script src="https://code.bdstatic.com/npm/netnr-cdn@0.0.1/libs/jquery-easyui/1.9.0/jquery.easyui.min.js"></script>
     <script src="https://code.bdstatic.com/npm/netnr-cdn@0.0.1/libs/jquery-easyui-extension/20191228/datagrid-groupview.min.js"></script>
 
-    <script src="https://code.bdstatic.com/npm/exceljs@3.6.0/dist/exceljs.min.js"></script>
-    <script src="https://code.bdstatic.com/npm/jszip@3.2.2/dist/jszip.min.js"></script>
+    <script src="https://code.bdstatic.com/npm/@babel/polyfill@7.10.1/dist/polyfill.js"></script>
+    <script src="https://code.bdstatic.com/npm/exceljs@4.0.0/dist/exceljs.min.js"></script>
+
+    <script src="https://code.bdstatic.com/npm/jszip@3.4.0/dist/jszip.min.js"></script>
     <script src="https://code.bdstatic.com/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
 
     <script src="https://code.bdstatic.com/npm/monaco-editor@0.19.3/min/vs/loader.js"></script>
@@ -53,8 +55,8 @@
         /* Bootstrap Ext */
         .modal-full {
             width: auto;
+            max-width: none;
             margin: 8px 8px 0;
-            max-width: initial;
         }
 
         .modal-open .modal {
@@ -514,7 +516,7 @@
                     if (e.keyCode == 13 && na != "") {
                         var ah = dk.lsArr('apiHost');
                         var nas = na.split(' ');
-                        if (!ah.filter(x => x.host == nas[0]).length) {
+                        if (!$(ah).filter(function () { return this.host == nas[0] }).length) {
                             ah.push({ host: nas[0], remark: nas[1] })
                             dk.ls["apiHost"] = ah;
                             dk.lsSave();
@@ -657,7 +659,9 @@
                     if (rowDatas.length) {
                         var arrTable = [];
                         if (dk.dc.table.data.length != rowDatas.length) {
-                            rowDatas.forEach(x => arrTable.push(x.TableName));
+                            $.each(rowDatas, function () {
+                                arrTable.push(this.TableName)
+                            });
                         }
 
                         dk.loadColumn(arrTable.join(','), function () {
@@ -783,8 +787,8 @@
                             //输出结果
                             var arro = [];
 
-                            tbv.forEach(tv => {
-                                var vis = tv.split('/');
+                            $.each(tbv, function () {
+                                var vis = this.split('/');
 
                                 //构建参数
                                 var pa = dk.build.pa();
@@ -842,7 +846,9 @@
                         $('#btnRunDebug')[0].click();
                     } else {
                         require(['vs/editor/editor.main'], function () {
-                            var modesIds = monaco.languages.getLanguages().map(function (lang) { return lang.id }).sort();
+                            var modesIds = $.map(monaco.languages.getLanguages(), function (lang) {
+                                return lang.id
+                            }).sort();
 
                             //输出语言
                             var languagehtm = [];
@@ -994,14 +1000,11 @@
                 //加载示例
                 $('#btnExtendLoadDemo').click(function () {
                     var uri = 'https://code.bdstatic.com/npm/netnr-cdn@0.0.1/libs/netnr-datakit-extension/0.0.1/demo.js';
-                    fetch(uri).then(x => x.text()).then(res => {
-                        dk.dc.EditorExtendJs.setValue(res);
-                    }).catch(_ => {
-                        fetch('https://cors.zme.ink/' + uri).then(x => x.text()).then(res => {
+                    $.ajax({
+                        url: uri,
+                        success: function (res) {
                             dk.dc.EditorExtendJs.setValue(res);
-                        }).catch(_ => {
-                            dk.msg('加载失败');
-                        })
+                        }
                     })
                 });
 
@@ -1180,7 +1183,9 @@
                 //头部宽度
                 var bw = 94;
 
-                ahosts.forEach(x => {
+                $.each(ahosts, function () {
+                    var x = this;
+
                     var ca = document.createElement('a');
                     ca.href = "javascript:void(0)";
                     ca.className = "dropdown-item small py-2";
@@ -1228,8 +1233,8 @@
             addDbConn: function (type, conn) {
                 var lsdc = dk.lsArr('dbConn');
 
-                if (!lsdc.filter(x => x.type == type && x.conn == conn).length) {
-                    lsdc.push({ type, conn });
+                if (!$(lsdc).filter(function () { return this.type == type && this.conn == conn }).length) {
+                    lsdc.push({ type: type, conn: conn });
                     dk.ls["dbConn"] = lsdc;
                     dk.lsSave();
 
@@ -1468,7 +1473,9 @@
                     { field: "FieldComment", title: "注释", width: 420 }
                 ];
                 if ((dk.dc.column.data || []).length <= dk.dc.autoWidthRow) {
-                    cols.forEach(c => (delete c.width));
+                    $.each(cols, function () {
+                        delete this.width
+                    })
                 }
 
                 $('#Grid2').datagrid({
@@ -1514,7 +1521,9 @@
             viewData: function () {
 
                 var cols = [{ field: "ck", checkbox: true }];
-                dk.dc.dataWhere.column.forEach(oi => {
+                $.each(dk.dc.dataWhere.column, function () {
+                    var oi = this;
+
                     cols.push({
                         field: oi.FieldName,
                         title: oi.FieldComment || oi.FieldName,
@@ -1656,7 +1665,9 @@
 
                 //填充头部;
                 var heads = [], colfield = [], dgo = $(ops.id).datagrid('options');
-                dgo.columns[0].forEach(col => {
+                $.each(dgo.columns[0], function () {
+                    var col = this;
+
                     if (!col.checkbox && !col.hidden) {
                         colfield.push(col.field);
                         var hd = col.field;
@@ -1685,8 +1696,8 @@
 
                 //填充数据行
                 var rows = [], sgi = [], cr;
-                rowDatas.forEach(x => {
-                    var row = [];
+                $.each(rowDatas, function () {
+                    var x = this, row = [];
                     //分组
                     if (dgo.showGroup) {
                         if (cr == null || x[dgo.groupField] != cr[dgo.groupField]) {
@@ -1713,7 +1724,8 @@
                 }
 
                 //分组行合并
-                sgi.forEach(si => {
+                $.each(sgi, function () {
+                    var si = this;
                     worksheet.mergeCells('A' + si + ':' + dk.excelColumnIndexAsLetter(colfield.length - 1) + si);
                     worksheet.getCell('A' + si).fill = {
                         type: 'pattern',
@@ -1821,7 +1833,8 @@
 
                 var gc = dk.arrSort(dk.lsArr('dbConn'), 'type');
                 gc = gc.concat(dk.connTemplate);
-                gc.forEach(x => {
+                $.each(gc, function () {
+                    var x = this;
                     if (x.type && x.conn) {
                         var ca = document.createElement('a');
                         ca.href = "javascript:void(0)";
@@ -2038,7 +2051,7 @@
                         success: function (data) {
                             if (data.code == 200) {
                                 $('#Grid1').datagrid("updateRow", {
-                                    index: dk.dc.rowIndex, row: { TableComment }
+                                    index: dk.dc.rowIndex, row: { TableComment: TableComment }
                                 });
 
                                 $('#commentModalCenter').modal('hide');
@@ -2088,7 +2101,7 @@
                             if (data.code == 200) {
                                 $('#Grid2').datagrid('updateRow', {
                                     index: dk.dc.rowIndex,
-                                    row: { FieldComment }
+                                    row: { FieldComment: FieldComment }
                                 });
                                 $('#commentModalCenter').modal('hide');
                             } else {
@@ -2267,8 +2280,8 @@
                                 //类注释
                                 if (pa.comment) {
                                     ts.push('\t' + '/// <summary>');
-                                    (rs[0].TableComment || "").split('\n').forEach(tc => {
-                                        ts.push('\t' + '/// ' + tc);
+                                    $.each((rs[0].TableComment || "").split('\n'), function () {
+                                        ts.push('\t' + '/// ' + this);
                                     });
                                     ts.push('\t' + '/// </summary>');
                                 }
@@ -2283,8 +2296,8 @@
                                     //项注释
                                     if (pa.comment) {
                                         ts.push('\t\t' + '/// <summary>');
-                                        (ri.FieldComment || "").split('\n').forEach(fc => {
-                                            ts.push('\t\t' + '/// ' + fc);
+                                        $.each((ri.FieldComment || "").split('\n'), function () {
+                                            ts.push('\t\t' + '/// ' + this);
                                         });
                                         ts.push('\t\t' + '/// </summary>');
                                     }
@@ -2381,8 +2394,8 @@
                                 //类注释
                                 if (pa.comment) {
                                     ts.push('\t' + '/// <summary>');
-                                    (rs[0].TableComment || "").split('\n').forEach(tc => {
-                                        ts.push('\t' + '/// ' + tc);
+                                    $.each((rs[0].TableComment || "").split('\n'), function () {
+                                        ts.push('\t' + '/// ' + this);
                                     });
                                     ts.push('\t' + '/// </summary>');
                                 }
@@ -2402,7 +2415,7 @@
                                     var ri = rs[i];
                                     fields.push(ri.FieldName);
                                     var dbm = dk.build.typeMapping.csharp[tdbname];
-                                    ri.omi = dbm.filter(x => x.db.toLowerCase() == ri.DataType.toLowerCase())[0] || {};
+                                    ri.omi = $(dbm).filter(function () { return this.db.toLowerCase() == ri.DataType.toLowerCase() })[0] || {};
                                     if (ri.PrimaryKey == "YES") {
                                         pkcolumn = ri;
                                     }
@@ -2679,8 +2692,8 @@
                                 //类注释
                                 if (pa.comment) {
                                     ts.push('/**');
-                                    (rs[0].TableComment || "").split('\n').forEach(tc => {
-                                        ts.push(' * ' + tc);
+                                    $.each((rs[0].TableComment || "").split('\n'), function () {
+                                        ts.push(' * ' + this);
                                     });
                                     ts.push(' */');
                                 }
@@ -2694,8 +2707,8 @@
                                     //项注释
                                     if (pa.comment) {
                                         ts.push('\t' + '/**');
-                                        (ri.FieldComment || "").split('\n').forEach(fc => {
-                                            ts.push('\t' + ' * ' + fc);
+                                        $.each((ri.FieldComment || "").split('\n'), function () {
+                                            ts.push('\t' + ' * ' + this);
                                         });
                                         ts.push('\t' + ' */');
                                     }
