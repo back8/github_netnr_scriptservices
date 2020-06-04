@@ -57,7 +57,7 @@
             </div>
         </div>
 
-    <script src="/js/global.js?v=CHZqoc5ixaAr_DwJYlAFkhh1yQ7AXfwvsHofTGXPxdI"></script>
+    <script src="/js/global.js?v=xYnLPncCGdwopIu-ETpzRKLPUDYBvYBsPkGjtl0yEB8"></script>
 
         <h4 class="text-center mt-3 mb-4">
             <img src="/icon/bmi.svg" class="titleicon" onerror="this.src = '/favicon.svg'; this.onerror = null;" />
@@ -124,7 +124,10 @@
 </div>
 
 <script>
-    ['txt1', 'txt2'].forEach(id => {
+
+    var ids = ['txt1', 'txt2'];
+    for (var i = 0; i < ids.length; i++) {
+        var id = ids[i];
         document.getElementById(id).oninput = function () {
             var kg = document.getElementById('txt1').value,
                 m = document.getElementById('txt2').value;
@@ -151,7 +154,7 @@
             t3.value = bmi;
             t3.className = 'form-control ' + bgc;
         }
-    })
+    }
 </script>
     </div>
 

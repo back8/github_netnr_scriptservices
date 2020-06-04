@@ -22,8 +22,8 @@
     <script src="https://code.bdstatic.com/npm/netnr-cdn@0.0.1/libs/jquery-easyui/1.9.0/jquery.easyui.min.js"></script>
     <script src="https://code.bdstatic.com/npm/netnr-cdn@0.0.1/libs/jquery-easyui-extension/20191228/datagrid-groupview.min.js"></script>
 
-    <script src="https://code.bdstatic.com/npm/@babel/polyfill@7.10.1/dist/polyfill.js"></script>
-    <script src="https://code.bdstatic.com/npm/exceljs@4.0.0/dist/exceljs.min.js"></script>
+    <script src="https://code.bdstatic.com/npm/@babel/polyfill@7.10.1/dist/polyfill.min.js"></script>
+    <script src="https://code.bdstatic.com/npm/exceljs@3.9.0/dist/exceljs.min.js"></script>
 
     <script src="https://code.bdstatic.com/npm/jszip@3.4.0/dist/jszip.min.js"></script>
     <script src="https://code.bdstatic.com/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
@@ -218,17 +218,22 @@
 
                     <div class="btn-group btn-group-sm">
                         <div style="width:320px">
-                            <input type="text" class="form-control" id="txtBuild" placeholder="请选择构建模版">
+                            <input type="text" class="form-control form-control-sm" id="txtBuild" placeholder="请选择构建模版">
                         </div>
-                        <button class="btn btn-info" title="构建语言模版并直接下载" id="btnBuild">
-                            <i class="fa fa-fw fa-forward"></i>生成
+                        <button type="button" class="btn btn-secondary dropdown-toggle-split" data-toggle="dropdown">
+                            <i class="fa fa-fw fa-caret-down"></i>
                         </button>
-                        <button class="btn btn-warning" title="调试语言模版" id="btnDebug">
-                            <i class="fa fa-fw fa-play"></i>调试
-                        </button>
-                        <button class="btn btn-primary" title="拓展语言模版，自定义构建" id="btnExtendJs">
-                            <i class="fa fa-fw fa-plug"></i>拓展
-                        </button>
+                        <div class="dropdown-menu" style="min-width:5em">
+                            <a class="dropdown-item p-2 text-info" href="javascript:void(0);" title="构建语言模版并直接下载" id="btnBuild">
+                                <i class="fa fa-fw fa-forward"></i>生成
+                            </a>
+                            <a class="dropdown-item p-2 text-warning" href="javascript:void(0);" title="调试语言模版" id="btnDebug">
+                                <i class="fa fa-fw fa-play"></i>调试
+                            </a>
+                            <a class="dropdown-item p-2 text-primary" href="javascript:void(0);" title="拓展语言模版，自定义构建" id="btnExtendJs">
+                                <i class="fa fa-fw fa-plug"></i>拓展
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -257,7 +262,7 @@
                             <i class="fa fa-fw fa-server"></i>设置服务接口<i class="fa fa-fw fa-caret-down"></i>
                         </button>
                         <input type="text" id="txtDkApi" class="form-control" placeholder="新增服务接口地址，空格添加备注，回车">
-                        <div class="dropdown-menu dropdown-menu-right border-info dmbox" id="dmDkApi"></div>
+                        <div class="dropdown-menu border-info dmbox" id="dmDkApi"></div>
                     </div>
                     <p class="form-text text-muted">当前接口 <a target="_blank" id="aapi" href="/swagger"></a></p>
                     <hr />

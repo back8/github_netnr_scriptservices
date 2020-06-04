@@ -103,6 +103,32 @@
 
 })(window);
 
+if (!Array.prototype.forEach) {
+    Array.prototype.forEach = function forEach(callback, thisArg) {
+        var T, k;
+        if (this == null) {
+            throw new TypeError("this is null or not defined");
+        }
+        var O = Object(this);
+        var len = O.length >>> 0;
+        if (typeof callback !== "function") {
+            throw new TypeError(callback + " is not a function");
+        }
+        if (arguments.length > 1) {
+            T = thisArg;
+        }
+        k = 0;
+        while (k < len) {
+            var kValue;
+            if (k in O) {
+                kValue = O[k];
+                callback.call(T, kValue, k, O);
+            }
+            k++;
+        }
+    };
+}
+
 $(function () {
     $.nrnav = netnrnav(".netnrnav");
     $('.MenuToggle').click(function () {
@@ -135,7 +161,9 @@ $(function () {
                 //发起fetch，添加成功的url（该url与hosts可能不一样），须支持跨域请求
                 fetch(host).then(function (res) {
                     res.ok ? ok.push(res.url) : bad++;
-                }).catch(() => bad++)
+                }).catch(function () {
+                    bad++
+                })
             }
             var si = setInterval(function () {
                 var isc = false, now = new Date().valueOf();
