@@ -1,10 +1,10 @@
-﻿var editor, defaultContent = localStorage["sqlformatter-content"] || 'SELECT * FROM table1';
+﻿var editor, dv = ss.lsStr('txt') || 'SELECT * FROM table1';
 
 require(['vs/editor/editor.main'], function () {
     var te = $("#editor");
 
     editor = monaco.editor.create(te[0], {
-        value: defaultContent,
+        value: dv,
         language: 'sql',
         automaticLayout: true,
         theme: 'vs',
@@ -20,7 +20,8 @@ require(['vs/editor/editor.main'], function () {
     editor.onDidChangeModelContent(function (e) {
         clearTimeout(window.defer1);
         window.defer1 = setTimeout(function () {
-            localStorage["sqlformatter-content"] = editor.getValue();
+            ss.ls.txt = editor.getValue();
+            ss.lsSave();
         }, 1000 * 1)
     });
 });
