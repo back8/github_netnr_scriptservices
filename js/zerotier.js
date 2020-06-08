@@ -39,9 +39,9 @@
                             {
                                 field: "online", title: "在线状态", sortable: true, filterControl: "select", formatter: function (value) {
                                     if (value == true) {
-                                        return '<span class="badge badge-success">OnLine</span>'
+                                        return '✔'
                                     } else {
-                                        return '<span class="badge badge-secondary">OffLine</span>'
+                                        return '✖'
                                     }
                                 }
                             },
