@@ -29,7 +29,35 @@ require(['vs/editor/editor.main'], function () {
 $(window).resize(AutoHeight);
 
 $('#btnSqlFormatter').click(function () {
-    let language = document.getElementById('selanguage');
-    var sf = sqlFormatter.format(editor.getValue(), { language: language.value });
+    var sf = sqlFormatter.format(editor.getValue(), { language: "sql" });
     editor.setValue(sf);
+})
+$('#btnPgFormatter').click(function () {
+    var that = this;
+    that.disabled = true;
+    ss.ajax({
+        url: "https://sqlformat.darold.net/",
+        data: {
+            colorize: 1,
+            uc_keyword: 2,
+            uc_function: 0,
+            uc_type: 1,
+            spaces: 4,
+            wrap_after: 0,
+            show_example: 0,
+            load_from_file: 0,
+            code_upload: "",
+            content: editor.getValue(),
+            original_content: ""
+        },
+        success: function (data) {
+            editor.setValue($.trim($(data).find('#sql').text()));
+        },
+        error: function () {
+            alert('请求服务失败');
+        },
+        complete: function () {
+            that.disabled = false;
+        }
+    })
 })
