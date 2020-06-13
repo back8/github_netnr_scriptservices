@@ -42,7 +42,7 @@ $('#btnPgFormatter').click(function () {
             uc_keyword: 2,
             uc_function: 0,
             uc_type: 1,
-            spaces: 4,
+            spaces: 2,
             wrap_after: 0,
             show_example: 0,
             load_from_file: 0,

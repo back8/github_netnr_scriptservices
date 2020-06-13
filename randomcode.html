@@ -12,9 +12,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <title>Ping云 NET牛人</title>
-    <meta name="keywords" content="netnr,NET牛人,Ping云" />
-    <meta name="description" content="netnr,NET牛人,Ping各大云服务节点" />
+    <title>生成随机密码 NET牛人</title>
+    <meta name="keywords" content="netnr,NET牛人,生成随机密码" />
+    <meta name="description" content="netnr,NET牛人,生成随机密码" />
 
 </head>
 <body>
@@ -62,27 +62,50 @@
     <script src="/js/global.js?v=ahFm2vpOxeXz7gkqO9R2iSVS0McHhcK7ZMRE8hdgPqk"></script>
 
         <h4 class="text-center mt-3 mb-4">
-            <img src="/icon/pingcloud.svg" class="titleicon" onerror="this.src = '/favicon.svg'; this.onerror = null;" />
-            Ping&#x4E91;
+            <img src="/icon/key.svg" class="titleicon" onerror="this.src = '/favicon.svg'; this.onerror = null;" />
+            &#x751F;&#x6210;&#x968F;&#x673A;&#x5BC6;&#x7801;
         </h4>
 
     <div class="min300">
-        <style>
-    #divbox {
-        position: relative;
-    }
-
-        #divbox > div {
-            position: absolute;
-            transition: all .3s;
-        }
-</style>
-
-<div class="container-fluid">
-    <div class="row" id="divbox"></div>
+        <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">长度</span>
+                </div>
+                <div class="input-group-prepend">
+                    <input class="form-control form-control-lg nrLen" title="长度" type="number" name="name" value="16" min="1" max="99" step="1" />
+                </div>
+                <div class="input-group-prepend">
+                    <button class="btn btn-warning nrGk">刷新</button>
+                </div>
+                <input type="text" class="form-control nrRcv">
+            </div>
+            <div class="my-3 clearfix">
+                <div class="custom-control custom-checkbox float-left mt-1 mr-4">
+                    <input type="checkbox" class="custom-control-input" id="chkUpper" value="A" checked>
+                    <label class="custom-control-label" for="chkUpper">ABC</label>
+                </div>
+                <div class="custom-control custom-checkbox float-left mt-1 mr-4">
+                    <input type="checkbox" class="custom-control-input" id="chkLower" value="a" checked>
+                    <label class="custom-control-label" for="chkLower">abc</label>
+                </div>
+                <div class="custom-control custom-checkbox float-left mt-1 mr-4">
+                    <input type="checkbox" class="custom-control-input" id="chkNumber" value="0" checked>
+                    <label class="custom-control-label" for="chkNumber">123</label>
+                </div>
+                <div class="custom-control custom-checkbox float-left mt-1 mr-4">
+                    <input type="checkbox" class="custom-control-input" id="chkSymbol" value="!" checked>
+                    <label class="custom-control-label" for="chkSymbol">!@#</label>
+                </div>
+                <input class="form-control form-control-sm float-left nrExclude" title="排除" placeholder="排除字符，如：0oOiIlL1" style="width:initial" />
+            </div>
+        </div>
+    </div>
 </div>
 
-<script src="/js/pingcloud.js?v=bDi2nzwnF6TGRFcfKwLkDOD_dleHK0LvTiU60oCJeJY"></script>
+<script src="/js/randomcode.js?v=PbzIw9GPdw9wXk4KjGQUncV8qxzhoNrfmG8x7b46i6I"></script>
     </div>
 
     <a href="javascript:ss.toTop();" class="totop" title="返回顶部">ˆ</a>

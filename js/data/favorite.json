@@ -44,7 +44,7 @@
       },
       {
         "url": "/sqlformatter",
-        "icon": "/icon/sqlformatter.svg",
+        "icon": "/icon/sql.svg",
         "title": "SQL格式化",
         "remark": "美化SQL语句"
       },
@@ -306,6 +306,11 @@
         "icon": "/icon/bmi.svg",
         "title": "体重标准",
         "remark": "中国成人超重和肥胖标准"
+      },
+      {
+        "url": "/randomcode",
+        "icon": "/icon/key.svg",
+        "title": "生成随机密码"
       }
     ]
   },
