@@ -1242,9 +1242,19 @@
 
                     dm.append(ca);
                 })
-                //默认第一个服务接口
+                //默认服务接口
                 if (dk.api == null) {
-                    dk.api = ahosts[0].host;
+                    var dhost = ahosts[0].host;
+                    //本地默认当前接口
+                    if (location.hostname == "localhost") {
+                        $.each(ahosts, function () {
+                            if (this.remark == "当前") {
+                                dhost = this.host;
+                                return false;
+                            }
+                        })
+                    }
+                    dk.api = dhost;
                 }
 
                 //选择标记
