@@ -187,7 +187,7 @@
                         <i class="fa fa-fw fa-arrows-alt"></i>
                     </button>
                     <div class="input-group-prepend">
-                        <input class="form-control form-control-sm" id="txtSearchTable" placeholder="搜索" />
+                        <input class="form-control form-control-sm" id="txtSearchTable" placeholder="搜索，多个词空格间隔" />
                     </div>
                 </div>
 
@@ -1467,8 +1467,14 @@
                     filterData = dk.dc.table.data || [];
                 } else {
                     $.each(dk.dc.table.data, function () {
-                        if (this.TableName.toLowerCase().indexOf(filterKey) >= 0 || (this.TableComment || "").toLowerCase().indexOf(filterKey) >= 0) {
-                            filterData.push(this)
+                        var fks = filterKey.split(' ');
+                        for (var i = 0; i < fks.length; i++) {
+                            var fki = fks[i];
+                            if (fki != "") {
+                                if (this.TableName.toLowerCase().indexOf(fki) >= 0 || (this.TableComment || "").toLowerCase().indexOf(fki) >= 0) {
+                                    filterData.push(this)
+                                }
+                            }
                         }
                     })
                 }
