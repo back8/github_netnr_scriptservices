@@ -187,7 +187,7 @@
                         <i class="fa fa-fw fa-arrows-alt"></i>
                     </button>
                     <div class="input-group-prepend">
-                        <input class="form-control form-control-sm" id="txtSearchTable" placeholder="搜索，多个词空格间隔" />
+                        <input class="form-control form-control-sm" id="txtSearchTable" placeholder="搜索，支持：a&b、a|b" title="并且搜索：a&b；或者搜索：a|b，a b" />
                     </div>
                 </div>
 
@@ -1466,14 +1466,39 @@
                 if (filterKey == "") {
                     filterData = dk.dc.table.data || [];
                 } else {
+                    var fks = [], sr;
+                    if (filterKey.indexOf(' ') > 0 || filterKey.indexOf('|') > 0) {
+                        fks = filterKey.replace(/\|/g, ' ').split(' ');
+                        sr = 'or';
+                    } else {
+                        fks = filterKey.split('&');
+                        sr = 'and';
+                    }
+
                     $.each(dk.dc.table.data, function () {
-                        var fks = filterKey.split(' ');
-                        for (var i = 0; i < fks.length; i++) {
-                            var fki = fks[i];
-                            if (fki != "") {
+                        if (sr == "or") {
+                            var fv = false;
+                            for (var i = 0; i < fks.length; i++) {
+                                var fki = fks[i];
                                 if (this.TableName.toLowerCase().indexOf(fki) >= 0 || (this.TableComment || "").toLowerCase().indexOf(fki) >= 0) {
-                                    filterData.push(this)
+                                    fv = true;
+                                    break;
                                 }
+                            }
+                            if (fv) {
+                                filterData.push(this);
+                            }
+                        } else if (sr == "and") {
+                            var fv = true;
+                            for (var i = 0; i < fks.length; i++) {
+                                var fki = fks[i];
+                                if (!(this.TableName.toLowerCase().indexOf(fki) >= 0 || (this.TableComment || "").toLowerCase().indexOf(fki) >= 0)) {
+                                    fv = false;
+                                    break;
+                                }
+                            }
+                            if (fv) {
+                                filterData.push(this);
                             }
                         }
                     })
