@@ -199,6 +199,12 @@
         "icon": "/icon/p2p.svg",
         "title": "ZeroTier",
         "remark": "ZeroTier 管理"
+      },
+      {
+        "url": "/officeview",
+        "icon": "/icon/office.svg",
+        "title": "Office文档查看",
+        "remark": "Word、Excel、PPT"
       }
     ]
   },
