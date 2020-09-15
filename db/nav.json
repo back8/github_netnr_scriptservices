@@ -334,6 +334,23 @@
     ]
   },
   {
+    "group": "AI",
+    "items": [
+      {
+        "url": "/ocr",
+        "icon": "/icon/ocr.svg",
+        "title": "OCR",
+        "remark": "识别图片内容"
+      },
+      {
+        "url": "/nsfw",
+        "icon": "/icon/nsfw.svg",
+        "title": "图片审查",
+        "remark": "绘画、变态、中立、色情、性感"
+      }
+    ]
+  },
+  {
     "group": "关于",
     "items": [
       {
