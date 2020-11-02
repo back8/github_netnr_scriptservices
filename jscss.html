@@ -231,18 +231,13 @@
         //压缩
         $('#btnFn1').click(function () {
             var code = ee1.getValue();
-
-            switch (jc.getLang(ee1)) {
-                case "javascript":
-                    {
-                        var options = {};
-                        Terser.minify(code, options).then(result => {
-                            ee2.setValue(result.code);
-                        }).catch(e => {
-                            ee2.setValue(e + "");
-                        })
-                    }
-                    break;
+            var options = {};
+            if (code != "") {
+                Terser.minify(code, options).then(result => {
+                    ee2.setValue(result.code);
+                }).catch(e => {
+                    ee2.setValue(e + "");
+                })
             }
         });
 

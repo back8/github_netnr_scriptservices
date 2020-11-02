@@ -168,6 +168,7 @@
             }
 
             ss.ls["formatter-lang"] = this.value;
+            ss.ls["vscode-lang"] = lang;
             ss.lsSave();
         }).val(formatterLang);
 
@@ -175,15 +176,16 @@
         $('#btnFormatter').click(function () {
             var fmlang = $('#seLang').val().split('-').pop();
             var code = ee.getValue();
-
-            try {
-                ee.setValue(prettier.format(code, {
-                    parser: fmlang,
-                    plugins: prettierPlugins
-                }))
-            } catch (e) {
-                console.log(e);
-                jz.msg(e + "");
+            if (code != "") {
+                try {
+                    ee.setValue(prettier.format(code, {
+                        parser: fmlang,
+                        plugins: prettierPlugins
+                    }))
+                } catch (e) {
+                    console.log(e);
+                    jz.msg(e + "");
+                }
             }
         });
 
