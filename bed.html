@@ -1,9 +1,9 @@
-﻿<!--
-https://github.com/netnr
-https://gitee.com/netnr
-https://www.netnr.com
-https://zme.ink
--->
+﻿            <!--
+            https://github.com/netnr
+            https://gitee.com/netnr
+            https://www.netnr.com
+            https://zme.ink
+            -->
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +31,7 @@ https://zme.ink
             <script src="https://cdn.jsdelivr.net/npm/netnrnav@1.1.0/src/netnrnav.js" defer async></script>
             <script>
                 $.ajax({
-                    url: '/images/icon.svg?201022',
+                    url: '/images/icon.svg?201102',
                     dataType: 'text',
                     success: function (data) {
                         $('body').append('<div class="d-none">' + data + '</div>')
@@ -39,7 +39,7 @@ https://zme.ink
                 })
             </script>
 
-        <link href="/css/global.css?v=DE0bvfxeaNrv9kM04k3iwLx3LJtPPzAo5IWIj2LN6vE" rel="stylesheet" />
+        <link href="/css/global.css?v=U2CQ0_PZmbXSniY6RazU70-0cCWjmrX7v03JRyadxZ0" rel="stylesheet" />
         <script src="/js/global.js?v=83bE557i4FM8eaqzTNVIZ3fbAAVZlAFDY06346DgWok"></script>
             <!--导航-->
             <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
@@ -54,6 +54,12 @@ https://zme.ink
                         <li><a href="https://www.netnr.com/doc" title="文档管理"><span class="fa fa-fw fa-book"></span> Doc</a></li>
                         <li><a href="https://www.netnr.com/draw/discover" title="绘制"><span class="fa fa-fw fa-paint-brush"></span> Draw</a></li>
                         <li><a href="/" title="ss.js.org"><span class="fa fa-fw fa-wrench"></span> 服务</a></li>
+                        <li style="background-image: radial-gradient(ellipse, white, rgb(227, 248, 240))">
+                            <!--标题-->
+                                <a href='javascript:location.reload(false)' title="图床大集合">
+                                    <svg class="titleicon"><use xlink:href="#img"></use></svg> &#x56FE;&#x5E8A;
+                                </a>
+                        </li>
                         <li>
                             <a class="text-muted"><span class="fa fa-fw fa-ellipsis-h"></span></a>
                             <ul>
@@ -64,29 +70,28 @@ https://zme.ink
                     </ul>
                 </div>
             </div>
-            <!--标题-->
-                <h4 class="m-3">
-                    <svg class="titleicon"><use xlink:href="#img"></use></svg> &#x56FE;&#x5E8A;
-                </h4>
-        <div class="min300">
+        <div class="min300 mt-3">
             <link href="/lib/webuploader/css/webuploader.css?v=90tKZhkCtatDMEOhJbp9UHAY_6LRXY4JPOqw9itiljg" rel="stylesheet" />
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-
-            <p class="text-danger">请勿上传违反中国法律的文件，违者后果自负。</p>
-
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">请选择上传的托管商</span>
+                    <span class="input-group-text">托管商</span>
                 </div>
-                <select class="custom-select" id="seup">
-                    <option value="https://imgbb.com/json">imgbb.com（Max 32MB）</option>
-                    <option value="https://uploadbeta.com/api/pictures/upload/file/">uploadbeta.com（Max 5MB）</option>
-                </select>
+                <div class="input-group-prepend">
+                    <select class="custom-select" id="seup">
+                        <option value="https://uploadbeta.com/api/pictures/upload/file/">uploadbeta.com（Max 5MB）</option>
+                        <option value="https://imgbb.com/json">imgbb.com（Max 32MB）</option>
+                    </select>
+                </div>
+                <div class="input-group-prepend">
+                    <span class="input-group-text text-danger"> 请勿上传违反中国法律的文件，违者后果自负。</span>
+                </div>
             </div>
-
+        </div>
+        <div class="col-md-12">
             <div id="wrapper">
                 <div id="container">
                     <div id="uploader">

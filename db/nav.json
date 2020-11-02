@@ -15,6 +15,12 @@
         "remark": "Monaco Editor 编辑器"
       },
       {
+        "url": "/diff",
+        "icon": "diff",
+        "title": "文本对比",
+        "remark": "Monaco Editor 文件对比"
+      },
+      {
         "url": "//md.netnr.com",
         "icon": "markdown",
         "title": "Markdown编辑器"
@@ -31,22 +37,16 @@
         "remark": "Nginx配置文件格式化"
       },
       {
-        "url": "/diff",
-        "icon": "diff",
-        "title": "文本对比",
-        "remark": "Monaco Editor 文件对比"
+        "url": "/sqlformatter",
+        "icon": "sql",
+        "title": "SQL格式化",
+        "remark": "美化SQL语句"
       },
       {
         "url": "/filetobase64",
         "icon": "code",
         "title": "文件转Base64",
         "remark": "Base64编码转换"
-      },
-      {
-        "url": "/sqlformatter",
-        "icon": "sql",
-        "title": "SQL格式化",
-        "remark": "美化SQL语句"
       },
       {
         "url": "/jsontocsharp",
@@ -74,10 +74,16 @@
         "remark": "ZeroTier 管理"
       },
       {
-        "url": "//www.css-js.com",
+        "url": "/jscss",
         "icon": "js",
-        "title": "JS压缩",
-        "remark": "JS压缩、CSS压缩"
+        "title": "JS、CSS工具",
+        "remark": "压缩、混淆"
+      },
+      {
+        "url": "/formatter",
+        "icon": "formatter",
+        "title": "代码格式化",
+        "remark": "Js、Css、Html、TypeScript、Yaml"
       },
       {
         "url": "//tiny.netnr.com",

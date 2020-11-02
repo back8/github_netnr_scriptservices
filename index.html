@@ -1,9 +1,9 @@
-﻿<!--
-https://github.com/netnr
-https://gitee.com/netnr
-https://www.netnr.com
-https://zme.ink
--->
+﻿            <!--
+            https://github.com/netnr
+            https://gitee.com/netnr
+            https://www.netnr.com
+            https://zme.ink
+            -->
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +31,7 @@ https://zme.ink
             <script src="https://cdn.jsdelivr.net/npm/netnrnav@1.1.0/src/netnrnav.js" defer async></script>
             <script>
                 $.ajax({
-                    url: '/images/icon.svg?201022',
+                    url: '/images/icon.svg?201102',
                     dataType: 'text',
                     success: function (data) {
                         $('body').append('<div class="d-none">' + data + '</div>')
@@ -39,7 +39,7 @@ https://zme.ink
                 })
             </script>
 
-        <link href="/css/global.css?v=DE0bvfxeaNrv9kM04k3iwLx3LJtPPzAo5IWIj2LN6vE" rel="stylesheet" />
+        <link href="/css/global.css?v=U2CQ0_PZmbXSniY6RazU70-0cCWjmrX7v03JRyadxZ0" rel="stylesheet" />
         <script src="/js/global.js?v=83bE557i4FM8eaqzTNVIZ3fbAAVZlAFDY06346DgWok"></script>
             <!--导航-->
             <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
@@ -54,6 +54,9 @@ https://zme.ink
                         <li><a href="https://www.netnr.com/doc" title="文档管理"><span class="fa fa-fw fa-book"></span> Doc</a></li>
                         <li><a href="https://www.netnr.com/draw/discover" title="绘制"><span class="fa fa-fw fa-paint-brush"></span> Draw</a></li>
                         <li><a href="/" title="ss.js.org"><span class="fa fa-fw fa-wrench"></span> 服务</a></li>
+                        <li style="background-image: radial-gradient(ellipse, white, rgb(227, 248, 240))">
+                            <!--标题-->
+                        </li>
                         <li>
                             <a class="text-muted"><span class="fa fa-fw fa-ellipsis-h"></span></a>
                             <ul>
@@ -64,14 +67,22 @@ https://zme.ink
                     </ul>
                 </div>
             </div>
-            <!--标题-->
-        <div class="min300">
-            
+        <div class="min300 mt-3">
+            <style>
+    @media (min-width: 1666px) {
+        .col-ll-2 {
+            -ms-flex: 0 0 16.666667%;
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+    }
+</style>
+
 <div class="container-fluid">
     <div class="row">
 
 
-        <div class="col-md-12 mt-3">
+        <div class="col-md-12">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <select class="custom-select" style="width:150px;" id="seGroup">
@@ -93,7 +104,7 @@ https://zme.ink
     <div class="navbox">
             <div class="row">
                 <div class="col-md-12 h5 mt-3"><i class="fa fa-fw text-muted fa-reorder"></i>&#x5F00;&#x53D1;</div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/code" >
@@ -104,7 +115,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/vscode" >
@@ -115,40 +126,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <a href="//md.netnr.com" target='_blank'>
-                                    <svg><use xlink:href="#markdown"></use></svg>
-                                    <h5 class="ov">Markdown编辑器</h5>
-                                    <small>Markdown编辑器</small>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <a href="//json.netnr.com" target='_blank'>
-                                    <svg><use xlink:href="#json"></use></svg>
-                                    <h5 class="ov">JSON编辑器</h5>
-                                    <small>JSON编辑器</small>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <a href="/nginx" >
-                                    <svg><use xlink:href="#nginx"></use></svg>
-                                    <h5 class="ov">Nginx编辑器</h5>
-                                    <small>Nginx配置文件格式化</small>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/diff" >
@@ -159,18 +137,40 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
-                                <a href="/filetobase64" >
-                                    <svg><use xlink:href="#code"></use></svg>
-                                    <h5 class="ov">文件转Base64</h5>
-                                    <small>Base64编码转换</small>
+                                <a href="//md.netnr.com" target='_blank'>
+                                    <svg><use xlink:href="#markdown"></use></svg>
+                                    <h5 class="ov">Markdown编辑器</h5>
+                                    <small>Markdown编辑器</small>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="//json.netnr.com" target='_blank'>
+                                    <svg><use xlink:href="#json"></use></svg>
+                                    <h5 class="ov">JSON编辑器</h5>
+                                    <small>JSON编辑器</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="/nginx" >
+                                    <svg><use xlink:href="#nginx"></use></svg>
+                                    <h5 class="ov">Nginx编辑器</h5>
+                                    <small>Nginx配置文件格式化</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/sqlformatter" >
@@ -181,7 +181,18 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="/filetobase64" >
+                                    <svg><use xlink:href="#code"></use></svg>
+                                    <h5 class="ov">文件转Base64</h5>
+                                    <small>Base64编码转换</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/jsontocsharp" >
@@ -192,7 +203,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/jsontoxml" >
@@ -203,7 +214,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/dk" target='_blank'>
@@ -214,7 +225,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/zerotier" >
@@ -225,18 +236,29 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
-                                <a href="//www.css-js.com" target='_blank'>
+                                <a href="/jscss" >
                                     <svg><use xlink:href="#js"></use></svg>
-                                    <h5 class="ov">JS压缩</h5>
-                                    <small>JS压缩、CSS压缩</small>
+                                    <h5 class="ov">JS、CSS工具</h5>
+                                    <small>压缩、混淆</small>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="/formatter" >
+                                    <svg><use xlink:href="#formatter"></use></svg>
+                                    <h5 class="ov">代码格式化</h5>
+                                    <small>Js、Css、Html、TypeScript、Yaml</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//tiny.netnr.com" target='_blank'>
@@ -247,7 +269,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//zijian.aliyun.com" target='_blank'>
@@ -258,7 +280,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//whois.aliyun.com" target='_blank'>
@@ -269,7 +291,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//check-host.net" target='_blank'>
@@ -280,7 +302,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/ip" >
@@ -291,7 +313,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//ping.pe" target='_blank'>
@@ -302,7 +324,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/pingcloud" >
@@ -313,7 +335,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//www.chinassl.net/ssltools/convert-ssl.html" target='_blank'>
@@ -324,7 +346,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//getman.cn" target='_blank'>
@@ -335,7 +357,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/useragent" >
@@ -346,7 +368,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/icp" >
@@ -357,7 +379,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/zoning" >
@@ -368,7 +390,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//tool.chinaz.com/regex/" target='_blank'>
@@ -379,7 +401,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/pinyin" >
@@ -390,7 +412,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//zidian.netnr.com" target='_blank'>
@@ -401,7 +423,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/bed" >
@@ -412,7 +434,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//www.iconfont.cn" target='_blank'>
@@ -423,7 +445,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//c.runoob.com/more/svgeditor/" target='_blank'>
@@ -434,7 +456,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/free" >
@@ -445,7 +467,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/officeview" >
@@ -459,7 +481,7 @@ https://zme.ink
             </div>
             <div class="row">
                 <div class="col-md-12 h5 mt-3"><i class="fa fa-fw text-muted fa-reorder"></i>&#x751F;&#x6D3B;</div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/wallpaper" >
@@ -470,7 +492,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//kms.netnr.com" target='_blank'>
@@ -481,7 +503,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/symbol" >
@@ -492,7 +514,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/emoji" >
@@ -503,7 +525,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/speedtest" >
@@ -514,7 +536,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/qrcode" >
@@ -525,7 +547,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/lottery" >
@@ -536,7 +558,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/idcard" >
@@ -547,7 +569,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/ps" target='_blank'>
@@ -558,7 +580,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//v.zme.ink" target='_blank'>
@@ -569,7 +591,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/express" >
@@ -580,7 +602,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/weather" >
@@ -591,7 +613,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/rmb" >
@@ -602,7 +624,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/randomcode" >
@@ -613,7 +635,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/qiushibaike" >
@@ -624,7 +646,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/tv" >
@@ -635,7 +657,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/purine" >
@@ -646,7 +668,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/bmi" >
@@ -657,7 +679,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/gc" >
@@ -671,7 +693,7 @@ https://zme.ink
             </div>
             <div class="row">
                 <div class="col-md-12 h5 mt-3"><i class="fa fa-fw text-muted fa-reorder"></i>AI</div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/ocr" >
@@ -682,7 +704,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/nsfw" >
@@ -693,7 +715,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/nlp" >
@@ -707,7 +729,7 @@ https://zme.ink
             </div>
             <div class="row">
                 <div class="col-md-12 h5 mt-3"><i class="fa fa-fw text-muted fa-reorder"></i>&#x5173;&#x4E8E;</div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/overview" >
@@ -718,7 +740,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="/message" >
@@ -729,7 +751,7 @@ https://zme.ink
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb-2">
+                    <div class="col-ll-2 col-xl-3 col-md-4 col-sm-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <a href="//zme.ink" target='_blank'>
