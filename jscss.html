@@ -17,7 +17,7 @@
     <title>JS、CSS工具 脚本服务</title>
 
     <meta name="keywords" content="netnr NET牛人 JS、CSS工具" />
-    <meta name="description" content="Script Services 压缩、混淆" />
+    <meta name="description" content="Script Services JS压缩、CSS压缩" />
 
 </head>
 <body>
@@ -31,7 +31,7 @@
             <script src="https://cdn.jsdelivr.net/npm/netnrnav@1.1.0/src/netnrnav.js" defer async></script>
             <script>
                 $.ajax({
-                    url: '/images/icon.svg?201102',
+                    url: '/images/icon.svg?201108',
                     dataType: 'text',
                     success: function (data) {
                         $('body').append('<div class="d-none">' + data + '</div>')
@@ -40,7 +40,7 @@
             </script>
 
         <link href="/css/global.css?v=U2CQ0_PZmbXSniY6RazU70-0cCWjmrX7v03JRyadxZ0" rel="stylesheet" />
-        <script src="/js/global.js?v=83bE557i4FM8eaqzTNVIZ3fbAAVZlAFDY06346DgWok"></script>
+        <script src="/js/global.js?v=IDvuVO5IygoqXs23DXJjJotOma54Qil-Wq4pQk68alc"></script>
             <!--导航-->
             <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
                 <span class="fa fa-align-justify fa-2x"></span>
@@ -56,7 +56,7 @@
                         <li><a href="/" title="ss.js.org"><span class="fa fa-fw fa-wrench"></span> 服务</a></li>
                         <li style="background-image: radial-gradient(ellipse, white, rgb(227, 248, 240))">
                             <!--标题-->
-                                <a href='javascript:location.reload(false)' title="压缩、混淆">
+                                <a href='javascript:location.reload(false)' title="JS压缩、CSS压缩">
                                     <svg class="titleicon"><use xlink:href="#js"></use></svg> JS&#x3001;CSS&#x5DE5;&#x5177;
                                 </a>
                         </li>
@@ -75,9 +75,8 @@
     <div class="row">
         <div class="col-md-6">
             <div class="mb-2">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-warning" id="btnFn1">Terser 压缩</button>
-                </div>
+                <button type="button" class="btn btn-warning" id="btnFn1">JS压缩(Terser)</button>
+                <button type="button" class="btn btn-info" id="btnFn2">CSS压缩(YUI)</button>
             </div>
             <div id="editor1" class="border overflow-hidden position-relative">
                 <i class="fa fa-arrows-alt fa-fw me-full-btn" title="Switch the full screen"></i>
@@ -89,7 +88,7 @@
                 <div class="input-group">
                     <button type="button" class="btn btn-success" id="btnDown">下载文件</button>
                     <div class="input-group-prepend">
-                        <input class="form-control" placeholder="文件名：code.js" id="txtFileName" />
+                        <input class="form-control" placeholder="（可选）自定义文件名" id="txtFileName" />
                     </div>
                 </div>
             </div>
@@ -165,6 +164,15 @@
         getLang: function (editor) {
             return editor.getModel().getLanguageIdentifier().language
         },
+        setEE: function (lang) {
+            if (lang != jc.getLang(ee1)) {
+                jc.changeLang(ee1, lang)
+                jc.changeLang(ee2, lang)
+
+                ss.ls["vscode-lang"] = lang;
+                ss.lsSave();
+            }
+        },
         download: function (filename, content, contentType) {
             if (!contentType) contentType = 'application/octet-stream';
             var a = document.createElement('a');
@@ -196,7 +204,7 @@
 
         window.ee2 = monaco.editor.create(document.getElementById("editor2"), {
             value: "/* 输出的内容 */",
-            language: "javascript",
+            language: defaultLang,
             automaticLayout: true,
             wordWrap: "on",
             theme: "vs",
@@ -228,11 +236,11 @@
             }, 1000 * 1)
         });
 
-        //压缩
         $('#btnFn1').click(function () {
             var code = ee1.getValue();
             var options = {};
             if (code != "") {
+                jc.setEE("javascript");
                 Terser.minify(code, options).then(result => {
                     ee2.setValue(result.code);
                 }).catch(e => {
@@ -241,9 +249,40 @@
             }
         });
 
+        $('#btnFn2').click(function () {
+            var code = ee1.getValue();
+            if (code != "") {
+                jc.setEE("css");
+                ss.loading();
+                $('#btnFn2')[0].disabled = true;
+                $.ajax({
+                    url: "https://api.zme.ink/minify/css",
+                    type: "post",
+                    data: {
+                        content: code
+                    },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            ee2.setValue(data.data);
+                        } else {
+                            ee2.setValue(JSON.stringify(data));
+                        }
+                    },
+                    error: function (e) {
+                        ee2.setValue(e + "");
+                    },
+                    complete: function () {
+                        ss.loading(0);
+                        $('#btnFn2')[0].disabled = false;
+                    }
+                })
+            }
+        });
+
         //下载
         $('#btnDown').click(function () {
-            var filename = $('#txtFileName').val() || "code.js";
+            var dfn = jc.getLang(ee1) == "javascript" ? "code.js" : "style.css";
+            var filename = $('#txtFileName').val() || dfn;
             var code = ee2.getValue();
             jc.download(filename, code);
         })

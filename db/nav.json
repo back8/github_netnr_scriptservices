@@ -77,7 +77,7 @@
         "url": "/jscss",
         "icon": "js",
         "title": "JS、CSS工具",
-        "remark": "压缩、混淆"
+        "remark": "JS压缩、CSS压缩"
       },
       {
         "url": "/formatter",
