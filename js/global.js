@@ -160,6 +160,23 @@ var ss = {
     },
     lsSave: function () {
         localStorage.setItem(this.lsKey, JSON.stringify(this.ls));
+    },
+
+    sizeOf: function (size) {
+        var u = 'B', s = size;
+        if (size >= 1024) {
+            u = 'K';
+            s = size / 1024.0
+        }
+        if (size >= 1024 * 1024) {
+            u = 'M'
+            s = size / 1024.0 / 1024;
+        }
+        if (size >= 1024 * 1024 * 1024) {
+            u = 'G'
+            s = size / 1024.0 / 1024 / 1024;
+        }
+        return s.toFixed(1) + u;
     }
 }
 

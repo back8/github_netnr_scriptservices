@@ -86,7 +86,7 @@
         "remark": "Js、Css、Html、TypeScript、Yaml"
       },
       {
-        "url": "//tiny.netnr.com",
+        "url": "/tiny",
         "icon": "tiny",
         "title": "图片压缩"
       },
@@ -176,6 +176,12 @@
         "icon": "img",
         "title": "图床",
         "remark": "图床大集合"
+      },
+      {
+        "url": "/storage",
+        "icon": "storage",
+        "title": "存储",
+        "remark": "图床存储"
       },
       {
         "url": "//www.iconfont.cn",

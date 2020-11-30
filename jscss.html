@@ -1,9 +1,11 @@
-﻿            <!--
-            https://github.com/netnr
-            https://gitee.com/netnr
-            https://www.netnr.com
-            https://zme.ink
-            -->
+﻿
+<!--
+https://github.com/netnr
+https://gitee.com/netnr
+https://www.netnr.com
+https://zme.ink
+-->
+
 
 <!DOCTYPE html>
 <html>
@@ -12,7 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+
 
     <title>JS、CSS工具 脚本服务</title>
 
@@ -21,26 +24,27 @@
 
 </head>
 <body>
-                    <div id="LoadingMask" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: white; z-index: 9999; background-image:url('/images/loading.svg');background-repeat:no-repeat;background-position:48% 45%"></div>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" rel="stylesheet">
-            <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-            <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/jzjs@2.0.2/2.0.2/jz.min.js"></script>
-            <link href="https://cdn.jsdelivr.net/npm/netnrnav@1.1.0/src/netnrnav.css" rel="stylesheet" />
-            <script src="https://cdn.jsdelivr.net/npm/netnrnav@1.1.0/src/netnrnav.js" defer async></script>
-            <script>
-                $.ajax({
-                    url: '/images/icon.svg?201120',
-                    dataType: 'text',
-                    success: function (data) {
-                        $('body').append('<div class="d-none">' + data + '</div>')
-                    }
-                })
-            </script>
+<div id='LoadingMask' style='position:fixed;top:0;left:0;bottom:0;right:0;background-color:white;z-index:19999;background-image:url('/images/loading.svg');background-repeat:no-repeat;background-position:48% 45%'></div>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+<script src='https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/jzjs@2.0.2/2.0.2/jz.min.js'></script>
+<link href='https://cdn.jsdelivr.net/npm/netnrnav@1.1.0/src/netnrnav.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/npm/netnrnav@1.1.0/src/netnrnav.js' defer async></script>
 
-        <link href="/css/global.css?v=U2CQ0_PZmbXSniY6RazU70-0cCWjmrX7v03JRyadxZ0" rel="stylesheet" />
-        <script src="/js/global.js?v=IDvuVO5IygoqXs23DXJjJotOma54Qil-Wq4pQk68alc"></script>
+<script>
+    $.ajax({
+        url: '/images/icon.svg?20201130',
+        dataType: 'text',
+        success: function (data) {
+            $('body').append('<div class="d-none">' + data + '</div>')
+        }
+    })
+</script>
+
+        <link href="/css/global.css?v=YuzFOH_Z7ma5bs-3HMdZQu0aPQZ1pkBqrzQ_Ri8Yh3k" rel="stylesheet" />
+        <script src="/js/global.js?v=qaaC1kQbysPcrWUAIoiq9U8DkYoI35FOcNj5QmvDF6A"></script>
             <!--导航-->
             <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
                 <span class="fa fa-align-justify fa-2x"></span>
@@ -75,8 +79,9 @@
     <div class="row">
         <div class="col-md-6">
             <div class="mb-2">
-                <button type="button" class="btn btn-warning" id="btnFn1">JS压缩(Terser)</button>
-                <button type="button" class="btn btn-info" id="btnFn2">CSS压缩(YUI)</button>
+                <button type="button" class="btn btn-warning" id="btnFn1">JS压缩（Terser）</button>
+                <button type="button" class="btn btn-success" id="btnFn2">CSS压缩（CleanCSS）</button>
+                <button type="button" class="btn btn-info" id="btnFn3">CSS压缩（YUI）</button>
             </div>
             <div id="editor1" class="border overflow-hidden position-relative">
                 <i class="fa fa-arrows-alt fa-fw me-full-btn" title="Switch the full screen"></i>
@@ -100,21 +105,62 @@
     </div>
 </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/terser@5.3.8/dist/bundle.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs/loader.js"></script>
-            <script>
-                require.config({
-                    paths: {
-                        vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs"
-                    },
-                    'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
-                });
-            </script>
+<script src='https://cdn.jsdelivr.net/npm/terser@5.3.8/dist/bundle.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/jakubpawlowicz/clean-css-builds/v4.2.2.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs/loader.js'></script>
+
+<script>
+    require.config({
+        paths: {
+            vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs'
+        },
+        'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
+    });
+</script>
+
 
 
 <script>
 
     var jc = {
+        options: {
+            js: {},
+            cleancss: {
+                "compatibility": "",
+                "format": false,
+                "inline": [
+                    "local"
+                ],
+                "rebase": false,
+                "level": {
+                    "0": true,
+                    "1": {
+                        "cleanupCharsets": true,
+                        "normalizeUrls": true,
+                        "optimizeBackground": true,
+                        "optimizeBorderRadius": true,
+                        "optimizeFilter": true,
+                        "optimizeFontWeight": true,
+                        "optimizeOutline": true,
+                        "removeEmpty": true,
+                        "removeNegativePaddings": true,
+                        "removeQuotes": true,
+                        "removeWhitespace": true,
+                        "replaceMultipleZeros": true,
+                        "replaceTimeUnits": true,
+                        "replaceZeroUnits": true,
+                        "roundingPrecision": "",
+                        "selectorsSortingMethod": "standard",
+                        "specialComments": "all",
+                        "tidyAtRules": true,
+                        "tidyBlockScopes": true,
+                        "tidySelectors": true
+                    },
+                    "2": false
+                },
+                "sourceMap": false
+            }
+        },
         sizeof: function (str, charset) {
             var total = 0, charCode, i, len;
             charset = charset ? charset.toLowerCase() : '';
@@ -238,10 +284,9 @@
 
         $('#btnFn1').click(function () {
             var code = ee1.getValue();
-            var options = {};
             if (code != "") {
                 jc.setEE("javascript");
-                Terser.minify(code, options).then(result => {
+                Terser.minify(code, jc.options.js).then(result => {
                     ee2.setValue(result.code);
                 }).catch(e => {
                     ee2.setValue(e + "");
@@ -253,8 +298,23 @@
             var code = ee1.getValue();
             if (code != "") {
                 jc.setEE("css");
+
+                var cout = new CleanCSS(jc.options.cleancss).minify(code);
+                console.log(cout);
+                if (cout.errors.length) {
+                    ee2.setValue(cout.errors.join("\r\n"));
+                } else {
+                    ee2.setValue(cout.styles);
+                }
+            }
+        });
+
+        $('#btnFn3').click(function () {
+            var code = ee1.getValue();
+            if (code != "") {
+                jc.setEE("css");
                 ss.loading();
-                $('#btnFn2')[0].disabled = true;
+                $('#btnFn3')[0].disabled = true;
                 $.ajax({
                     url: "https://api.zme.ink/minify/css",
                     type: "post",
@@ -273,7 +333,7 @@
                     },
                     complete: function () {
                         ss.loading(0);
-                        $('#btnFn2')[0].disabled = false;
+                        $('#btnFn3')[0].disabled = false;
                     }
                 })
             }
