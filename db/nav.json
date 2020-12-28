@@ -190,6 +190,12 @@
         "remark": "矢量图标库"
       },
       {
+        "url": "//svgsprit.es",
+        "icon": "chain",
+        "title": "SVG雪碧图",
+        "remark": "合并SVG"
+      },
+      {
         "url": "//c.runoob.com/more/svgeditor/",
         "icon": "svg",
         "title": "SVG编辑器"
@@ -290,6 +296,12 @@
         "url": "/randomcode",
         "icon": "key",
         "title": "生成随机密码"
+      },
+      {
+        "url": "/randommatch",
+        "icon": "dice",
+        "title": "随机匹配",
+        "remark": "随机数生成、随机分组"
       },
       {
         "url": "/qiushibaike",
