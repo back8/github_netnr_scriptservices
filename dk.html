@@ -1089,7 +1089,7 @@
                                 var wi = ri;
                                 while (wi - 999 < ri && sort == null) {
                                     var cdi = dk.dc.column.data[wi++];
-                                    if (cdi && cdi.PrimaryKey == "YES") {
+                                    if (cdi && cdi.TableName == table && cdi.PrimaryKey == "YES") {
                                         sort = cdi.FieldName;
                                     }
                                 }
