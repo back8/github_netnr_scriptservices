@@ -181,7 +181,8 @@
         "url": "/storage",
         "icon": "storage",
         "title": "存储",
-        "remark": "图床存储"
+        "remark": "图床存储",
+        "display": "0"
       },
       {
         "url": "//www.iconfont.cn",
