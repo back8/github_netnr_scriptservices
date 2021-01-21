@@ -1592,7 +1592,7 @@
                     { field: "FieldOrder", title: "排序", halign: "center", align: "center", width: 50 },
                     { field: "PrimaryKey", title: "主键", halign: "center", align: "center", width: 60 },
                     { field: "AutoAdd", title: "自增", halign: "center", align: "center", width: 60 },
-                    { field: "NotNull", title: "不为空", halign: "center", align: "center", width: 60 },
+                    { field: "NotNull", title: "必填", halign: "center", align: "center", width: 60 },
                     { field: "DefaultValue", title: "默认值", halign: "center", align: "center", width: 80 },
                     { field: "FieldComment", title: "注释", width: 420 }
                 ];
@@ -1903,7 +1903,7 @@
                         tablemd.push('');
                         tablemd.push((cr.TableComment || "").split('\n').join('</br>').replace(/\[/g, '\\[').replace(/\(/g, '\\('));
                         tablemd.push('');
-                        tablemd.push('|字段|类型|主键|自增|不为空|默认值|注释|');
+                        tablemd.push('|字段|类型|主键|自增|必填|默认值|注释|');
                         tablemd.push('|----|----|:-----:|:-----:|:-----:|:-----:|-----|');
                     }
                     tablemd.push('|' + x.FieldName + ' |' + x.DataTypeLength + ' |' + (x.PrimaryKey || "") + ' |' + (x.AutoAdd || "") + ' |' + (x.NotNull || "") + ' |' + (x.DefaultValue || "") + ' |' + (x.FieldComment || "").split('\n').join('</br>').replace(/\[/g, '\\[').replace(/\(/g, '\\(') + ' |');

@@ -35,7 +35,7 @@ https://zme.ink
 
 <script>
     $.ajax({
-        url: '/images/icon.svg?20210114',
+        url: '/images/icon.svg?20210122',
         dataType: 'text',
         success: function (data) {
             $('body').append('<div class="d-none">' + data + '</div>')
@@ -43,8 +43,8 @@ https://zme.ink
     })
 </script>
 
-        <link href="/css/global.css?v=YuzFOH_Z7ma5bs-3HMdZQu0aPQZ1pkBqrzQ_Ri8Yh3k" rel="stylesheet" />
-        <script src="/js/global.js?v=Ftt92UvcHweAooRR-lMVm1P0unPhSDTvh_2iCk3GnAA"></script>
+        <link href="/css/global.css?v=8day63ZfnKDva9KQuDWIgzWbAwNGkylzlnLgUUezVjw" rel="stylesheet" />
+        <script src="/js/global.js?v=d3ulAqTj9rbTzUn0sEPkgzec_V4Zym1Tzjvhauv3HlU"></script>
             <!--导航-->
             <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
                 <span class="fa fa-align-justify fa-2x"></span>
@@ -116,10 +116,6 @@ https://zme.ink
     var pg = {
         init: function () {
 
-            $('#txtFile').change(function () {
-                pg.preview();
-            });
-
             $('#btnRotateLeft').click(function () {
                 if (pg.cp) {
                     pg.cp.rotate(-5)
@@ -142,46 +138,24 @@ https://zme.ink
                 pg.scan();
             });
 
-            //粘贴图片
-            document.addEventListener('paste', function (event) {
-                if (event.clipboardData || event.originalEvent) {
-                    var clipboardData = (event.clipboardData || event.originalEvent.clipboardData);
-                    if (clipboardData.items) {
-                        var items = clipboardData.items, len = items.length;
-                        for (var i = 0; i < len; i++) {
-                            if (items[i].type.indexOf("image") !== -1) {
-                                var blob = items[i].getAsFile();
-                                pg.iv.src = URL.createObjectURL(blob);
-
-                                pg.crop();
-                            }
-                        }
+            //接收文件
+            ss.receiveFiles(function (files) {
+                var isImg = false;
+                for (var i = 0; i < files.length; i++) {
+                    if (files[i].type.indexOf("image") != -1) {
+                        isImg = true;
+                        pg.iv.src = URL.createObjectURL(files[i]);
+                        pg.crop();
+                        break;
                     }
                 }
-            })
+                if (!isImg) {
+                    jz.alert('不是图片哦');
+                }
+            }, "#txtFile");
         },
 
         iv: document.getElementById('imgview'),
-
-        preview: function () {
-            var file = document.querySelector('input[type=file]').files[0];
-            if (file) {
-                console.log(file);
-                if (file.type.indexOf('image') != 0) {
-                    jz.alert('不是图片哦');
-                    return false;
-                }
-                var reader = new FileReader();
-                reader.onload = function () {
-                    pg.iv.src = reader.result;
-
-                    pg.crop();
-                }
-                reader.readAsDataURL(file);
-            } else {
-                pg.iv.src = "https://api.zme.ink/svg/400*200";
-            }
-        },
 
         crop: function () {
             if (pg.cp) {

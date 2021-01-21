@@ -35,7 +35,7 @@ https://zme.ink
 
 <script>
     $.ajax({
-        url: '/images/icon.svg?20210114',
+        url: '/images/icon.svg?20210122',
         dataType: 'text',
         success: function (data) {
             $('body').append('<div class="d-none">' + data + '</div>')
@@ -43,8 +43,8 @@ https://zme.ink
     })
 </script>
 
-        <link href="/css/global.css?v=YuzFOH_Z7ma5bs-3HMdZQu0aPQZ1pkBqrzQ_Ri8Yh3k" rel="stylesheet" />
-        <script src="/js/global.js?v=Ftt92UvcHweAooRR-lMVm1P0unPhSDTvh_2iCk3GnAA"></script>
+        <link href="/css/global.css?v=8day63ZfnKDva9KQuDWIgzWbAwNGkylzlnLgUUezVjw" rel="stylesheet" />
+        <script src="/js/global.js?v=d3ulAqTj9rbTzUn0sEPkgzec_V4Zym1Tzjvhauv3HlU"></script>
             <!--导航-->
             <button type="button" class="MenuToggle show-in-mobile btn btn-primary ml-3 mt-3">
                 <span class="fa fa-align-justify fa-2x"></span>
@@ -104,6 +104,9 @@ https://zme.ink
                         </optgroup>
                     </select>
                 </div>
+                <div class="input-group-prepend pt-2 pl-3 text-muted">
+                    可拖拽文件打开
+                </div>
             </div>
         </div>
         <div class="col-sm-6">
@@ -155,12 +158,12 @@ https://zme.ink
     AutoHeight();
 </script>
 
-<script src='https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs/loader.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/monaco-editor@0.21.3/min/vs/loader.js'></script>
 
 <script>
     require.config({
         paths: {
-            vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs'
+            vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.21.3/min/vs'
         },
         'vs/nls': { availableLanguages: { '*': 'zh-cn' } }
     });
@@ -169,11 +172,11 @@ https://zme.ink
 
 
 <script>
-    /*                      *\
-    Author：netnr
-    Date：2019-09-14
-\*                      */
 
+    /**
+     * by netnr
+     * 2019-09-14
+     * */
     var rt = {
         //配置
         config: {
@@ -442,6 +445,16 @@ https://zme.ink
         } catch (ex) {
             editor2.setValue(ex);
         }
+    });
+
+    //接收文件
+    ss.receiveFiles(function (files) {
+        var file = files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            editor1.setValue(e.target.result);
+        };
+        reader.readAsText(file);
     });
 </script>
         </div>
