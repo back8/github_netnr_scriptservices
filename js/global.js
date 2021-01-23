@@ -65,6 +65,7 @@
 
 /* ScriptService */
 var ss = {
+    apiServer: "https://api.netnr.eu.org",
     init: function () {
         ss.lsInit();
 
