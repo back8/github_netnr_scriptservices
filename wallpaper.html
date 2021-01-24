@@ -35,7 +35,7 @@ https://zme.ink
 
 <script>
     $.ajax({
-        url: '/images/icon.svg?20210123',
+        url: '/images/icon.svg?20210124',
         dataType: 'text',
         success: function (data) {
             $('body').append('<div class="d-none">' + data + '</div>')
@@ -344,7 +344,7 @@ https://zme.ink
         //代理
         urlProxy: function (url) {
             if (ss.lsStr("useProxy") == "1") {
-                url = "https://cors.eu.org/" + url.replace("http://", "");
+                url = "https://image.baidu.com/search/down?tn=download&word=download&ie=utf8&fr=detail&url=" + url;
             } else {
                 url = url.replace("http://", "https://");
             }
