@@ -35,7 +35,7 @@ https://zme.ink
 
 <script>
     $.ajax({
-        url: '/images/icon.svg?20210124',
+        url: '/images/icon.svg?20210125',
         dataType: 'text',
         success: function (data) {
             $('body').append('<div class="d-none">' + data + '</div>')
@@ -80,7 +80,9 @@ https://zme.ink
         <div class="col-md-12">
             <div class="mb-2">
                 <div class="input-group">
-                    <button class="btn btn-warning" id="btnFormatter">格式化</button>
+                    <div class="input-group-prepend">
+                        <button class="btn btn-warning" id="btnFormatter" title="Ctrl+Shift+F 快捷格式化">格式化</button>
+                    </div>                    
                     <div class="input-group-prepend">
                         <select class="custom-select" id="seLang">
                             <option value="javascript">JS</option>
@@ -164,6 +166,11 @@ https://zme.ink
                 ss.lsSave();
             }, 1000 * 1)
         });
+
+        //快捷键
+        ee.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KEY_F, function () {
+            $('#btnFormatter')[0].click();
+        })
 
         //切换语言
         $('#seLang').change(function () {
